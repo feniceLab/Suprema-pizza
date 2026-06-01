@@ -1,0 +1,29 @@
+name: Deploy para VPS Fenix
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-producao
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Sincronizar site no VPS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH (git pull na pasta servida)
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            cd /etc/icontainer/apps/openresty/openresty/www/sites/supremapizza.fenicelab.com.br
+            git fetch origin main
+            git reset --hard origin/main
+            echo "Deploy concluido: $(git log --oneline -1)"
