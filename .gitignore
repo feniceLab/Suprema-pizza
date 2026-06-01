@@ -1,0 +1,8 @@
+# Certificados e chaves — NUNCA versionar
+ssl/
+*.pem
+*.key
+
+# Sistema
+.DS_Store
+Thumbs.db

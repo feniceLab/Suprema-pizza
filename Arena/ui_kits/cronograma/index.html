@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suprema Pizza — Cronograma de Conteúdo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --carvao:#FFEBDC; --carvao-md:#242424; --carvao-lt:#333;
+    --dourado:#D62828; --dourado-dk:#B71C1C; --bege:#EDD9A3;
+    --branco:#fff; --cinza:#888; --brasa:#C0392B; --ambar:#E63946;
+    /* pilares de conteúdo */
+    --p-produto:#D62828; --p-promo:#C0392B; --p-bastidor:#E63946;
+    --p-social:#8B9D5B; --p-instit:#6A8CAF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--carvao);color:#3A322E;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;padding:32px 24px 80px}
+  .wrap{max-width:1200px;margin:0 auto}
+
+  .top{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado)}
+  h1{font-family:'Bebas Neue',sans-serif;font-size:46px;letter-spacing:3px;color:var(--dourado);line-height:.9}
+  .period{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:10px;padding:8px 16px}
+  .period b{font-family:'Bebas Neue';font-size:20px;letter-spacing:1.5px;color:var(--bege)}
+  .period span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.1em}
+  .lead{color:#aaa;font-size:13.5px;max-width:680px;margin:10px 0 24px}
+
+  /* legenda de pilares */
+  .pilares{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .pil{display:flex;align-items:center;gap:8px;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:8px;padding:7px 13px;font-size:12px;font-weight:600;color:#3A322E}
+  .pil .d{width:11px;height:11px;border-radius:3px}
+
+  /* grade semanal */
+  .week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  @media(max-width:980px){.week{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.week{grid-template-columns:repeat(1,1fr)}}
+  .day{background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:230px}
+  .day .dh{padding:10px 12px;border-bottom:1px solid var(--carvao-lt);display:flex;align-items:baseline;justify-content:space-between}
+  .day .dh .wd{font-family:'Bebas Neue';font-size:17px;letter-spacing:1.5px;color:var(--dourado)}
+  .day .dh .dt{font-size:11px;color:var(--cinza);font-weight:600}
+  .day .body{padding:10px;display:flex;flex-direction:column;gap:8px;flex:1}
+
+  .post{border-radius:9px;border:1px solid var(--carvao-lt);border-left-width:3px;background:#1f1f1f;padding:9px 11px}
+  .post .pf{display:flex;align-items:center;gap:6px;margin-bottom:5px}
+  .post .fmt{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:4px;background:var(--carvao-lt);color:var(--bege)}
+  .post .fmt.reel{background:rgba(192,57,43,.22);color:#E08074}
+  .post .fmt.story{background:rgba(106,140,175,.22);color:#9DBBD6}
+  .post .time{font-size:10px;color:var(--cinza);margin-left:auto;font-weight:600}
+  .post .ttl{font-size:12.5px;font-weight:700;color:#fff;line-height:1.3}
+  .post .cap{font-size:11px;color:#999;margin-top:3px;line-height:1.45}
+  .post[contenteditable]:focus{outline:1px solid var(--dourado-dk)}
+  .empty{flex:1;display:flex;align-items:center;justify-content:center;color:#555;font-size:11px;border:1px dashed #383838;border-radius:8px;min-height:60px}
+
+  .foot{margin-top:30px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:12px;padding:18px 22px}
+  .foot .stat b{font-family:'Bebas Neue';font-size:30px;color:var(--dourado);letter-spacing:1px;display:block;line-height:1}
+  .foot .stat span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.1em}
+  .foot .hint{margin-left:auto;font-size:12px;color:#888;max-width:320px}
+  .foot .hint b{color:var(--bege)}
+  .tags{margin-top:18px;font-size:12px;color:#999}
+  .tags b{color:var(--dourado);font-weight:700}
+  .tags code{background:var(--carvao-lt);color:var(--bege);padding:2px 7px;border-radius:5px;margin:0 2px;font-size:11px}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;500;800;900&display=swap" rel="stylesheet">
+<style id="sup-wm">
+.wm-s{font-family:'Saira Condensed',sans-serif !important;font-weight:800 !important;letter-spacing:-.01em !important;text-transform:uppercase}
+.wm-p{font-family:'Saira Condensed',sans-serif !important;font-weight:300 !important;letter-spacing:.26em !important;font-size:.68em;text-transform:uppercase;display:inline-block}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="sup-v2">
+:root{
+ --carvao:#0F0F0F;--carvao-md:#141414;--carvao-lt:#1F1F1F;--carvao-2:#161616;
+ --dourado:#D62020;--dourado-dk:#B71C1C;--brasa:#B71C1C;--ambar:#D62020;
+ --bege:#FFEBDC;--cinza:#9A9A9A;--branco:#FFFFFF;--creme:#FFFFFF;--kraft:#D62020;--tinta:#FFFFFF;
+}
+*{font-family:'Poppins',sans-serif !important}
+html,body{background:#0F0F0F !important;color:#fff !important}
+section{background:#0F0F0F !important;color:#fff !important}
+section.light{background:#141414 !important}
+section.dark2{background:#161616 !important}
+.hero{background:#0F0F0F !important}
+h1,h2,h3,h4{color:#fff !important}
+.hero h1{color:#D62020 !important}
+.kicker,.eyebrow{color:#D62020 !important}
+.lead{color:#E6E6E6 !important}
+p{color:#C2C2C2}
+.label,.hint,.col-sub,.col-tag,.col2-hint,.fnd-hint,.col2-meta,.fnd-meta,.col2-cap,.cap,.wd,.dt,.dh,.time,.tags,.stat,.period{color:#9A9A9A !important}
+.col2-bar,.fnd-bar{background:#161616 !important;border-color:rgba(255,255,255,.1) !important}
+.week,.post,.pil,.pilares,.graf{border-color:rgba(255,255,255,.1) !important}
+.post{background:#141414 !important}
+.pil{background:#161616 !important}
+.ttl{color:#fff !important}
+footer,.foot{background:#0a0a0a !important;color:#888 !important;border-top:1px solid rgba(255,255,255,.08) !important}
+[style*="color:#1A1A1A"]{color:#fff !important}
+[style*="color:#1a1a1a"]{color:#fff !important}
+[style*="color:#3A322E"]{color:#C2C2C2 !important}
+[style*="color:#3a322e"]{color:#C2C2C2 !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div>
+      <div class="eyebrow">Planejamento Editorial · Suprema Pizza</div>
+      <h1>Cronograma de Conteúdo</h1>
+    </div>
+    <div class="period">
+      <div>
+        <b contenteditable="true">Semana 1 — Junho</b><br>
+        <span>@asupremapizza</span>
+      </div>
+    </div>
+  </div>
+  <p class="lead">Mapa semanal de postagens do Suprema Pizza. Cada card define <b>formato</b>, <b>pilar de conteúdo</b>,
+  tema e legenda. Edite os textos direto nos cards. Ritmo-alvo: <b>1 post de feed/dia + stories diários + 2 reels/semana.</b></p>
+
+  <div class="pilares">
+    <div class="pil"><span class="d" style="background:var(--p-produto)"></span>Produto · brasa</div>
+    <div class="pil"><span class="d" style="background:var(--p-promo)"></span>Promoção · oferta</div>
+    <div class="pil"><span class="d" style="background:var(--p-bastidor)"></span>Bastidores · cozinha</div>
+    <div class="pil"><span class="d" style="background:var(--p-social)"></span>Prova social · review</div>
+    <div class="pil"><span class="d" style="background:var(--p-instit)"></span>Institucional · info</div>
+  </div>
+
+  <div class="week" id="week"></div>
+
+  <div class="foot">
+    <div class="stat"><b>7</b><span>Feeds</span></div>
+    <div class="stat"><b>2</b><span>Reels</span></div>
+    <div class="stat"><b>7</b><span>Dias de story</span></div>
+    <div class="hint"><b>Dica:</b> alterne os pilares ao longo da semana — nunca dois dias seguidos de promoção. Produto e bastidores sustentam o feed; promoção converte.</div>
+  </div>
+
+  <p class="tags"><b>Hashtags institucionais:</b>
+    <code>#ArenaGourmet</code><code>#ArenaGourmetBlumenau</code><code>#HambúrguerNaBrasa</code><code>#GourmetBlumenau</code><code>#ArenaDoSabor</code><code>#ArenaDog</code>
+  </p>
+
+</div>
+
+<script>
+const PILARES = {
+  produto:'var(--p-produto)', promo:'var(--p-promo)', bastidor:'var(--p-bastidor)',
+  social:'var(--p-social)', instit:'var(--p-instit)'
+};
+const WEEK = [
+  { wd:'SEG', dt:'02/06', posts:[
+    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Djem — o best-seller', cap:'Costela, pão australiano, cebola caramelizada. "Hambúrguer de respeito."'},
+    {fmt:'story', pilar:'instit', time:'18h', ttl:'Horário de hoje', cap:'Aberto até 23h. Vem pra Arena.'},
+  ]},
+  { wd:'TER', dt:'03/06', posts:[
+    {fmt:'feed', pilar:'bastidor', time:'12h', ttl:'A brasa em ação', cap:'O fogo que faz a diferença — bastidor da chapa.'},
+    {fmt:'story', pilar:'social', time:'19h', ttl:'Print de avaliação 5★', cap:'Repost de cliente.'},
+  ]},
+  { wd:'QUA', dt:'04/06', posts:[
+    {fmt:'feed', pilar:'promo', time:'11h', ttl:'PROMOÇÃO DO DIA', cap:'Segundo burger com 50% OFF. "Porque você merecia antes."'},
+    {fmt:'reel', pilar:'produto', time:'20h', ttl:'Reel: queijo derretendo', cap:'Close em câmera lenta, fumaça, brasa.'},
+  ]},
+  { wd:'QUI', dt:'05/06', posts:[
+    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Arena DOG artesanal', cap:'Linha de hot dogs. Apresenta a categoria.'},
+    {fmt:'story', pilar:'instit', time:'18h', ttl:'Enquete: qual o próximo?', cap:'Caixinha de pergunta no story.'},
+  ]},
+  { wd:'SEX', dt:'06/06', posts:[
+    {fmt:'feed', pilar:'promo', time:'11h', ttl:'Sextou na Arena', cap:'Combo família com brinde kids. CTA delivery.'},
+    {fmt:'story', pilar:'bastidor', time:'20h', ttl:'Movimento da sexta', cap:'Bastidor do salão cheio.'},
+  ]},
+  { wd:'SÁB', dt:'07/06', posts:[
+    {fmt:'reel', pilar:'produto', time:'13h', ttl:'Reel: montagem do herói', cap:'Camada por camada até o burger final.'},
+    {fmt:'story', pilar:'social', time:'21h', ttl:'Casa cheia', cap:'Stories do ambiente, pisca-pisca, família.'},
+  ]},
+  { wd:'DOM', dt:'08/06', posts:[
+    {fmt:'feed', pilar:'instit', time:'12h', ttl:'Domingo é dia de Arena', cap:'Espaço kids + CashBack. Convite ao programa de fidelidade.'},
+  ]},
+];
+
+const week = document.getElementById('week');
+WEEK.forEach(d=>{
+  const col = document.createElement('div'); col.className='day';
+  let inner = `<div class="dh"><span class="wd">${d.wd}</span><span class="dt">${d.dt}</span></div><div class="body">`;
+  if(d.posts.length){
+    d.posts.forEach(p=>{
+      inner += `<div class="post" style="border-left-color:${PILARES[p.pilar]}" contenteditable="true">
+        <div class="pf"><span class="fmt ${p.fmt}">${p.fmt}</span><span class="time">${p.time}</span></div>
+        <div class="ttl">${p.ttl}</div>
+        <div class="cap">${p.cap}</div>
+      </div>`;
+    });
+  } else {
+    inner += `<div class="empty">sem post</div>`;
+  }
+  inner += `</div>`;
+  col.innerHTML = inner;
+  week.appendChild(col);
+});
+</script>
+</body>
+</html>

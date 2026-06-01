@@ -1,0 +1,22 @@
+{
+  "categorias": ["Pizzas (tamanhos)", "Sabores em destaque", "Bebidas"],
+  "produtos": [
+    {"id":"pizza-baby","nome":"Pizza Baby","categoria":"Pizzas (tamanhos)","preco":"38,00","desc":"20cm · 4 fatias · 1 sabor.","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"pizza-media","nome":"Pizza Média","categoria":"Pizzas (tamanhos)","preco":"69,00","desc":"30cm · 8 fatias · até 2 sabores.","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"pizza-grande","nome":"Pizza Grande","categoria":"Pizzas (tamanhos)","preco":"91,00","desc":"35cm · 12 fatias · até 3 sabores.","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"pizza-gigante","nome":"Pizza Gigante","categoria":"Pizzas (tamanhos)","preco":"109,00","desc":"45cm · 16 fatias · até 4 sabores.","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"sabor-camarao-cheddar","nome":"Camarão com Borda de Cheddar","categoria":"Sabores em destaque","preco":"","desc":"Sabor especial — camarão com borda recheada de cheddar.","ingredientes":["Camarão","Borda de cheddar"],"adicionais":[],"obs":""},
+    {"id":"sabor-alho-cebola","nome":"Alho com Cebola Caramelizada","categoria":"Sabores em destaque","preco":"","desc":"Alho e cebola caramelizada.","ingredientes":["Alho","Cebola caramelizada"],"adicionais":[],"obs":""},
+    {"id":"sabor-milho-bacon-catupiry","nome":"Milho, Bacon e Catupiry","categoria":"Sabores em destaque","preco":"","desc":"Milho, bacon e catupiry.","ingredientes":["Milho","Bacon","Catupiry"],"adicionais":[],"obs":""},
+    {"id":"sabor-nutella-morango","nome":"Nutella com Morangos Frescos","categoria":"Sabores em destaque","preco":"","desc":"Doce — Nutella com morangos frescos.","ingredientes":["Nutella","Morangos frescos"],"adicionais":[],"obs":""},
+    {"id":"sabor-geleia-brie","nome":"Geleia de Pimenta com Queijo Brie","categoria":"Sabores em destaque","preco":"","desc":"Geleia de pimenta com queijo brie.","ingredientes":["Geleia de pimenta","Queijo brie"],"adicionais":[],"obs":""},
+    {"id":"sabor-a-suprema","nome":"A Suprema","categoria":"Sabores em destaque","preco":"","desc":"O sabor que dá nome à casa.","ingredientes":[],"adicionais":[],"obs":""},
+    {"id":"cerveja-long-neck","nome":"Cervejas Long Neck","categoria":"Bebidas","preco":"12,00","desc":"","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"refri-2l","nome":"Refrigerantes 2L","categoria":"Bebidas","preco":"18,00","desc":"","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"refri-600","nome":"Refrigerantes 600ml","categoria":"Bebidas","preco":"8,00","desc":"","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"refri-lata","nome":"Refrigerantes Lata","categoria":"Bebidas","preco":"6,00","desc":"","ingredientes":[],"adicionais":[],"obs":"A partir de"},
+    {"id":"agua-gas","nome":"Água com Gás","categoria":"Bebidas","preco":"3,50","desc":"","ingredientes":[],"adicionais":[],"obs":""},
+    {"id":"agua","nome":"Água sem Gás","categoria":"Bebidas","preco":"3,50","desc":"","ingredientes":[],"adicionais":[],"obs":""},
+    {"id":"guarana-15","nome":"Guaraná Antárctica 1,5L","categoria":"Bebidas","preco":"12,00","desc":"","ingredientes":[],"adicionais":[],"obs":""}
+  ]
+}
