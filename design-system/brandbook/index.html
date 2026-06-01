@@ -257,6 +257,15 @@
   .credits .big em{color:var(--vermelho);font-style:normal}
   .credits .by{margin-top:24px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza)}
   .credits .by b{color:var(--vermelho-lt)}
+
+/* Sprint 1 — hero full-bleed + epigrafes */
+.cover{position:relative;overflow:hidden}
+.cover-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cover-veil{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 38%,rgba(11,10,8,.42),rgba(11,10,8,.92) 78%),linear-gradient(180deg,rgba(11,10,8,.5),rgba(11,10,8,.96))}
+.cover .topbar{z-index:3}
+.cover .inner{position:relative;z-index:2}
+.cover .meta{position:relative;z-index:2}
+.epi{font-family:var(--display,'Saira Condensed');font-weight:300;font-style:italic;text-transform:none;font-size:clamp(15px,1.9vw,21px);color:var(--bege,#FFEBDC);letter-spacing:.01em;margin-top:14px;max-width:680px;line-height:1.4;padding-left:16px;border-left:2px solid var(--vermelho,#D62828)}
 </style>
 </head>
 <body>
@@ -280,6 +289,8 @@
 <!-- ░░ CAPA ░░ -->
 <header class="cover" id="capa" data-bb="Capa">
   <div class="topbar"></div>
+  <img class="cover-photo" src="../assets/photos/foto-30.jpg" alt="">
+  <div class="cover-veil"></div>
   <div class="inner">
     <img class="logo" src="../assets/logo-suprema-branco.png" alt="Suprema Pizza">
     <div class="big">Brand<br><em>Book</em></div>
@@ -343,6 +354,7 @@
   <span class="num">02</span>
   <div class="kicker rv">Estratégia da marca</div>
   <h2 class="rv d1">No que a gente<br><em>acredita.</em></h2>
+  <p class="epi rv d2">Marca boa não grita preço. Ela dá fome.</p>
   <div class="strat rv d1">
     <div class="scard"><div class="ic">Propósito</div><h3>Espalhar lembrança boa</h3><p>Transformar uma noite comum na melhor pizza da semana — comida de verdade que junta gente à mesa.</p></div>
     <div class="scard"><div class="ic">Missão</div><h3>Pizza no ponto, sempre</h3><p>Massa fresca, queijo escorrendo e entrega quente. Consistência que faz o cliente voltar e indicar.</p></div>
@@ -362,6 +374,7 @@
   <span class="num">03</span>
   <div class="kicker rv">Público-alvo</div>
   <h2 class="rv d1">Pra quem<br>a gente <em>faz.</em></h2>
+  <p class="epi rv d2">Sexta à noite, eles já sabem o que querem.</p>
   <p class="lead rv d2">Famílias e amigos de Blumenau que querem uma noite gostosa em casa. Sexta, sábado e domingo são os picos — e o conteúdo fala com quem decide o pedido.</p>
   <div class="personas rv d1">
     <div class="persona"><div class="ph" style="background-image:url('../assets/photos/foto-100.jpg')"></div><div class="bd"><div class="lbl">Núcleo</div><h3>A família reunida</h3><p>O pedido grande do fim de semana — vários sabores, todo mundo junto. Gigante de 4 sabores + bebida.</p></div></div>
@@ -375,6 +388,7 @@
   <span class="num">04</span>
   <div class="kicker rv">Identidade visual · logo</div>
   <h2 class="rv d1">A logo<br>e seu <em>racional.</em></h2>
+  <p class="epi rv d2">Dois rolinhos cruzados. O resto, todo mundo reconhece.</p>
   <p class="lead rv d2">O wordmark "SUPREMA" pesado com "PIZZA" fino e espaçado, coroado pelos rolinhos de massa cruzados entre duas linhas. Vermelha sobre claro; branca sobre escuro ou foto.</p>
   <div class="lg-anat rv d1">
     <div class="lg-visual"><img src="../assets/logo-suprema-branco.png" alt="Logo Suprema Pizza"></div>
@@ -396,6 +410,7 @@
   <span class="num">04</span>
   <div class="kicker rv">Grid de construção</div>
   <h2 class="rv d1">Proporção<br><em>protegida.</em></h2>
+  <p class="epi rv d2">Proporção é sabor: nada fora do lugar.</p>
   <p class="lead rv d2">A logo é construída sobre um grid modular. Mantenha as proporções originais — nunca recrie, estique ou reposicione os elementos manualmente.</p>
   <div class="lg-grid rv d1"><img src="../assets/logo-suprema-branco.png" alt="Logo no grid"></div>
 </section>
@@ -405,6 +420,7 @@
   <span class="num">05</span>
   <div class="kicker rv">Símbolo</div>
   <h2 class="rv d1">Os rolinhos<br><em>cruzados.</em></h2>
+  <p class="epi rv d2">Quando não cabe o nome, cabe o X.</p>
   <p class="lead rv d2">Quando não há espaço para a logo completa, os <strong>rolinhos de massa em "✕"</strong> funcionam como símbolo isolado — selo, avatar, favicon e ponto de atenção.</p>
   <div class="sym-grid rv d1">
     <div class="sym-big">
@@ -426,6 +442,7 @@
   <span class="num">06</span>
   <div class="kicker rv">Grafismos</div>
   <h2 class="rv d1">A linguagem<br><em>de apoio.</em></h2>
+  <p class="epi rv d2">O bege que abraça a frase — e dá água na boca.</p>
   <p class="lead rv d2">O elemento-assinatura é o <strong>halo bege</strong> de legenda; somam-se os rolinhos, as linhas e o pattern de marca. Tudo derivado da logo, em preto, vermelho e bege.</p>
   <div class="gf-grid rv d1">
     <div class="gf-card">
@@ -457,6 +474,7 @@
   <span class="num">07</span>
   <div class="kicker rv">Padrão de assinatura</div>
   <h2 class="rv d1">Padrão e<br><em>reduzida.</em></h2>
+  <p class="epi rv d2">Grande quando dá, símbolo quando aperta.</p>
   <p class="lead rv d2">Duas versões: a assinatura <strong>padrão</strong> (prioritária, máxima legibilidade) e a <strong>reduzida</strong> (o símbolo, para espaços apertados — avatar, favicon, lacre).</p>
   <div class="sig-grid rv d1">
     <div class="sig-card">
@@ -480,6 +498,7 @@
   <span class="num">08</span>
   <div class="kicker rv">Reserva de integridade</div>
   <h2 class="rv d1">Espaço de<br><em>respiro.</em></h2>
+  <p class="epi rv d2">Dá espaço pra ela respirar — e brilhar.</p>
   <p class="lead rv d2">A margem mínima ao redor da logo é definida pelo módulo <strong>X</strong> — a altura do "✕" dos rolinhos. Nenhum elemento, texto ou imagem invade essa área.</p>
   <div class="clear rv d1">
     <div class="stage">
@@ -496,6 +515,7 @@
   <span class="num">09</span>
   <div class="kicker rv">Tamanhos mínimos</div>
   <h2 class="rv d1">Legível em<br>qualquer <em>escala.</em></h2>
+  <p class="epi rv d2">Pequena, sim. Ilegível, nunca.</p>
   <p class="lead rv d2">Abaixo destes limites a logo perde legibilidade. Em dúvida, faça um teste no suporte final antes de produzir.</p>
   <div class="sizes rv d1">
     <div class="sz-card">
@@ -522,6 +542,7 @@
   <span class="num">10</span>
   <div class="kicker rv">Paleta de cor</div>
   <h2 class="rv d1">Preto, vermelho<br>e <em>branco.</em></h2>
+  <p class="epi rv d2">Preto de fundo, vermelho de desejo.</p>
   <p class="lead rv d2">Base preta, marca vermelha, texto branco. Bege e cinza são apoio. Considere os códigos exatos — para impressão, use sempre CMYK.</p>
   <div class="grp rv">Principais</div>
   <div class="palette rv d1">
@@ -557,6 +578,7 @@
   <span class="num">11</span>
   <div class="kicker rv">Linha tipográfica</div>
   <h2 class="rv d1">Saira Condensed<br>+ <em>Poppins.</em></h2>
+  <p class="epi rv d2">Título que pesa, legenda que conversa.</p>
   <p class="lead rv d2">Dois papéis: <strong>Saira Condensed</strong> para o nome e os títulos pesados (como na logo); <strong>Poppins</strong> para legendas, corpo e interface.</p>
   <div class="tfam rv d1">
     <div class="tcard2">
@@ -581,6 +603,7 @@
   <span class="num">12</span>
   <div class="kicker rv">Utilização da marca</div>
   <h2 class="rv d1">O que <em>não</em><br>fazer.</h2>
+  <p class="epi rv d2">Cuidar da marca é cuidar da fome que ela desperta.</p>
   <p class="lead rv d2">Use a logo só nas cores da marca, na proporção correta e com contraste suficiente. Os erros abaixo quebram a identidade.</p>
   <div class="donts rv d1">
     <div class="dont"><div class="d" style="background:#1f6f3f"><img src="../assets/logo-suprema-branco.png" alt=""></div><p>Não trocar a cor da marca</p></div>
@@ -596,6 +619,7 @@
   <span class="num">13</span>
   <div class="kicker rv">Fotografia</div>
   <h2 class="rv d1">Quente, real,<br><em>apetitosa.</em></h2>
+  <p class="epi rv d2">Se a foto não der fome, refaz.</p>
   <p class="lead rv d2">Pizza em primeiro plano, queijo escorrendo, borda alta e dourada. Luz quente e direcional, sombras presentes. A caixa kraft da Suprema aparece como prop recorrente.</p>
   <div class="ph-attrs rv d1">
     <div class="ph-attr"><img src="../assets/photos/foto-30.jpg" alt=""><div class="t"><b>Caloroso</b><span>Luz quente, tom acolhedor</span></div></div>
@@ -615,6 +639,7 @@
   <span class="num">14</span>
   <div class="kicker rv">Layouts</div>
   <h2 class="rv d1">Peças que<br>parecem <em>Suprema.</em></h2>
+  <p class="epi rv d2">Foto cheia, frase no ponto, logo no rodapé.</p>
   <p class="lead rv d2">Foto cheia, halo bege no topo, logo branca no rodapé. Os formatos sociais 9:16 seguem sempre o mesmo sistema.</p>
   <div class="lay-grid rv d1">
     <div class="story"><img class="bg" src="../assets/photos/foto-30.jpg" alt=""><div class="cap"><span class="l1">Massa fresca, do jeito que</span> <span class="l2">a gente faz há anos.</span></div><img class="lg" src="../assets/logo-suprema-branco.png" alt=""></div>
@@ -629,6 +654,7 @@
   <span class="num">15</span>
   <div class="kicker rv">A marca em ação</div>
   <h2 class="rv d1">No mundo<br><em>real.</em></h2>
+  <p class="epi rv d2">Da caixa kraft à mesa de sexta — a marca viva.</p>
   <p class="lead rv d2">A identidade viva — na embalagem, na mão do cliente, na mesa de sexta à noite.</p>
   <div class="action rv d1">
     <div class="act"><img src="../assets/photos/foto-60.jpg" alt=""><div class="tag">Caixa kraft com a marca em vermelho</div></div>
@@ -643,6 +669,7 @@
   <span class="num">16</span>
   <div class="kicker rv">Materiais de venda</div>
   <h2 class="rv d1">Marca <em>aplicada.</em></h2>
+  <p class="epi rv d2">A marca veste, embala e entrega.</p>
   <p class="lead rv d2">Aplicações em embalagem e uniforme. Verifique sempre a viabilidade com o fornecedor e peça uma prova antes de produzir em escala.</p>
   <div class="materials rv d1">
     <div class="mat"><div class="mk"><img class="photo" src="../assets/photos/foto-60.jpg" alt=""></div><div class="nm"><b>Caixa de Pizza</b><span>Kraft · marca em vermelho</span></div></div>

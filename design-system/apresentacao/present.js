@@ -31,3 +31,15 @@
     });
   });
 })();
+
+/* scroll-spy do índice lateral (.ds-toc) — só ativa onde o aside existe */
+(function(){
+  var toc=document.querySelector('.ds-toc'); if(!toc) return;
+  var links={}; toc.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  var spy=new IntersectionObserver(function(es){
+    es.forEach(function(e){ var a=links[e.target.id];
+      if(a && e.isIntersecting){ toc.querySelectorAll('a.active').forEach(function(x){x.classList.remove('active');}); a.classList.add('active'); }
+    });
+  },{rootMargin:'-30% 0px -60% 0px',threshold:0});
+  document.querySelectorAll('section[id]').forEach(function(s){spy.observe(s);});
+})();
