@@ -322,10 +322,10 @@ footer span{color:#bbb}
   <section id="tab-brandbook" class="tab-panel active">
     <div class="embed-bar">
       <b>Brand Book</b> &mdash; manual de marca completo. Role a p&aacute;gina para navegar pelas se&ccedil;&otilde;es.
-      <a href="Arena/ui_kits/apresentacao/index.html?v=20260531b" target="_blank">Abrir em nova aba &#8599;</a>
+      <a href="design-system/apresentacao/index.html" target="_blank">Abrir em nova aba &#8599;</a>
     </div>
     <div class="embed-wrap">
-      <iframe src="Arena/ui_kits/apresentacao/index.html?v=20260531b" title="Brand Book"></iframe>
+      <iframe src="design-system/brandbook/index.html" title="Brand Book"></iframe>
     </div>
   </section>
 
@@ -333,10 +333,10 @@ footer span{color:#bbb}
   <section id="tab-designsystem" class="tab-panel">
     <div class="embed-bar">
       <b>Design System</b> — tokens de cores, tipografia, espaçamento, componentes e elementos de marca.
-      <a href="Arena/design-system.html" target="_blank">Abrir em nova aba ↗</a>
+      <a href="design-system/apresentacao/design-system.html" target="_blank">Abrir em nova aba ↗</a>
     </div>
     <div class="embed-wrap">
-      <iframe data-src="Arena/design-system.html?v=20260531n" title="Design System"></iframe>
+      <iframe data-src="design-system/apresentacao/design-system.html?v=20260531n" title="Design System"></iframe>
     </div>
   </section>
 
@@ -344,10 +344,10 @@ footer span{color:#bbb}
   <section id="tab-grafismos" class="tab-panel">
     <div class="embed-bar">
       <b>Grafismos &amp; Elementos</b> &mdash; sistema visual da marca: halo de legenda, rolinhos cruzados, linhas e fundos prontos.
-      <a href="Arena/grafismos.html" target="_blank">Abrir em nova aba &#8599;</a>
+      <a href="design-system/apresentacao/grafismos.html" target="_blank">Abrir em nova aba &#8599;</a>
     </div>
     <div class="embed-wrap">
-      <iframe data-src="Arena/grafismos.html?v=20260531a" title="Grafismos"></iframe>
+      <iframe data-src="design-system/apresentacao/grafismos.html?v=20260531a" title="Grafismos"></iframe>
     </div>
   </section>
 
@@ -356,10 +356,10 @@ footer span{color:#bbb}
   <section id="tab-cronograma" class="tab-panel">
     <div class="embed-bar">
       <b>Cronograma de Conte&uacute;do</b> &mdash; planejamento editorial semanal. Edite os cards direto na grade.
-      <a href="Arena/ui_kits/cronograma/index.html" target="_blank">Abrir em nova aba &#8599;</a>
+      <a href="design-system/operacao/cronograma/index.html" target="_blank">Abrir em nova aba &#8599;</a>
     </div>
     <div class="embed-wrap">
-      <iframe data-src="Arena/ui_kits/cronograma/index.html" title="Cronograma"></iframe>
+      <iframe data-src="design-system/operacao/cronograma/index.html" title="Cronograma"></iframe>
     </div>
   </section>
 
@@ -404,10 +404,10 @@ footer span{color:#bbb}
 </footer>
 
 <script>
-const DS='Arena/assets/';
+const DS='assets/';
 const B='arena_gourmet/',F2=B+'Folder (2)/',F3=B+'Folder (3)/',F4=B+'Folder (4)/',F5=B+'Folder (5)/',F6=B+'Folder (6)/';
 const VPS='vps-assets/',VO='vps-assets/fotos-originais/',PP='posts-publicados/';
-const GAL='Arena/assets/galeria/';
+const GAL='assets/galeria/';
 
 const GALLERIES={
   'grid-sp-sessao':[
@@ -713,7 +713,7 @@ body.editmode .item{outline:1px dashed rgba(212,180,131,.3);cursor:zoom-in}
   function keyOf(src){return src.split('/').pop();}
   var PRODS=[];
   function fillProds(sel){if(!sel)return;sel.innerHTML='<option value="">(nenhum)</option>';PRODS.forEach(function(p){var o=document.createElement('option');o.value=p.id;o.textContent=p.nome;sel.appendChild(o);});}
-  function loadProds(sel){fetch('Arena/assets/cardapio.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){PRODS=(d&&d.produtos)||[];fillProds(sel);}).catch(function(){});}
+  function loadProds(sel){fetch('assets/cardapio.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){PRODS=(d&&d.produtos)||[];fillProds(sel);}).catch(function(){});}
   function rebuild(){
     SECTIONS.forEach(function(s){LISTS[s.id]=[];});
     for(var id in GALLERIES){
@@ -815,7 +815,7 @@ body.editmode .item{outline:1px dashed rgba(212,180,131,.3);cursor:zoom-in}
       var lb=document.getElementById('lb'); if(!lb.classList.contains('open'))return;
       if(e.key==='ArrowLeft')nav(-1); else if(e.key==='ArrowRight')nav(1);
     });
-    fetch('Arena/assets/galeria-cat.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(m){CATMAP=m||{};}).catch(function(){CATMAP={};}).finally(function(){rebuild();});
+    fetch('assets/galeria-cat.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(m){CATMAP=m||{};}).catch(function(){CATMAP={};}).finally(function(){rebuild();});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
 })();
@@ -830,7 +830,7 @@ body.editmode .item{outline:1px dashed rgba(212,180,131,.3);cursor:zoom-in}
 </style>
 <script>
 (function(){
-  var VG='Arena/assets/videos/';
+  var VG='assets/videos/';
 var VIDS={
     'vgrid-sp':[
     {f:'sv-001.mp4',l:'Camarão com Borda de Cheddar'},
@@ -1070,8 +1070,8 @@ body.catedit #cat-bar #cat-edit{background:var(--dourado);color:#FFEBDC}
   async function save(){try{var r=await fetch('/cardapio/save',{method:'POST',headers:{'Content-Type':'application/json','x-arena-token':'suprema2026'},body:JSON.stringify(CARD)});var j=await r.json();if(j&&j.ok){_dirty=false;document.getElementById('cat-save').style.display='none';to('Catálogo salvo ✓');}else to('Erro ao salvar');}catch(e){to('Erro de conexão');}}
   function to(m){var t=document.getElementById('org-toast');if(!t){t=document.createElement('div');t.id='org-toast';document.body.appendChild(t);}t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2200);}
   function loadAll(){buildSrcMap();Promise.all([
-    fetch('Arena/assets/cardapio.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){CARD=d;}).catch(function(){CARD={categorias:[],produtos:[]};}),
-    fetch('Arena/assets/galeria-cat.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){CAT=d||{};}).catch(function(){CAT={};})
+    fetch('assets/cardapio.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){CARD=d;}).catch(function(){CARD={categorias:[],produtos:[]};}),
+    fetch('assets/galeria-cat.json?ts='+Date.now()).then(function(r){return r.json();}).then(function(d){CAT=d||{};}).catch(function(){CAT={};})
   ]).then(render);}
   function init(){
     var e=document.getElementById('cat-edit');if(e)e.onclick=toggleEdit;

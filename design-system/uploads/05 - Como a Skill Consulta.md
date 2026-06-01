@@ -6,6 +6,8 @@ atualizado_em: 2026-05-29
 
 # 05 — Como a Skill Consulta Essas Regras
 
+> **Skill oficial:** estas regras integram a skill guarda-chuva **`suprema-design`** (`SKILL.md` na raiz do design system). `stop-motion-creator` é a sub-rotina de produção de vídeo que consome estas mesmas regras.
+
 Este arquivo é **meta**: explica como a IA (skill `stop-motion-creator` e futuras skills) deve usar os outros arquivos desta pasta.
 
 ## Fluxo obrigatório antes de gerar conteúdo

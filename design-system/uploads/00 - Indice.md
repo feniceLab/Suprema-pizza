@@ -29,7 +29,8 @@ Sempre que houver mudança aprovada com o cliente, atualizar o arquivo correspon
 
 - **Nome:** Suprema Pizza
 - **Caminho no vault:** `Clientes/Suprema Pizza/`
-- **Skills associadas:** `stop-motion-creator` (principal), futuras skills de marketing
+- **Skill guarda-chuva:** `suprema-design` (design system oficial — ver `SKILL.md`)
+- **Sub-rotina:** `stop-motion-creator` (produção de stop motions), futuras skills de marketing
 
 ## Atualizado em
 

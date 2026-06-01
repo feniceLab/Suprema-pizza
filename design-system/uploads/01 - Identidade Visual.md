@@ -10,6 +10,19 @@ Toda a identidade visual descoberta/confirmada na sessão de 2026-05-29 (entrega
 
 ## Cores
 
+> A Suprema tem **dois contextos de cor — não misturar**. A UI é escura; o bege é exclusivo do halo das peças sociais.
+
+### Paleta de UI (tema escuro — digital / institucional)
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Carvão | `#0F0F0F` | Fundo principal |
+| Grafite | `#161616` | Cards |
+| Elevado | `#1F1F1F` | Superfícies elevadas (hover → `#2A2A2A`) |
+| Vermelho Suprema | `#D62828` | Única cor de marca (wordmark, CTA, preço) — pontual; hover `#B71C1C` |
+| Branco | `#FFFFFF` | Texto principal |
+| Cinza | `#9A9A9A` | Texto secundário |
+
+### Cores das peças sociais (criativo sobre foto)
 | Elemento | Cor | Hex | Observação |
 |----------|-----|-----|------------|
 | Fundo da caixinha de legenda | Bege quente (cor de massa de pizza assada) | `#FFEBDC` | Confirmada via pixel sampling em referências |
@@ -56,9 +69,9 @@ A "caixinha bege" que aparece atrás do texto **NÃO é uma caixa retangular**. 
 
 ### Arquivo original
 
-- **Caminho:** `Clientes/Suprema Pizza/Materiais/Logo/logo.png`
+- **Assets oficiais:** `design-system/assets/logo-suprema-vermelho.png` (oficial) · `logo-suprema-branco.png` (peças/fundo escuro) · `logo-suprema-original.png` (mestre)
 - **Dimensões:** 1920 × 1080
-- **Cor:** Vermelho com fundo transparente
+- **Cor:** Vermelho oficial `#D62828` com fundo transparente
 
 ### Elementos visuais do logo
 
