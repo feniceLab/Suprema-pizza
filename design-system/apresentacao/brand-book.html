@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suprema Pizza — Brand Book</title>
+<link rel="stylesheet" href="present.css">
+<style>
+  .hero.bb{background:#000}
+  .hero.bb .bg{position:absolute;inset:0;z-index:0}
+  .hero.bb .bg img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(1.05) contrast(1.05)}
+  .hero.bb .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,15,15,.95) 35%,rgba(15,15,15,.4) 75%,rgba(15,15,15,.7))}
+  .hero.bb>*{position:relative;z-index:1}
+
+  .statement{font-family:var(--display);font-weight:800;text-transform:uppercase;line-height:.98;
+    font-size:clamp(30px,4.4vw,58px);max-width:14ch;margin-top:8px}
+  .statement em{color:var(--vermelho);font-style:normal}
+
+  .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  @media(max-width:820px){.voice-grid{grid-template-columns:1fr}}
+  .vcol{border-radius:16px;padding:26px;border:1px solid var(--line);background:var(--s2)}
+  .vcol.yes{border-color:rgba(214,40,40,.4)}
+  .vcol.no{border-color:rgba(110,110,110,.35)}
+  .vcol h4{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .vcol.yes h4{color:var(--vermelho-lt)} .vcol.no h4{color:#9a9a9a}
+  .vcol ul{list-style:none}
+  .vcol li{padding:9px 0 9px 24px;position:relative;font-size:14.5px;line-height:1.5;font-style:italic;color:#dcdcdc;border-bottom:1px solid var(--line)}
+  .vcol li:last-child{border-bottom:none}
+  .vcol.yes li::before{content:'✓';position:absolute;left:0;top:9px;color:var(--vermelho-lt);font-weight:800;font-style:normal}
+  .vcol.no li::before{content:'✕';position:absolute;left:0;top:9px;color:#6E6E6E;font-weight:800;font-style:normal}
+
+  .copy-spec{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.copy-spec{grid-template-columns:1fr}}
+  .cs-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--s2)}
+  .cs-card .demo{aspect-ratio:16/10;position:relative;background:#000;display:flex;align-items:center;justify-content:center}
+  .cs-card .demo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+  .cs-card .cap{padding:14px 18px;font-size:12.5px;color:var(--cinza);border-top:1px solid var(--line)}
+  .halo-svg{width:84%;height:auto;position:relative;z-index:2}
+
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.tiers{grid-template-columns:1fr}}
+  .tier{border-radius:16px;padding:28px;background:var(--s2);border:1px solid var(--line);position:relative;overflow:hidden}
+  .tier .rank{font-family:var(--display);font-weight:800;font-size:64px;line-height:.8;opacity:.08;position:absolute;top:14px;right:18px}
+  .tier .lbl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--vermelho-lt);font-weight:700}
+  .tier h4{font-family:var(--display);font-weight:800;font-size:25px;letter-spacing:.03em;text-transform:uppercase;margin:8px 0 10px;color:#fff}
+  .tier p{font-size:13.5px;line-height:1.6;color:var(--cinza)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><img src="../assets/logo-suprema-branco.png" alt=""><span class="lbl wm" style="color:#fff"><span class="s" style="font-size:15px">SUPREMA</span></span></a>
+  <div class="links">
+    <a href="index.html">Início</a>
+    <a href="brand-book.html" class="on">Brand Book</a>
+    <a href="design-system.html">Design System</a>
+    <a href="grafismos.html">Grafismos</a>
+  </div>
+</nav>
+<div id="prog"></div>
+
+<header class="hero bb">
+  <div class="bg"><img src="../assets/photos/foto-60.jpg" alt=""></div>
+  <div class="badge"><img src="../assets/logo-suprema-branco.png" alt="Suprema Pizza"></div>
+  <h1>Brand<br><em>Book</em></h1>
+  <div class="tag">A alma da marca — quem somos e como falamos.</div>
+  <div class="meta">Capítulo 01 · Suprema Pizza</div>
+  <div class="scrollcue"><span class="line"></span> role para ler</div>
+</header>
+
+<!-- 01 A MARCA -->
+<section>
+  <span class="num">01</span>
+  <div class="kicker rv">A marca</div>
+  <h2 class="rv d1">Pizzaria de<br>bairro, <em>de verdade.</em></h2>
+  <p class="lead rv d2">A Suprema é uma pizzaria e delivery em Blumenau/SC. Massa fresca de fermentação lenta, queijo que escorre e borda alta dourada — <strong>a pizza que vira lembrança boa</strong>. Identidade quente e acolhedora, vendida pelo desejo, nunca pelo preço.</p>
+  <div class="info-grid rv d1">
+    <div class="info"><b>Nome</b><p>Suprema Pizza</p></div>
+    <div class="info"><b>Segmento</b><p>Pizzaria · Delivery</p></div>
+    <div class="info"><b>Cidade</b><p>Blumenau, SC</p></div>
+    <div class="info"><b>Endereço</b><p>Rua General Osório, 3012 — Velha</p></div>
+    <div class="info"><b>Instagram</b><p>@asupremapizza</p></div>
+    <div class="info"><b>Cardápio</b><p>pedir.delivery/app/asupremapizza</p></div>
+  </div>
+</section>
+
+<!-- 02 ESSÊNCIA -->
+<section class="alt">
+  <span class="num">02</span>
+  <div class="kicker rv">Essência</div>
+  <h2 class="rv d1">Quente, leve<br>e <em>apetitosa.</em></h2>
+  <p class="lead rv d2">A foto do produto sempre em primeiro plano; o vermelho da marca e o bege quente da massa como apoio. O tom é leve e brincalhão — apela pro desejo, não pro desconto.</p>
+  <div class="ds-table rv d1">
+    <table>
+      <thead><tr><th style="width:170px">Atributo</th><th>Como se expressa</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Atitude</strong></td><td>Leve, brincalhona, sem pressão de venda</td></tr>
+        <tr><td><strong>Calor</strong></td><td>Acolhedora, familiar, do bairro</td></tr>
+        <tr><td><strong>Estética</strong></td><td>Apetitosa — foto de produto sobre preto, vermelho + bege</td></tr>
+        <tr><td><strong>Sensação</strong></td><td>Queijo escorrendo, massa fresca, vontade de repetir</td></tr>
+        <tr><td><strong>Tom</strong></td><td>Conversacional, provoca o apetite</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tag-list rv d2">
+    <span>pizza</span><span>massa fresca</span><span>queijo no ponto</span><span>desejo</span><span>leve</span><span>família</span><span>blumenauense</span><span>doce</span><span>salgado</span><span>A Suprema</span>
+  </div>
+</section>
+
+<!-- 03 PÚBLICO -->
+<section>
+  <span class="num">03</span>
+  <div class="kicker rv">Quem pede</div>
+  <h2 class="rv d1">Pra quem<br>a gente faz.</h2>
+  <p class="lead rv d2">Famílias e amigos de Blumenau que querem uma noite gostosa em casa — sexta, sábado e domingo são os picos. O conteúdo fala com quem decide o pedido.</p>
+  <div class="tiers">
+    <div class="tier rv d1"><div class="rank">01</div><div class="lbl">Núcleo</div><h4>A família reunida</h4><p>O pedido grande do fim de semana — vários sabores, todo mundo junto. Gigante de 4 sabores + bebida.</p></div>
+    <div class="tier rv d2"><div class="rank">02</div><div class="lbl">Frequente</div><h4>A turma de amigos</h4><p>Noite de jogo, série ou conversa. Querem fartura, sabor e zero complicação no pedido.</p></div>
+    <div class="tier rv d3"><div class="rank">03</div><div class="lbl">Desejo</div><h4>O casal da sexta</h4><p>"Dieta começa amanhã." Uma média de dois sabores e uma sobremesa pra fechar a noite.</p></div>
+  </div>
+</section>
+
+<!-- 04 TOM DE VOZ -->
+<section class="alt">
+  <span class="num">04</span>
+  <div class="kicker rv">Tom de voz</div>
+  <h2 class="rv d1">Como a Suprema<br><em>fala.</em></h2>
+  <p class="lead rv d2">Conversacional e brincalhona, como um amigo que entende de pizza. <strong>Duas linhas curtas</strong>: o gancho com reticências, e a revelação fechando em ponto.</p>
+
+  <div class="copy-spec rv d1">
+    <div class="cs-card">
+      <div class="demo">
+        <svg class="halo-svg" viewBox="0 0 600 210" role="img" aria-label="Quando o queijo escorre, a pizza tá no ponto.">
+          <defs><filter id="h1" x="-15%" y="-15%" width="130%" height="130%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/>
+            <feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="hh"/>
+            <feMerge><feMergeNode in="hh"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#h1)" x="300" y="86" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:40px">Quando o queijo escorre...</text>
+          <text filter="url(#h1)" x="300" y="156" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:46px">a pizza tá no ponto.</text>
+        </svg>
+      </div>
+      <div class="cap"><b style="color:#fff">Linha 1</b> gancho em Regular, termina em "…" · <b style="color:#fff">Linha 2</b> punchline em Bold, fecha em ponto.</div>
+    </div>
+    <div class="cs-card">
+      <div class="demo">
+        <img src="../assets/photos/foto-110.jpg" alt="">
+        <svg class="halo-svg" viewBox="0 0 600 190" role="img" aria-label="Se for pra exagerar, que seja na pizza.">
+          <defs><filter id="h2" x="-15%" y="-15%" width="130%" height="130%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/>
+            <feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="hh"/>
+            <feMerge><feMergeNode in="hh"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#h2)" x="300" y="78" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:38px">Se for pra exagerar,</text>
+          <text filter="url(#h2)" x="300" y="146" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:46px">que seja na pizza.</text>
+        </svg>
+      </div>
+      <div class="cap">Sobre foto — o halo bege garante leitura em qualquer imagem.</div>
+    </div>
+  </div>
+
+  <div class="voice-grid rv d2">
+    <div class="vcol yes">
+      <h4>Soa como Suprema</h4>
+      <ul>
+        <li>"Quando o queijo escorre, a pizza tá no ponto."</li>
+        <li>"Dieta começa amanhã… hoje tem pizza."</li>
+        <li>"Não é fome… é vontade de pizza mesmo."</li>
+        <li>"Não é qualquer pizza. É A Suprema."</li>
+      </ul>
+    </div>
+    <div class="vcol no">
+      <h4>Não é Suprema</h4>
+      <ul>
+        <li>"PROMOÇÃO IMPERDÍVEL!!!"</li>
+        <li>Listar preço ou condição na arte</li>
+        <li>"Longa fermentação artesanal premium…"</li>
+        <li>Emoji sem propósito e hashtag na arte</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CARDÁPIO -->
+<section>
+  <span class="num">05</span>
+  <div class="kicker rv">Cardápio</div>
+  <h2 class="rv d1">Da Baby<br>à <em>Gigante.</em></h2>
+  <p class="lead rv d2">Pizza por tamanho, com sabores salgados, doces e premium. O sabor institucional é <strong>"A Suprema"</strong>, que dá nome à casa.</p>
+  <div class="ds-table rv d1">
+    <table>
+      <thead><tr><th style="width:150px">Tamanho</th><th>Detalhe</th><th style="width:130px">A partir de</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Baby</strong></td><td>20cm · 4 fatias · 1 sabor</td><td>R$ 38</td></tr>
+        <tr><td><strong>Média</strong></td><td>30cm · 8 fatias · até 2 sabores</td><td>R$ 69</td></tr>
+        <tr><td><strong>Grande</strong></td><td>35cm · 12 fatias · até 3 sabores</td><td>R$ 91</td></tr>
+        <tr><td><strong>Gigante</strong></td><td>45cm · 16 fatias · até 4 sabores</td><td>R$ 109</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grp rv">Sabores em destaque</div>
+  <div class="ds-table rv d1">
+    <table>
+      <thead><tr><th style="width:50%">Salgados</th><th>Doces</th></tr></thead>
+      <tbody>
+        <tr><td>Camarão com Borda de Cheddar</td><td>Nutella com Morangos Frescos</td></tr>
+        <tr><td>Alho com Cebola Caramelizada</td><td>Geleia de Pimenta com Brie</td></tr>
+        <tr><td>Milho, Bacon e Catupiry</td><td>—</td></tr>
+        <tr><td><strong>A Suprema</strong> · institucional</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <span><span class="wm" style="color:var(--vermelho-lt)"><span class="s" style="font-size:15px">SUPREMA</span></span> · Brand Book</span>
+  <span>Produzido por <b>Fenice Lab</b> · 2026</span>
+</footer>
+
+<script src="present.js"></script>
+</body>
+</html>

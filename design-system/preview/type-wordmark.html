@@ -1,0 +1,37 @@
+<!-- @dsCard group="Type" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;800;900&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:var(--sup-carvao);font-family:var(--sup-font);color:#fff}
+  .wrap{padding:22px 26px;display:flex;align-items:center;gap:30px}
+  .real{flex-shrink:0;width:230px;background:#0a0a0a;border:1px solid var(--sup-linha);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;padding:22px 18px}
+  .real img{width:100%;display:block}
+  .mark{display:flex;flex-direction:column;align-items:center;line-height:.84}
+  .mark .rule{width:150px;height:2px;background:var(--sup-vermelho)}
+  .mark .top{display:flex;align-items:center;gap:9px;width:150px}
+  .mark .top .rule{flex:1;width:auto}
+  .mark .x{color:var(--sup-vermelho);font-size:18px;font-weight:900;flex-shrink:0;line-height:1}
+  .mark .s{font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:48px;color:var(--sup-vermelho);text-transform:uppercase;letter-spacing:.01em;margin-top:5px}
+  .mark .p{font-family:'Saira Condensed',sans-serif;font-weight:300;font-size:19px;color:var(--sup-vermelho);text-transform:uppercase;letter-spacing:.38em;padding-left:.05em;margin:3px 0 5px}
+  .note{font-size:12.5px;color:var(--sup-cinza);line-height:1.65}
+  .note b{color:#fff;font-weight:600}
+  .lbl{font-size:9.5px;color:var(--sup-cinza-esc);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+</style></head>
+<body><div class="wrap">
+  <div style="text-align:center">
+    <div class="lbl">Logo oficial</div>
+    <div class="real"><img src="../assets/logo-suprema-branco.png" alt="Suprema Pizza"></div>
+  </div>
+  <div>
+    <div class="lbl">Reconstrução tipográfica</div>
+    <div class="mark">
+      <div class="top"><span class="rule"></span><span class="x">&#10005;</span><span class="rule"></span></div>
+      <div class="s">SUPREMA</div>
+      <div class="p">PIZZA</div>
+      <div class="rule"></div>
+    </div>
+    <p class="note" style="margin-top:14px;max-width:230px"><b>Saira Condensed 800</b> em "SUPREMA"; <b>300</b> com letter-spacing alto em "PIZZA". Rolinhos cruzados (✕) entre linhas — direto da logo.</p>
+  </div>
+</div></body></html>

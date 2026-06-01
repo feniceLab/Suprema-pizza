@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suprema Pizza — Grafismos</title>
+<link rel="stylesheet" href="present.css">
+<style>
+  .hero.gr{background:radial-gradient(circle at 70% 35%,#1a1310,#0c0a09 72%)}
+  .rule-box{margin-top:26px;background:rgba(214,40,40,.1);border-left:3px solid var(--vermelho);padding:14px 18px;border-radius:8px;color:#dcdcdc;max-width:760px;font-size:14px}
+  .rule-box b{color:#fff}
+  .rule-box code{background:#222;color:#ffd9d4;padding:2px 7px;border-radius:5px;font-size:.86em}
+
+  .halo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+  @media(max-width:760px){.halo-grid{grid-template-columns:1fr}}
+  .halo-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--s2)}
+  .halo-stage{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;background:#000}
+  .halo-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82}
+  .halo-cap{padding:12px 16px;font-size:12px;color:var(--cinza);border-top:1px solid var(--line)}
+  .halo-svg{width:86%;height:auto;position:relative;z-index:2}
+
+  .orn-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;margin-top:32px;align-items:center}
+  @media(max-width:760px){.orn-grid{grid-template-columns:1fr}}
+  .orn-big{background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:48px;display:flex;align-items:center;justify-content:center}
+  .uses{display:flex;flex-direction:column;gap:12px}
+  .use{background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:15px 18px}
+  .use b{color:var(--vermelho-lt)}
+  .use p{color:var(--cinza);font-size:13.5px;margin-top:3px}
+  .use code{background:#222;color:#ffd9d4;padding:1px 6px;border-radius:4px;font-size:.85em}
+
+  .divider{display:flex;align-items:center;justify-content:center;gap:18px;margin:26px 0}
+  .divider .ln{height:3px;width:min(220px,30vw);background:var(--vermelho);border-radius:2px}
+
+  .pattern{margin-top:28px;height:220px;border-radius:16px;border:1px solid var(--line);overflow:hidden}
+
+  .fnd-bar{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;align-items:center}
+  .fnd-bar .seg{display:flex;background:var(--s2);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .fnd-bar button{background:none;border:none;color:var(--cinza);font-weight:700;font-size:12px;padding:9px 18px;cursor:pointer;font-family:var(--font)}
+  .fnd-bar button.on{background:var(--vermelho);color:#fff}
+  .fnd-bar .hint{color:var(--cinza-esc);font-size:12px}
+  .fnd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:22px}
+  .fnd{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--s2)}
+  .fnd-stage{position:relative;display:flex;align-items:center;justify-content:center;transition:.3s var(--ease);aspect-ratio:1/1;overflow:hidden}
+  .fnd-safe{position:absolute;inset:9%;border:1px dashed rgba(160,160,160,.4);border-radius:6px;pointer-events:none}
+  .fnd-logo{width:60%;max-height:46%;object-fit:contain;z-index:2}
+  .fnd-meta{padding:10px 14px;font-size:11px;color:var(--cinza);border-top:1px solid var(--line);display:flex;justify-content:space-between}
+  .fnd-meta b{color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><img src="../assets/logo-suprema-branco.png" alt=""><span class="lbl wm" style="color:#fff"><span class="s" style="font-size:15px">SUPREMA</span></span></a>
+  <div class="links">
+    <a href="index.html">Início</a>
+    <a href="brand-book.html">Brand Book</a>
+    <a href="design-system.html">Design System</a>
+    <a href="grafismos.html" class="on">Grafismos</a>
+  </div>
+</nav>
+<div id="prog"></div>
+
+<header class="hero gr">
+  <div class="badge"><img src="../assets/logo-suprema-branco.png" alt="Suprema Pizza"></div>
+  <h1>Grafis<em>mos</em></h1>
+  <div class="tag">A linguagem visual própria da marca.</div>
+  <div class="meta">Capítulo 03 · Halo · Rolinhos · Linhas · Fundos</div>
+  <div class="scrollcue"><span class="line"></span> role para ver</div>
+</header>
+
+<!-- 01 HALO -->
+<section>
+  <span class="num">01</span>
+  <div class="kicker rv">Elemento-assinatura</div>
+  <h2 class="rv d1">Halo de<br><em>legenda.</em></h2>
+  <p class="lead rv d2">A caixinha bege atrás do texto <strong>não é um retângulo</strong> — é um halo dilatado que segue o contorno das letras, gerando bordas arredondadas orgânicas. É o detalhe que diferencia a Suprema do genérico.</p>
+  <div class="halo-grid rv d1">
+    <div class="halo-card">
+      <div class="halo-stage" style="background:#0F0F0F">
+        <svg class="halo-svg" viewBox="0 0 600 220" role="img" aria-label="Quando o queijo escorre, a pizza tá no ponto.">
+          <defs><filter id="halo1" x="-15%" y="-15%" width="130%" height="130%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/>
+            <feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="h"/>
+            <feMerge><feMergeNode in="h"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#halo1)" x="300" y="90" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:42px">Quando o queijo escorre...</text>
+          <text filter="url(#halo1)" x="300" y="162" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:48px">a pizza tá no ponto.</text>
+        </svg>
+      </div>
+      <div class="halo-cap">Sobre fundo escuro — gancho (Regular) + revelação (Bold).</div>
+    </div>
+    <div class="halo-card">
+      <div class="halo-stage">
+        <img src="../assets/photos/foto-30.jpg" alt="">
+        <svg class="halo-svg" viewBox="0 0 600 200" role="img" aria-label="Não é qualquer pizza. É A Suprema.">
+          <defs><filter id="halo2" x="-15%" y="-15%" width="130%" height="130%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/>
+            <feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="h"/>
+            <feMerge><feMergeNode in="h"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#halo2)" x="300" y="80" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:40px">Não é qualquer pizza.</text>
+          <text filter="url(#halo2)" x="300" y="150" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:50px">É A Suprema.</text>
+        </svg>
+      </div>
+      <div class="halo-cap">Sobre foto — o halo garante leitura em qualquer imagem.</div>
+    </div>
+  </div>
+  <div class="rule-box rv"><b>Regra crítica.</b> Cor do halo <code>#FFEBDC</code>, texto em <b>preto</b>. Técnica oficial (peças / stop motion): ImageMagick <code>-morphology Dilate Disk:26</code> sobre o canal alpha do texto. <b>Nunca</b> caixa retangular sólida.</div>
+</section>
+
+<!-- 02 ROLINHOS -->
+<section class="alt">
+  <span class="num">02</span>
+  <div class="kicker rv">Ornamento</div>
+  <h2 class="rv d1">Rolinhos<br><em>cruzados.</em></h2>
+  <p class="lead rv d2">Os dois rolinhos de massa em "✕" vêm do topo da logo. Funcionam como selo, ponto de atenção e ornamento — sempre em vermelho ou branco, nunca distorcidos.</p>
+  <div class="orn-grid rv d1">
+    <div class="orn-big">
+      <svg width="220" height="150" viewBox="0 0 220 150" aria-label="Rolinhos de massa cruzados">
+        <g transform="rotate(34 110 75)">
+          <rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/>
+          <rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/>
+          <rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/>
+        </g>
+        <g transform="rotate(-34 110 75)">
+          <rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/>
+          <rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/>
+          <rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/>
+        </g>
+      </svg>
+    </div>
+    <div class="uses">
+      <div class="use"><b>Selo / assinatura</b><p>No topo do nome, como na logo — fecha a composição.</p></div>
+      <div class="use"><b>Divisória</b><p>Centralizado entre duas linhas, separa blocos.</p></div>
+      <div class="use"><b>Ponto de atenção</b><p>Pequeno, marca itens de lista ou destaques.</p></div>
+      <div class="use"><b>Cores</b><p>Vermelho <code>#D62828</code> sobre claro · branco sobre escuro/foto. Nunca outra cor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LINHAS -->
+<section>
+  <span class="num">03</span>
+  <div class="kicker rv">Divisórias</div>
+  <h2 class="rv d1">Linhas<br><em>decorativas.</em></h2>
+  <p class="lead rv d2">Os filetes horizontais da logo viram divisórias da marca. Use com o "✕" no centro para um respiro elegante entre seções.</p>
+  <div class="divider rv d1">
+    <span class="ln"></span>
+    <svg width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+      <g transform="rotate(34 23 17)"><rect x="6" y="13" width="34" height="7" rx="3.5" fill="#D62828"/></g>
+      <g transform="rotate(-34 23 17)"><rect x="6" y="13" width="34" height="7" rx="3.5" fill="#fff"/></g>
+    </svg>
+    <span class="ln"></span>
+  </div>
+  <div class="divider rv d1">
+    <span class="ln" style="background:#fff;opacity:.4"></span>
+    <span class="ln" style="background:#fff;opacity:.4"></span>
+  </div>
+</section>
+
+<!-- 04 PADRÃO -->
+<section class="alt">
+  <span class="num">04</span>
+  <div class="kicker rv">Padrão de fundo</div>
+  <h2 class="rv d1">Pattern<br>de <em>marca.</em></h2>
+  <p class="lead rv d2">Os rolinhos repetidos formam um padrão sutil para fundos e texturas — em bege/vermelho sobre o preto, baixa opacidade, sem competir com o conteúdo.</p>
+  <div class="pattern rv d1" id="pat"></div>
+</section>
+
+<!-- 05 FUNDOS -->
+<section>
+  <span class="num">05</span>
+  <div class="kicker rv">Prontos pra usar</div>
+  <h2 class="rv d1">Fundos<br>da <em>marca.</em></h2>
+  <p class="lead rv d2">Bases prontas em preto, vermelho e bege, com a logo e a área segura. Escolha o formato do post.</p>
+  <div class="fnd-bar rv d1">
+    <div class="seg" id="fmt">
+      <button data-r="1/1" class="on">1:1</button>
+      <button data-r="4/5">4:5</button>
+      <button data-r="9/16">9:16</button>
+    </div>
+    <span class="hint">Tracejado = área segura (margem livre).</span>
+  </div>
+  <div class="fnd-grid rv d1" id="fnds"></div>
+</section>
+
+<footer>
+  <span><span class="wm" style="color:var(--vermelho-lt)"><span class="s" style="font-size:15px">SUPREMA</span></span> · Grafismos</span>
+  <span>Produzido por <b>Fenice Lab</b> · 2026</span>
+</footer>
+
+<script src="present.js"></script>
+<script>
+  var pin="<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>"
+    +"<g transform='rotate(34 60 60)'><rect x='22' y='54' width='76' height='11' rx='5.5' fill='%23D62828' opacity='0.5'/></g>"
+    +"<g transform='rotate(-34 60 60)'><rect x='22' y='54' width='76' height='11' rx='5.5' fill='%23FFEBDC' opacity='0.28'/></g></svg>";
+  var patURL="url(\"data:image/svg+xml,"+pin+"\")";
+  document.getElementById('pat').style.background="#0F0F0F "+patURL+" repeat";
+
+  var LOGO="../assets/logo-suprema-branco.png", LOGOR="../assets/logo-suprema-vermelho.png";
+  var FNDS=[
+    {bg:'#0F0F0F', name:'Preto', red:false},
+    {bg:'#D62828', name:'Vermelho', red:false},
+    {bg:'#FFEBDC', name:'Bege', red:true},
+    {bg:'#111111', name:'Preto + pattern', red:false, pat:true},
+    {bg:'#B71C1C', name:'Vermelho Escuro', red:false},
+    {bg:'#FFFFFF', name:'Branco', red:true},
+  ];
+  var grid=document.getElementById('fnds');
+  FNDS.forEach(function(f){
+    grid.insertAdjacentHTML('beforeend',
+      '<div class="fnd"><div class="fnd-stage" style="background:'+f.bg+'">'
+      +'<div class="fnd-safe"></div>'
+      +'<img class="fnd-logo" src="'+(f.red?LOGOR:LOGO)+'">'
+      +'</div><div class="fnd-meta"><b>'+f.name+'</b><span>'+f.bg+'</span></div></div>');
+    if(f.pat){ var st=grid.lastElementChild.querySelector('.fnd-stage'); st.style.background=f.bg+" "+patURL+" repeat"; }
+  });
+  document.getElementById('fmt').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    [].forEach.call(this.querySelectorAll('button'),function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    [].forEach.call(document.querySelectorAll('.fnd-stage'),function(s){s.style.aspectRatio=b.dataset.r});
+  });
+</script>
+</body>
+</html>

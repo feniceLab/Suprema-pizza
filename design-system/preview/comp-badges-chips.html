@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--sup-carvao);color:#fff}
+  .wrap{padding:24px 28px;display:flex;flex-direction:column;gap:18px}
+  .lbl{font-size:11px;color:var(--sup-cinza);margin:0 0 4px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+  .b-pri{background:#D62828;color:#fff}
+  .b-soft{background:rgba(214,40,40,.16);color:#E84B4B}
+  .b-out{border:1px solid var(--sup-linha-forte);color:#fff}
+  .live{display:inline-flex;align-items:center;gap:7px;background:#C0392B;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.06em}
+  .dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:p 1.5s infinite}
+  @keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+  .chip{background:var(--sup-grafite-2);border:1px solid var(--sup-linha);color:#cfcfcf;font-size:12.5px;padding:8px 14px;border-radius:999px}
+  .chip.on{background:#D62828;border-color:#D62828;color:#fff;font-weight:600}
+</style></head>
+<body><div class="wrap">
+  <div><div class="lbl">Badges</div><div class="row">
+    <span class="badge b-pri">Mais pedida</span>
+    <span class="badge b-soft">Novo</span>
+    <span class="badge b-out">Doce</span>
+    <span class="live"><span class="dot"></span>Ao vivo</span>
+  </div></div>
+  <div><div class="lbl">Chips de filtro</div><div class="row">
+    <span class="chip on">Salgadas</span>
+    <span class="chip">Doces</span>
+    <span class="chip">Bordas</span>
+    <span class="chip">Bebidas</span>
+  </div></div>
+</div></body></html>

@@ -1,0 +1,178 @@
+/* ============================================================
+   SUPREMA PIZZA — Design System · Foundations
+   Cores + Tipografia · Fenice Lab · 2026
+   Tema: ESCURO (carvão + vermelho Suprema + branco)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ---------- COR · Superfícies escuras (tema base) ---------- */
+  --sup-carvao:      #0F0F0F;   /* fundo principal                */
+  --sup-grafite:     #161616;   /* cards / superfície alternativa */
+  --sup-grafite-2:   #1F1F1F;   /* superfície elevada / inputs    */
+  --sup-grafite-3:   #2A2A2A;   /* hover de superfície            */
+  --sup-preto:       #000000;   /* moldura cinematográfica        */
+
+  /* ---------- COR · Marca / primária ---------- */
+  --sup-vermelho:    #D62828;   /* PRIMÁRIA — "SUPREMA", CTAs     */
+  --sup-vermelho-dk: #B71C1C;   /* press / hover escuro          */
+  --sup-vermelho-lt: #E84B4B;   /* hover claro / foco            */
+  --sup-brasa:       #C0392B;   /* badge "ao vivo" / alerta      */
+
+  /* ---------- COR · Texto sobre escuro ---------- */
+  --sup-branco:      #FFFFFF;   /* texto primário                */
+  --sup-cinza:       #9A9A9A;   /* texto secundário              */
+  --sup-cinza-esc:   #6E6E6E;   /* texto desativado / legendas   */
+
+  /* ---------- COR · Conteúdo social (halo de legenda) ---------- */
+  /* Usar SOMENTE em peças sociais sobre foto — nunca na UI escura. */
+  --sup-bege:        #FFEBDC;   /* halo de legenda (cor de massa) */
+  --sup-bege-tinta:  #1A1A1A;   /* texto preto dentro do halo     */
+
+  /* ---------- COR · Linhas / divisores ---------- */
+  --sup-linha:       rgba(255,255,255,.08);
+  --sup-linha-forte: rgba(255,255,255,.16);
+  --sup-linha-verm:  #D62828;
+
+  /* ---------- COR · Semânticas de status ---------- */
+  --sup-ok:          #3FB950;
+  --sup-aviso:       #E3A008;
+  --sup-erro:        #D62828;
+
+  /* ---------- TIPOGRAFIA · Famílias ---------- */
+  --sup-font:        'Poppins', system-ui, -apple-system, sans-serif;
+  --sup-font-display:'Poppins', system-ui, sans-serif; /* caps pesado p/ títulos */
+
+  /* ---------- TIPOGRAFIA · Pesos ---------- */
+  --sup-w-light:  300;   /* "PIZZA" do logo / kicker fino   */
+  --sup-w-reg:    400;   /* corpo · linha 1 da legenda      */
+  --sup-w-med:    500;
+  --sup-w-semi:   600;
+  --sup-w-bold:   700;   /* linha 2 da legenda (punchline)  */
+  --sup-w-black:  800;   /* "SUPREMA" / headlines           */
+
+  /* ---------- ESPAÇAMENTO (escala 4px) ---------- */
+  --sup-s1: 4px;  --sup-s2: 8px;  --sup-s3: 12px; --sup-s4: 16px;
+  --sup-s5: 24px; --sup-s6: 32px; --sup-s7: 48px; --sup-s8: 64px;
+
+  /* ---------- RAIO ---------- */
+  --sup-r-sm:  6px;
+  --sup-r-md:  10px;
+  --sup-r-lg:  16px;
+  --sup-r-xl:  24px;
+  --sup-r-pill: 999px;
+
+  /* ---------- SOMBRA / ELEVAÇÃO ---------- */
+  --sup-sh-1: 0 1px 2px rgba(0,0,0,.4);
+  --sup-sh-2: 0 8px 24px rgba(0,0,0,.45);
+  --sup-sh-3: 0 18px 48px rgba(0,0,0,.6);
+  --sup-glow: 0 0 0 1px rgba(214,40,40,.35), 0 10px 30px rgba(214,40,40,.18);
+
+  /* ---------- MOVIMENTO ---------- */
+  --sup-ease: cubic-bezier(.2,.7,.3,1);
+  --sup-dur:  .18s;
+  --sup-dur-lg: .4s;     /* fades de legenda em vídeo */
+}
+
+/* ============================================================
+   ESTILOS SEMÂNTICOS BASE
+   ============================================================ */
+
+.sup-body {
+  background: var(--sup-carvao);
+  color: var(--sup-branco);
+  font-family: var(--sup-font);
+  font-weight: var(--sup-w-reg);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display / títulos — caixa-alta pesada alinhada ao logo */
+.sup-h1 {
+  font-family: var(--sup-font-display);
+  font-weight: var(--sup-w-black);
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: .98;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.sup-h2 {
+  font-family: var(--sup-font-display);
+  font-weight: var(--sup-w-black);
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.sup-h3 {
+  font-family: var(--sup-font);
+  font-weight: var(--sup-w-bold);
+  font-size: 22px;
+  line-height: 1.2;
+}
+.sup-kicker {
+  font-family: var(--sup-font);
+  font-weight: var(--sup-w-semi);
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sup-vermelho);
+}
+.sup-p {
+  font-weight: var(--sup-w-reg);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--sup-cinza);
+}
+.sup-small {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--sup-cinza-esc);
+}
+.sup-price {
+  font-family: var(--sup-font);
+  font-weight: var(--sup-w-bold);
+  color: var(--sup-vermelho);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Wordmark do logo (SUPREMA / PIZZA) ---------- */
+.sup-wordmark { display: inline-flex; flex-direction: column; line-height: .9; }
+.sup-wordmark .sm-s {
+  font-weight: var(--sup-w-black);
+  font-size: 1em;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+.sup-wordmark .sm-p {
+  font-weight: var(--sup-w-light);
+  font-size: .42em;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  padding-left: .04em;
+}
+
+/* ============================================================
+   LEGENDA SOCIAL — "halo bege" (assinatura da marca)
+   NÃO é caixa retangular: é halo dilatado de cantos orgânicos.
+   Aplicar só em peças sobre foto (Stories / Stop Motion).
+   ============================================================ */
+.sup-halo {
+  display: inline;
+  background: var(--sup-bege);
+  color: var(--sup-bege-tinta);
+  /* box-decoration-clone + padding negativo via shadow gera o efeito de halo */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: .06em .28em;
+  border-radius: .55em;
+  box-shadow:
+    -.14em 0 0 var(--sup-bege),
+     .14em 0 0 var(--sup-bege);
+  font-family: var(--sup-font);
+  line-height: 1.55;
+}
+.sup-halo--linha1 { font-weight: var(--sup-w-reg); }   /* gancho   */
+.sup-halo--linha2 { font-weight: var(--sup-w-bold); }  /* punchline */

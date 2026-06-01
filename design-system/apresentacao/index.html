@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suprema Pizza — Manual da Marca</title>
+<link rel="stylesheet" href="present.css">
+<style>
+  .hub-hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    padding:120px 6vw 70px;background:radial-gradient(circle at 50% 30%,#1a1310,#0c0a09 72%);position:relative}
+  .hub-hero .topbar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--vermelho)}
+  .hub-hero img.logo{width:300px;margin-bottom:28px;filter:drop-shadow(0 10px 36px rgba(0,0,0,.6))}
+  .hub-hero h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,8vw,86px);text-transform:uppercase;line-height:.9}
+  .hub-hero .tag{font-size:clamp(16px,2.4vw,24px);color:var(--bege);margin-top:16px;font-weight:300}
+  .hub-hero .meta{margin-top:22px;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--cinza-esc)}
+
+  .chapters{padding:90px 6vw 110px}
+  .chapters .head{margin-bottom:40px}
+  .ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:900px){.ch-grid{grid-template-columns:1fr}}
+  .ch{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;
+    background:var(--s1);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+  .ch:hover{transform:translateY(-6px);border-color:var(--vermelho-dk);box-shadow:0 22px 50px rgba(0,0,0,.5)}
+  .ch .viz{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .ch .body{padding:26px 26px 30px;flex:1;display:flex;flex-direction:column}
+  .ch .nn{font-family:var(--display);font-weight:800;font-size:14px;color:var(--vermelho-lt);letter-spacing:.16em}
+  .ch h3{font-family:var(--display);font-weight:800;font-size:32px;text-transform:uppercase;margin:8px 0 10px;line-height:1}
+  .ch p{font-size:14px;line-height:1.6;color:var(--cinza);flex:1}
+  .ch .go{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#fff}
+  .ch .go .arr{transition:transform .25s var(--ease)}
+  .ch:hover .go .arr{transform:translateX(5px)}
+  .ch:hover .go{color:var(--vermelho-lt)}
+
+  /* viz: brand book */
+  .viz-bb{background:#000}
+  .viz-bb img{width:100%;height:100%;object-fit:cover;opacity:.7}
+  .viz-bb .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(15,15,15,.7));display:flex;align-items:center;justify-content:center}
+  .viz-bb .ov img{width:130px;height:auto;opacity:1;object-fit:contain}
+  /* viz: design system swatches */
+  .viz-ds{background:#111;gap:0;align-items:stretch}
+  .viz-ds .sw{flex:1}
+  /* viz: grafismos */
+  .viz-gr{background:#111}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><img src="../assets/logo-suprema-branco.png" alt=""><span class="lbl wm" style="color:#fff"><span class="s" style="font-size:15px">SUPREMA</span></span></a>
+  <div class="links">
+    <a href="index.html" class="on">Início</a>
+    <a href="brand-book.html">Brand Book</a>
+    <a href="design-system.html">Design System</a>
+    <a href="grafismos.html">Grafismos</a>
+  </div>
+</nav>
+
+<div id="prog"></div>
+
+<header class="hub-hero">
+  <div class="topbar"></div>
+  <img class="logo" src="../assets/logo-suprema-branco.png" alt="Suprema Pizza">
+  <h1>Manual da Marca</h1>
+  <div class="tag">Quando o queijo escorre, a pizza tá no ponto.</div>
+  <div class="meta">Suprema Pizza · Blumenau / SC · Fenice Lab · 2026</div>
+</header>
+
+<section class="chapters">
+  <div class="head">
+    <div class="kicker rv">Três capítulos</div>
+    <h2 class="rv d1">Tudo o que faz<br>a <em>Suprema</em>.</h2>
+    <p class="lead rv d2">Da história e do tom de voz às cores, tipografia e grafismos. O manual completo para criar peças que parecem — e soam — Suprema.</p>
+  </div>
+  <div class="ch-grid">
+
+    <a class="ch rv d1" href="brand-book.html">
+      <div class="viz viz-bb">
+        <img src="../assets/photos/foto-30.jpg" alt="">
+        <div class="ov"><img src="../assets/logo-suprema-branco.png" alt=""></div>
+      </div>
+      <div class="body">
+        <div class="nn">01</div>
+        <h3>Brand Book</h3>
+        <p>Quem é a Suprema, a essência da marca, o público, o tom de voz e a linha de cardápio.</p>
+        <span class="go">Abrir capítulo <span class="arr">→</span></span>
+      </div>
+    </a>
+
+    <a class="ch rv d2" href="design-system.html">
+      <div class="viz viz-ds">
+        <div class="sw" style="background:#0F0F0F"></div>
+        <div class="sw" style="background:#D62828"></div>
+        <div class="sw" style="background:#FFEBDC"></div>
+        <div class="sw" style="background:#FFFFFF"></div>
+      </div>
+      <div class="body">
+        <div class="nn">02</div>
+        <h3>Design System</h3>
+        <p>Logo, paleta de cor, tipografia, espaçamento, sombras e componentes de interface.</p>
+        <span class="go">Abrir capítulo <span class="arr">→</span></span>
+      </div>
+    </a>
+
+    <a class="ch rv d3" href="grafismos.html">
+      <div class="viz viz-gr">
+        <svg width="180" height="120" viewBox="0 0 220 150" aria-hidden="true">
+          <g transform="rotate(34 110 75)">
+            <rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/>
+            <rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/>
+            <rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/>
+          </g>
+          <g transform="rotate(-34 110 75)">
+            <rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/>
+            <rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/>
+            <rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/>
+          </g>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="nn">03</div>
+        <h3>Grafismos</h3>
+        <p>Os elementos próprios da marca: halo de legenda, rolinhos cruzados, linhas e fundos prontos.</p>
+        <span class="go">Abrir capítulo <span class="arr">→</span></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <span><span class="wm" style="color:var(--vermelho-lt)"><span class="s" style="font-size:15px">SUPREMA</span></span> · Manual da Marca</span>
+  <span>Produzido por <b>Fenice Lab</b> · 2026</span>
+</footer>
+
+<script src="present.js"></script>
+</body>
+</html>

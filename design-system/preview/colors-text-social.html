@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--sup-carvao);font-family:var(--sup-font);color:#fff}
+  .wrap{padding:22px 24px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .lbl{font-size:11px;color:var(--sup-cinza);margin:0 0 12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+  .row{display:flex;gap:10px}
+  .sw{flex:1;border-radius:var(--sup-r-md);overflow:hidden;border:1px solid var(--sup-linha)}
+  .chip{height:58px}
+  .meta{padding:7px 9px;background:var(--sup-grafite)}
+  .nm{font-size:11px;font-weight:700}
+  .hex{font-size:10px;color:var(--sup-cinza);text-transform:uppercase}
+  .halo-demo{background:#FFEBDC;color:#1A1A1A;border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.5}
+  .halo-demo b{font-weight:700}
+</style></head>
+<body><div class="wrap">
+  <div>
+    <p class="lbl">Texto sobre escuro</p>
+    <div class="row">
+      <div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="meta"><div class="nm" style="color:#fff">Branco</div><div class="hex">#FFFFFF</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9A9A9A"></div><div class="meta"><div class="nm">Cinza</div><div class="hex">#9A9A9A</div></div></div>
+      <div class="sw"><div class="chip" style="background:#6E6E6E"></div><div class="meta"><div class="nm">Cinza Esc</div><div class="hex">#6E6E6E</div></div></div>
+    </div>
+  </div>
+  <div>
+    <p class="lbl">Bege · halo de legenda (só em foto)</p>
+    <div class="halo-demo">Quando o queijo escorre…<br><b>a pizza tá no ponto.</b></div>
+    <div class="hex" style="margin-top:8px">#FFEBDC sobre foto · texto #1A1A1A</div>
+  </div>
+</div></body></html>

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--sup-carvao);color:#fff}
+  .wrap{padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+  .lbl{font-size:11px;color:var(--sup-cinza);margin:0 0 8px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .field{width:100%;background:var(--sup-grafite-2);border:1px solid var(--sup-linha-forte);border-radius:10px;padding:12px 14px;color:#fff;font-family:var(--sup-font);font-size:14px;box-sizing:border-box}
+  .field::placeholder{color:var(--sup-cinza-esc)}
+  .field.focus{border-color:#D62828;box-shadow:0 0 0 3px rgba(214,40,40,.2);outline:none}
+  .qty{display:inline-flex;align-items:center;gap:0;border:1px solid var(--sup-linha-forte);border-radius:10px;overflow:hidden}
+  .qty button{background:var(--sup-grafite-2);color:#fff;border:none;width:42px;height:44px;font-size:18px;cursor:pointer}
+  .qty span{width:48px;text-align:center;font-weight:700}
+  .full{grid-column:1/-1}
+</style></head>
+<body><div class="wrap">
+  <div><div class="lbl">Campo de texto</div><input class="field" placeholder="Seu endereço de entrega"></div>
+  <div><div class="lbl">Foco</div><input class="field focus" value="Rua General Osório, 3012"></div>
+  <div class="full"><div class="lbl">Seletor de quantidade</div>
+    <div class="qty"><button>−</button><span>2</span><button>+</button></div>
+  </div>
+</div></body></html>

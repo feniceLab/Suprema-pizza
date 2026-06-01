@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suprema Pizza — Brand Book</title>
+<link rel="stylesheet" href="../apresentacao/present.css">
+<style>
+  /* ============ BRAND BOOK — layouts específicos ============ */
+  .bb-index{position:fixed;top:50%;right:22px;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;gap:9px}
+  .bb-index a{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.2);transition:.2s var(--ease);position:relative}
+  .bb-index a:hover,.bb-index a.on{background:var(--vermelho);transform:scale(1.25)}
+  .bb-index a span{position:absolute;right:18px;top:50%;transform:translateY(-50%);white-space:nowrap;
+    font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+    background:rgba(15,15,15,.9);padding:4px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:.2s}
+  .bb-index a:hover span{opacity:1}
+  @media(max-width:880px){.bb-index{display:none}}
+
+  /* CAPA */
+  .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+    padding:80px 6vw;position:relative;background:radial-gradient(circle at 50% 32%,#1c1410,#0b0a08 74%);overflow:hidden}
+  .cover .topbar{position:absolute;top:0;left:0;right:0;height:5px;background:var(--vermelho)}
+  .cover .pat{position:absolute;inset:0;opacity:.5;pointer-events:none}
+  .cover .inner{position:relative;z-index:2}
+  .cover img.logo{width:clamp(220px,32vw,400px);margin-bottom:30px;filter:drop-shadow(0 12px 40px rgba(0,0,0,.7))}
+  .cover .big{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9;
+    font-size:clamp(40px,8vw,104px);color:#fff}
+  .cover .big em{color:var(--vermelho);font-style:normal}
+  .cover .sub{font-size:clamp(15px,2.2vw,22px);color:var(--bege);margin-top:20px;font-weight:300}
+  .cover .meta{position:absolute;bottom:34px;left:0;right:0;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--cinza-esc)}
+
+  /* OLÁ / intro */
+  .hello{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  @media(max-width:820px){.hello{grid-template-columns:1fr;gap:30px}}
+  .hello .big-quote{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(30px,4.6vw,60px);line-height:.98;color:#fff}
+  .hello .big-quote em{color:var(--vermelho);font-style:normal}
+
+  /* ÍNDICE */
+  .toc{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  @media(max-width:820px){.toc{grid-template-columns:1fr}}
+  .toc a{display:flex;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);transition:.2s var(--ease)}
+  .toc a:hover{padding-left:8px;border-color:var(--vermelho-dk)}
+  .toc a .tn{font-family:var(--display);font-weight:800;font-size:18px;color:var(--vermelho-lt);min-width:34px}
+  .toc a .tt{font-size:16px;font-weight:500;color:#EAEAEA}
+  .toc a:hover .tt{color:#fff}
+  .toc a .dots{flex:1;border-bottom:1px dotted var(--line);margin:0 4px;transform:translateY(-4px)}
+
+  /* MANIFESTO */
+  .manifesto p{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:1.04;
+    font-size:clamp(24px,3.6vw,46px);max-width:18ch;color:#fff;margin-top:8px}
+  .manifesto p em{color:var(--vermelho);font-style:normal}
+  .manifesto .small{font-family:var(--font);font-weight:400;text-transform:none;font-size:16px;line-height:1.7;
+    color:#B5B5B5;max-width:620px;margin-top:28px}
+  .manifesto .small strong{color:#fff}
+
+  /* ESTRATÉGIA cards */
+  .strat{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.strat{grid-template-columns:1fr}}
+  .scard{background:var(--s2);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative;overflow:hidden}
+  .scard .ic{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--vermelho-lt);margin-bottom:14px}
+  .scard h3{font-family:var(--display);font-weight:800;font-size:27px;text-transform:uppercase;color:#fff;margin-bottom:10px;line-height:1.05}
+  .scard p{font-size:14.5px;line-height:1.65;color:var(--cinza)}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  @media(max-width:820px){.pillars{grid-template-columns:1fr}}
+  .pillar{background:var(--s2);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
+  .pillar .n{font-family:var(--display);font-weight:900;font-size:40px;color:var(--vermelho);line-height:1}
+  .pillar b{display:block;font-family:var(--display);font-weight:800;font-size:20px;text-transform:uppercase;color:#fff;margin:10px 0 6px}
+  .pillar p{font-size:13px;color:var(--cinza);line-height:1.55}
+
+  /* PÚBLICO personas */
+  .personas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.personas{grid-template-columns:1fr}}
+  .persona{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--s2)}
+  .persona .ph{height:170px;background-size:cover;background-position:center;position:relative}
+  .persona .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(22,22,22,.9))}
+  .persona .bd{padding:22px}
+  .persona .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--vermelho-lt);font-weight:700}
+  .persona h3{font-family:var(--display);font-weight:800;font-size:24px;text-transform:uppercase;color:#fff;margin:6px 0 10px}
+  .persona p{font-size:13.5px;line-height:1.6;color:var(--cinza)}
+
+  /* LOGO anatomia */
+  .lg-anat{display:grid;grid-template-columns:minmax(300px,1fr) 1.05fr;gap:30px;align-items:center;margin-top:36px}
+  @media(max-width:860px){.lg-anat{grid-template-columns:1fr}}
+  .lg-visual{background:#000;border:1px solid var(--line);border-radius:18px;padding:54px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative}
+  .lg-visual img{width:78%;max-width:300px}
+  .parts{list-style:none}
+  .parts li{display:flex;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line)}
+  .parts li:last-child{border-bottom:none}
+  .parts .mk{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--vermelho);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;font-family:ui-monospace,monospace}
+  .parts b{display:block;font-size:14px;color:#fff;margin-bottom:2px}
+  .parts span{font-size:13px;line-height:1.5;color:var(--cinza)}
+  .lg-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .lcard{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .lcard .stage{height:150px;display:flex;align-items:center;justify-content:center}
+  .lcard .stage img{width:160px}
+  .lcard .cap{padding:11px 16px;font-size:12px;color:var(--cinza);background:var(--s2);border-top:1px solid var(--line)}
+  /* GRID de construção */
+  .lg-grid{background:#000;border:1px solid var(--line);border-radius:18px;padding:40px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-top:36px;min-height:320px;
+    background-image:linear-gradient(rgba(214,40,40,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(214,40,40,.14) 1px,transparent 1px);background-size:34px 34px}
+  .lg-grid img{width:54%;max-width:340px;position:relative;z-index:2}
+  /* SÍMBOLO */
+  .sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px;align-items:stretch}
+  @media(max-width:820px){.sym-grid{grid-template-columns:1fr}}
+  .sym-big{background:var(--s2);border:1px solid var(--line);border-radius:18px;padding:54px;display:flex;align-items:center;justify-content:center}
+  .sym-uses{display:flex;flex-direction:column;gap:12px;justify-content:center}
+  .sym-use{background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .sym-use b{color:var(--vermelho-lt);font-size:14px}
+  .sym-use p{color:var(--cinza);font-size:13px;margin-top:3px}
+  .sym-use code{background:#222;color:#ffd9d4;padding:1px 6px;border-radius:4px;font-size:.85em}
+  /* GRAFISMOS */
+  .gf-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+  @media(max-width:760px){.gf-grid{grid-template-columns:1fr}}
+  .gf-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--s2)}
+  .gf-stage{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;background:#000}
+  .gf-stage img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+  .gf-cap{padding:12px 16px;font-size:12px;color:var(--cinza);border-top:1px solid var(--line)}
+  .halo-svg{width:84%;position:relative;z-index:2}
+  .gf-pattern{height:150px;border-radius:14px;border:1px solid var(--line);overflow:hidden;margin-top:14px}
+  /* ASSINATURA */
+  .sig-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:36px}
+  @media(max-width:820px){.sig-grid{grid-template-columns:1fr}}
+  .sig-card{background:var(--s2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .sig-stage{min-height:200px;display:flex;align-items:center;justify-content:center;padding:40px;background:#0a0a0a}
+  .sig-stage img{max-width:80%}
+  .sig-stage.reduced img{max-width:120px}
+  .sig-cap{padding:16px 20px;border-top:1px solid var(--line)}
+  .sig-cap b{font-family:var(--display);font-weight:800;font-size:16px;text-transform:uppercase;color:#fff}
+  .sig-cap p{font-size:13px;color:var(--cinza);margin-top:5px;line-height:1.55}
+  /* CLEARSPACE */
+  .clear{display:flex;justify-content:center;margin-top:42px}
+  .clear .stage{background:#0a0a0a;border:1px solid var(--line);border-radius:16px;padding:70px;display:inline-flex}
+  .clear .inner{position:relative;padding:58px;border:2px dashed var(--vermelho-dk)}
+  .clear .inner img{width:220px;display:block}
+  .clear .mod{position:absolute;background:rgba(214,40,40,.22);border:1px solid var(--vermelho-dk);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#ffd9d4;width:40px;height:40px}
+  .clear .mod.t{top:-1px;left:50%;margin-left:-20px;transform:translateY(-100%)}
+  .clear .mod.b{bottom:-40px;left:50%;margin-left:-20px}
+  .clear .mod.l{left:-40px;top:50%;margin-top:-20px}
+  .clear .mod.r{right:-40px;top:50%;margin-top:-20px}
+  /* TAMANHOS */
+  .sizes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+  @media(max-width:820px){.sizes{grid-template-columns:1fr}}
+  .sz-card{background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .sz-card h3{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--vermelho-lt);margin-bottom:20px}
+  .sz-row{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
+  .sz-item{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .sz-item .chip{background:#0a0a0a;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:14px}
+  .sz-item .chip img{display:block}
+  .sz-item .lbl{font-size:11.5px;font-weight:700;color:var(--cinza)}
+  .sz-item.min .chip{border-color:var(--vermelho);box-shadow:0 0 0 2px rgba(214,40,40,.3)}
+  .sz-item.min .lbl{color:var(--vermelho-lt)}
+
+  /* COR — códigos, neg/pos, cinza */
+  .pc .codes{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:var(--cinza);margin-top:6px;line-height:1.5}
+  .negpos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  @media(max-width:720px){.negpos{grid-template-columns:1fr}}
+  .np{border-radius:16px;border:1px solid var(--line);overflow:hidden}
+  .np .st{height:170px;display:flex;align-items:center;justify-content:center}
+  .np .lbl{padding:12px 16px;font-size:12px;color:var(--cinza);background:var(--s2);border-top:1px solid var(--line)}
+  .np .st img{width:150px}
+  .grayscale{display:flex;border-radius:12px;overflow:hidden;margin-top:16px;border:1px solid var(--line)}
+  .grayscale .g{flex:1;height:64px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:10px;font-family:ui-monospace,monospace}
+
+  /* TIPOGRAFIA */
+  .tfam{margin-top:32px;display:grid;grid-template-columns:1fr;gap:18px}
+  .tcard2{background:var(--s2);border:1px solid var(--line);border-radius:18px;padding:34px}
+  .tcard2 .hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+  .tcard2 .role{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--vermelho-lt)}
+  .tcard2 .big{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,76px);text-transform:uppercase;color:#fff;line-height:1}
+  .tcard2 .big.pop{font-family:var(--font);text-transform:none}
+  .tcard2 .name{font-size:20px;font-weight:700;color:#fff}
+  .tcard2 p{font-size:14px;line-height:1.6;color:var(--cinza);max-width:680px;margin-top:8px}
+  .glyphs{font-size:19px;color:#D6D6D6;letter-spacing:.06em;margin-top:18px;line-height:1.7;word-spacing:4px}
+  .weights{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .weights span{font-size:12px;padding:6px 13px;border-radius:999px;background:#0a0a0a;border:1px solid var(--line);color:var(--cinza)}
+
+  /* USOS INCORRETOS */
+  .donts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:36px}
+  .dont{background:var(--s2);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .dont .d{height:84px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:8px;background:#0a0a0a}
+  .dont .d img{max-width:70%;max-height:54px}
+  .dont .d::before,.dont .d::after{content:'';position:absolute;left:8%;right:8%;top:50%;height:3px;background:var(--vermelho);border-radius:2px}
+  .dont .d::before{transform:rotate(18deg)}.dont .d::after{transform:rotate(-18deg)}
+  .dont p{font-size:11.5px;line-height:1.4;color:var(--cinza);margin-top:11px}
+
+  /* FOTOGRAFIA */
+  .ph-attrs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.ph-attrs{grid-template-columns:1fr}}
+  .ph-attr{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:4/5;display:flex;align-items:flex-end;border:1px solid var(--line)}
+  .ph-attr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ph-attr::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,10,8,.92))}
+  .ph-attr .t{position:relative;z-index:2;padding:24px}
+  .ph-attr .t b{font-family:var(--display);font-weight:800;font-size:26px;text-transform:uppercase;color:#fff;display:block}
+  .ph-attr .t span{font-size:13px;color:var(--bege)}
+  .ph-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+  @media(max-width:820px){.ph-strip{grid-template-columns:1fr 1fr}}
+  .ph-strip .p{aspect-ratio:1;border-radius:12px;background-size:cover;background-position:center;border:1px solid var(--line)}
+
+  /* LAYOUTS — peças sociais */
+  .lay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.lay-grid{grid-template-columns:1fr 1fr}}
+  .story{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line)}
+  .story img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .story .cap{position:absolute;top:8%;left:0;right:0;text-align:center;padding:0 9%;font-size:13px;line-height:1.7}
+  .story .cap span{ -webkit-box-decoration-break:clone;box-decoration-break:clone;background:#FFEBDC;color:#1A1A1A;padding:.07em .3em;border-radius:.5em;box-shadow:-.14em 0 0 #FFEBDC,.14em 0 0 #FFEBDC}
+  .story .l1{font-weight:400}.story .l2{font-weight:700}
+  .story .lg{position:absolute;bottom:6%;left:50%;transform:translateX(-50%);width:40%;opacity:.92}
+  .story.reel{justify-content:center}
+  .story .bars{position:absolute;left:0;right:0;height:8%;background:#000}.story .bars.tp{top:0}.story .bars.bt{bottom:0}
+  .story .narr{position:absolute;top:46%;left:0;right:0;transform:translateY(-50%);text-align:center;padding:0 10%;color:#fff;font-weight:300;text-transform:uppercase;font-size:14px;line-height:1.25;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+
+  /* MARCA EM AÇÃO / MOCKUPS */
+  .action{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.action{grid-template-columns:1fr}}
+  .act{border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:4/3;background:#0a0a0a}
+  .act img{width:100%;height:100%;object-fit:cover}
+  .act .tag{position:absolute;bottom:0;left:0;right:0;padding:14px 18px;background:linear-gradient(0deg,rgba(11,10,8,.92),transparent);font-size:13px;color:#fff;font-weight:600;z-index:2}
+  .act.tall{aspect-ratio:auto}
+
+  /* MATERIAIS DE VENDA */
+  .materials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  @media(max-width:820px){.materials{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.materials{grid-template-columns:1fr}}
+  .mat{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--s2)}
+  .mat .mk{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .mat .mk img.photo{width:100%;height:100%;object-fit:cover}
+  .mat .nm{padding:14px 16px;border-top:1px solid var(--line)}
+  .mat .nm b{font-family:var(--display);font-weight:800;font-size:16px;text-transform:uppercase;color:#fff;display:block}
+  .mat .nm span{font-size:12px;color:var(--cinza)}
+  /* mockups CSS */
+  .mk-shirt{background:#0F0F0F}
+  .mk-shirt .body{width:150px;height:130px;background:#1c1c1c;border-radius:14px 14px 8px 8px;position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+  .mk-shirt .body::before,.mk-shirt .body::after{content:'';position:absolute;top:0;width:34px;height:30px;background:#1c1c1c}
+  .mk-shirt .body::before{left:-26px;transform:skewX(20deg);border-radius:8px 0 0 0}
+  .mk-shirt .body::after{right:-26px;transform:skewX(-20deg);border-radius:0 8px 0 0}
+  .mk-shirt .body .col{position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:14px;background:#0F0F0F;border-radius:0 0 20px 20px}
+  .mk-shirt .body img{position:absolute;top:38px;left:50%;transform:translateX(-50%);width:88px;z-index:2}
+  .mk-card{background:#0F0F0F;gap:10px}
+  .mk-card .cardv{width:170px;height:104px;border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+  .mk-card .cardv img{width:64%}
+  .mk-cup{background:#161616}
+  .mk-cup .cup{width:96px;height:120px;background:#D62828;border-radius:8px 8px 40px 40px/8px 8px 24px 24px;position:relative;display:flex;align-items:center;justify-content:center;box-shadow:inset -10px 0 18px rgba(0,0,0,.2)}
+  .mk-cup .cup::before{content:'';position:absolute;top:-10px;left:-6px;right:-6px;height:14px;background:#3a3a3a;border-radius:6px}
+  .mk-cup .cup img{width:66px;filter:brightness(0) invert(1)}
+  .mk-bag{background:#161616}
+  .mk-bag .bag{width:120px;height:130px;background:linear-gradient(180deg,#caa46f,#b3905c);border-radius:4px;position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  .mk-bag .bag::before{content:'';position:absolute;top:0;left:0;right:0;height:24px;background:rgba(0,0,0,.08)}
+  .mk-bag .bag img{position:absolute;top:46px;left:50%;transform:translateX(-50%);width:84px;filter:brightness(0) saturate(100%) invert(18%) sepia(82%) saturate(3000%) hue-rotate(347deg)}
+  .mk-apron{background:#0F0F0F}
+  .mk-apron .ap{width:120px;height:140px;background:#161616;border-radius:0 0 16px 16px;position:relative;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+  .mk-apron .ap::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:60px;height:18px;border:3px solid #444;border-bottom:none;border-radius:30px 30px 0 0}
+  .mk-apron .ap img{position:absolute;top:42px;left:50%;transform:translateX(-50%);width:80px}
+
+  /* CRÉDITOS */
+  .credits{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 40%,#1c1410,#0b0a08 74%)}
+  .credits img{width:200px;margin-bottom:24px}
+  .credits .big{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,72px);text-transform:uppercase;color:#fff;line-height:.92}
+  .credits .big em{color:var(--vermelho);font-style:normal}
+  .credits .by{margin-top:24px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza)}
+  .credits .by b{color:var(--vermelho-lt)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="../apresentacao/index.html"><img src="../assets/logo-suprema-branco.png" alt=""><span class="lbl wm" style="color:#fff"><span class="s" style="font-size:15px">SUPREMA</span></span></a>
+  <div class="links">
+    <a href="#manifesto">Manifesto</a>
+    <a href="#identidade">Identidade</a>
+    <a href="#cor">Cor</a>
+    <a href="#tipografia">Tipografia</a>
+    <a href="#acao">Em ação</a>
+    <a href="#materiais">Materiais</a>
+  </div>
+</nav>
+<div id="prog"></div>
+
+<!-- pontos de navegação -->
+<div class="bb-index" id="bbIndex"></div>
+
+<!-- ░░ CAPA ░░ -->
+<header class="cover" id="capa" data-bb="Capa">
+  <div class="topbar"></div>
+  <div class="inner">
+    <img class="logo" src="../assets/logo-suprema-branco.png" alt="Suprema Pizza">
+    <div class="big">Brand<br><em>Book</em></div>
+    <div class="sub">Quando o queijo escorre, a pizza tá no ponto.</div>
+  </div>
+  <div class="meta">Suprema Pizza · Blumenau / SC · Versão 1.0 · ©2026 Fenice Lab</div>
+</header>
+
+<!-- ░░ OLÁ ░░ -->
+<section id="ola" data-bb="Olá">
+  <span class="num">00</span>
+  <div class="hello">
+    <div>
+      <div class="kicker rv">Olá!</div>
+      <div class="big-quote rv d1">Seja bem-vindo<br>ao manual da<br><em>Suprema.</em></div>
+    </div>
+    <div>
+      <p class="lead rv d2">Aqui você descobre como a marca se comporta — as diretrizes que mantêm tudo coerente, do Story ao cardápio, da caixa de pizza ao uniforme.</p>
+      <p class="body rv d3">Leia antes de criar qualquer peça. Quando a marca fala com uma voz só, a Suprema fica inconfundível — e dá fome só de olhar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ ÍNDICE ░░ -->
+<section class="alt" id="indice" data-bb="Índice">
+  <span class="num">—</span>
+  <div class="kicker rv">Índice</div>
+  <h2 class="rv d1">O que tem<br>aqui <em>dentro.</em></h2>
+  <div class="toc rv d1">
+    <a href="#manifesto"><span class="tn">01</span><span class="tt">Manifesto</span><span class="dots"></span></a>
+    <a href="#estrategia"><span class="tn">02</span><span class="tt">Estratégia da marca</span><span class="dots"></span></a>
+    <a href="#publico"><span class="tn">03</span><span class="tt">Público-alvo</span><span class="dots"></span></a>
+    <a href="#identidade"><span class="tn">04</span><span class="tt">Identidade visual · logo</span><span class="dots"></span></a>
+    <a href="#simbolo"><span class="tn">05</span><span class="tt">Símbolo &amp; mascote</span><span class="dots"></span></a>
+    <a href="#grafismos"><span class="tn">06</span><span class="tt">Grafismos</span><span class="dots"></span></a>
+    <a href="#assinatura"><span class="tn">07</span><span class="tt">Padrão de assinatura</span><span class="dots"></span></a>
+    <a href="#integridade"><span class="tn">08</span><span class="tt">Reserva de integridade</span><span class="dots"></span></a>
+    <a href="#tamanhos"><span class="tn">09</span><span class="tt">Tamanhos mínimos</span><span class="dots"></span></a>
+    <a href="#cor"><span class="tn">10</span><span class="tt">Paleta de cor</span><span class="dots"></span></a>
+    <a href="#tipografia"><span class="tn">11</span><span class="tt">Linha tipográfica</span><span class="dots"></span></a>
+    <a href="#usos"><span class="tn">12</span><span class="tt">Utilização da marca</span><span class="dots"></span></a>
+    <a href="#fotografia"><span class="tn">13</span><span class="tt">Fotografia</span><span class="dots"></span></a>
+    <a href="#layouts"><span class="tn">14</span><span class="tt">Layouts</span><span class="dots"></span></a>
+    <a href="#acao"><span class="tn">15</span><span class="tt">A marca em ação</span><span class="dots"></span></a>
+    <a href="#materiais"><span class="tn">16</span><span class="tt">Materiais de venda</span><span class="dots"></span></a>
+  </div>
+</section>
+
+<!-- ░░ 01 MANIFESTO ░░ -->
+<section id="manifesto" data-bb="Manifesto">
+  <span class="num">01</span>
+  <div class="kicker rv">Manifesto</div>
+  <div class="manifesto">
+    <p class="rv d1">A gente faz pizza<br>como quem faz<br><em>pra família.</em></p>
+    <p class="small rv d2">Massa fresca de fermentação lenta. Queijo que escorre — o sinal de que tá no ponto. Borda alta e dourada, do jeito que <strong>a gente faz há anos</strong> aqui em Blumenau. Não é a pizza mais barata do app: é a que vira <strong>lembrança boa</strong>. Sexta à noite, jogo na TV, a turma reunida — a Suprema chega quente e some rápido. <strong>Não é qualquer pizza. É A Suprema.</strong></p>
+  </div>
+</section>
+
+<!-- ░░ 02 ESTRATÉGIA ░░ -->
+<section class="alt" id="estrategia" data-bb="Estratégia">
+  <span class="num">02</span>
+  <div class="kicker rv">Estratégia da marca</div>
+  <h2 class="rv d1">No que a gente<br><em>acredita.</em></h2>
+  <div class="strat rv d1">
+    <div class="scard"><div class="ic">Propósito</div><h3>Espalhar lembrança boa</h3><p>Transformar uma noite comum na melhor pizza da semana — comida de verdade que junta gente à mesa.</p></div>
+    <div class="scard"><div class="ic">Missão</div><h3>Pizza no ponto, sempre</h3><p>Massa fresca, queijo escorrendo e entrega quente. Consistência que faz o cliente voltar e indicar.</p></div>
+    <div class="scard"><div class="ic">Visão</div><h3>A pizza de Blumenau</h3><p>Ser a primeira escolha de pizza da cidade — a marca que o blumenauense tem orgulho de pedir.</p></div>
+    <div class="scard"><div class="ic">Posicionamento</div><h3>Artesanal &amp; acolhedora</h3><p>Pizzaria de bairro com alma caseira. Vendemos pelo desejo, nunca pelo preço.</p></div>
+  </div>
+  <div class="grp rv">Pilares de marca</div>
+  <div class="pillars rv d1">
+    <div class="pillar"><div class="n">01</div><b>Caloroso</b><p>Fala como amigo, acolhe como casa.</p></div>
+    <div class="pillar"><div class="n">02</div><b>Artesanal</b><p>Massa fresca, feito com cuidado.</p></div>
+    <div class="pillar"><div class="n">03</div><b>Apetitoso</b><p>Tudo gera vontade de dar uma garfada.</p></div>
+  </div>
+</section>
+
+<!-- ░░ 03 PÚBLICO ░░ -->
+<section id="publico" data-bb="Público">
+  <span class="num">03</span>
+  <div class="kicker rv">Público-alvo</div>
+  <h2 class="rv d1">Pra quem<br>a gente <em>faz.</em></h2>
+  <p class="lead rv d2">Famílias e amigos de Blumenau que querem uma noite gostosa em casa. Sexta, sábado e domingo são os picos — e o conteúdo fala com quem decide o pedido.</p>
+  <div class="personas rv d1">
+    <div class="persona"><div class="ph" style="background-image:url('../assets/photos/foto-100.jpg')"></div><div class="bd"><div class="lbl">Núcleo</div><h3>A família reunida</h3><p>O pedido grande do fim de semana — vários sabores, todo mundo junto. Gigante de 4 sabores + bebida.</p></div></div>
+    <div class="persona"><div class="ph" style="background-image:url('../assets/photos/foto-60.jpg')"></div><div class="bd"><div class="lbl">Frequente</div><h3>A turma de amigos</h3><p>Noite de jogo, série ou conversa. Querem fartura, sabor e zero complicação no pedido.</p></div></div>
+    <div class="persona"><div class="ph" style="background-image:url('../assets/photos/foto-110.jpg')"></div><div class="bd"><div class="lbl">Desejo</div><h3>O casal da sexta</h3><p>"Dieta começa amanhã." Uma média de dois sabores e uma sobremesa pra fechar a noite.</p></div></div>
+  </div>
+</section>
+
+<!-- ░░ 04 IDENTIDADE / LOGO ░░ -->
+<section id="identidade" data-bb="Logo">
+  <span class="num">04</span>
+  <div class="kicker rv">Identidade visual · logo</div>
+  <h2 class="rv d1">A logo<br>e seu <em>racional.</em></h2>
+  <p class="lead rv d2">O wordmark "SUPREMA" pesado com "PIZZA" fino e espaçado, coroado pelos rolinhos de massa cruzados entre duas linhas. Vermelha sobre claro; branca sobre escuro ou foto.</p>
+  <div class="lg-anat rv d1">
+    <div class="lg-visual"><img src="../assets/logo-suprema-branco.png" alt="Logo Suprema Pizza"></div>
+    <ul class="parts">
+      <li><span class="mk">1</span><div><b>Rolinhos cruzados (✕)</b><span>Selo no topo — dois rolinhos de massa em X, a assinatura da marca, no centro de uma linha.</span></div></li>
+      <li><span class="mk">2</span><div><b>Linhas decorativas</b><span>Filetes horizontais acima e abaixo, emoldurando o conjunto.</span></div></li>
+      <li><span class="mk">3</span><div><b>"SUPREMA"</b><span>Wordmark pesado em Saira Condensed 800, caixa-alta.</span></div></li>
+      <li><span class="mk">4</span><div><b>"PIZZA"</b><span>Peso fino (300) com letter-spacing alto — o contraste é a assinatura.</span></div></li>
+    </ul>
+  </div>
+  <div class="lg-cards rv d1">
+    <div class="lcard"><div class="stage" style="background:#fff"><img src="../assets/logo-suprema-vermelho.png" alt=""></div><div class="cap">Versão vermelha · sobre fundo claro</div></div>
+    <div class="lcard"><div class="stage" style="background:#0F0F0F"><img src="../assets/logo-suprema-branco.png" alt=""></div><div class="cap">Versão branca · sobre escuro ou foto</div></div>
+  </div>
+</section>
+
+<!-- GRID DE CONSTRUÇÃO -->
+<section class="alt" data-bb="Grid">
+  <span class="num">04</span>
+  <div class="kicker rv">Grid de construção</div>
+  <h2 class="rv d1">Proporção<br><em>protegida.</em></h2>
+  <p class="lead rv d2">A logo é construída sobre um grid modular. Mantenha as proporções originais — nunca recrie, estique ou reposicione os elementos manualmente.</p>
+  <div class="lg-grid rv d1"><img src="../assets/logo-suprema-branco.png" alt="Logo no grid"></div>
+</section>
+
+<!-- ░░ 05 SÍMBOLO ░░ -->
+<section id="simbolo" data-bb="Símbolo">
+  <span class="num">05</span>
+  <div class="kicker rv">Símbolo</div>
+  <h2 class="rv d1">Os rolinhos<br><em>cruzados.</em></h2>
+  <p class="lead rv d2">Quando não há espaço para a logo completa, os <strong>rolinhos de massa em "✕"</strong> funcionam como símbolo isolado — selo, avatar, favicon e ponto de atenção.</p>
+  <div class="sym-grid rv d1">
+    <div class="sym-big">
+      <svg width="260" height="180" viewBox="0 0 220 150" aria-label="Rolinhos de massa cruzados">
+        <g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g>
+        <g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g>
+      </svg>
+    </div>
+    <div class="sym-uses">
+      <div class="sym-use"><b>Avatar &amp; favicon</b><p>O símbolo isolado no perfil do Instagram e na aba do navegador.</p></div>
+      <div class="sym-use"><b>Selo / assinatura</b><p>Carimbo em embalagens, lacres e rodapés.</p></div>
+      <div class="sym-use"><b>Cores</b><p>Vermelho <code>#D62828</code> sobre claro · branco sobre escuro/foto. Nunca outra cor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 06 GRAFISMOS ░░ -->
+<section class="alt" id="grafismos" data-bb="Grafismos">
+  <span class="num">06</span>
+  <div class="kicker rv">Grafismos</div>
+  <h2 class="rv d1">A linguagem<br><em>de apoio.</em></h2>
+  <p class="lead rv d2">O elemento-assinatura é o <strong>halo bege</strong> de legenda; somam-se os rolinhos, as linhas e o pattern de marca. Tudo derivado da logo, em preto, vermelho e bege.</p>
+  <div class="gf-grid rv d1">
+    <div class="gf-card">
+      <div class="gf-stage">
+        <svg class="halo-svg" viewBox="0 0 600 210" role="img" aria-label="Quando o queijo escorre, a pizza tá no ponto.">
+          <defs><filter id="bh1" x="-15%" y="-15%" width="130%" height="130%"><feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/><feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="h"/><feMerge><feMergeNode in="h"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#bh1)" x="300" y="88" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:40px">Quando o queijo escorre...</text>
+          <text filter="url(#bh1)" x="300" y="158" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:46px">a pizza tá no ponto.</text>
+        </svg>
+      </div>
+      <div class="gf-cap">Halo de legenda — gancho (Regular) + revelação (Bold). Nunca caixa retangular.</div>
+    </div>
+    <div class="gf-card">
+      <div class="gf-stage"><img class="bg" src="../assets/photos/foto-30.jpg" alt="">
+        <svg class="halo-svg" viewBox="0 0 600 200" role="img" aria-label="Não é qualquer pizza. É A Suprema.">
+          <defs><filter id="bh2" x="-15%" y="-15%" width="130%" height="130%"><feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/><feFlood flood-color="#FFEBDC" result="b"/><feComposite in="b" in2="d" operator="in" result="h"/><feMerge><feMergeNode in="h"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <text filter="url(#bh2)" x="300" y="80" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:400;font-size:40px">Não é qualquer pizza.</text>
+          <text filter="url(#bh2)" x="300" y="150" text-anchor="middle" fill="#1A1A1A" style="font-family:Poppins;font-weight:700;font-size:50px">É A Suprema.</text>
+        </svg>
+      </div>
+      <div class="gf-cap">Sobre foto — o halo garante leitura em qualquer imagem.</div>
+    </div>
+  </div>
+  <div class="gf-pattern rv d1" id="gfPat"></div>
+</section>
+
+<!-- ░░ 07 ASSINATURA ░░ -->
+<section id="assinatura" data-bb="Assinatura">
+  <span class="num">07</span>
+  <div class="kicker rv">Padrão de assinatura</div>
+  <h2 class="rv d1">Padrão e<br><em>reduzida.</em></h2>
+  <p class="lead rv d2">Duas versões: a assinatura <strong>padrão</strong> (prioritária, máxima legibilidade) e a <strong>reduzida</strong> (o símbolo, para espaços apertados — avatar, favicon, lacre).</p>
+  <div class="sig-grid rv d1">
+    <div class="sig-card">
+      <div class="sig-stage"><img src="../assets/logo-suprema-branco.png" alt=""></div>
+      <div class="sig-cap"><b>Assinatura padrão</b><p>Versão prioritária — use sempre que houver espaço. Equilíbrio ideal entre legibilidade e impacto.</p></div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-stage reduced">
+        <svg width="120" height="84" viewBox="0 0 220 150" aria-label="Símbolo Suprema">
+          <g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g>
+          <g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g>
+        </svg>
+      </div>
+      <div class="sig-cap"><b>Assinatura reduzida</b><p>Só o símbolo — para formatos verticais, mobile, etiquetas e suportes pequenos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 08 RESERVA DE INTEGRIDADE ░░ -->
+<section class="alt" id="integridade" data-bb="Integridade">
+  <span class="num">08</span>
+  <div class="kicker rv">Reserva de integridade</div>
+  <h2 class="rv d1">Espaço de<br><em>respiro.</em></h2>
+  <p class="lead rv d2">A margem mínima ao redor da logo é definida pelo módulo <strong>X</strong> — a altura do "✕" dos rolinhos. Nenhum elemento, texto ou imagem invade essa área.</p>
+  <div class="clear rv d1">
+    <div class="stage">
+      <div class="inner">
+        <img src="../assets/logo-suprema-branco.png" alt="">
+        <span class="mod t">X</span><span class="mod b">X</span><span class="mod l">X</span><span class="mod r">X</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 09 TAMANHOS ░░ -->
+<section id="tamanhos" data-bb="Tamanhos">
+  <span class="num">09</span>
+  <div class="kicker rv">Tamanhos mínimos</div>
+  <h2 class="rv d1">Legível em<br>qualquer <em>escala.</em></h2>
+  <p class="lead rv d2">Abaixo destes limites a logo perde legibilidade. Em dúvida, faça um teste no suporte final antes de produzir.</p>
+  <div class="sizes rv d1">
+    <div class="sz-card">
+      <h3>Impressão</h3>
+      <div class="sz-row">
+        <div class="sz-item min"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:80px"></div><div class="lbl">30mm · mínimo</div></div>
+        <div class="sz-item"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:120px"></div><div class="lbl">45mm</div></div>
+        <div class="sz-item"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:160px"></div><div class="lbl">60mm</div></div>
+      </div>
+    </div>
+    <div class="sz-card">
+      <h3>Web</h3>
+      <div class="sz-row">
+        <div class="sz-item min"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:88px"></div><div class="lbl">88px · mínimo</div></div>
+        <div class="sz-item"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:128px"></div><div class="lbl">128px</div></div>
+        <div class="sz-item"><div class="chip"><img src="../assets/logo-suprema-branco.png" style="width:160px"></div><div class="lbl">160px</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 10 COR ░░ -->
+<section id="cor" data-bb="Cor">
+  <span class="num">10</span>
+  <div class="kicker rv">Paleta de cor</div>
+  <h2 class="rv d1">Preto, vermelho<br>e <em>branco.</em></h2>
+  <p class="lead rv d2">Base preta, marca vermelha, texto branco. Bege e cinza são apoio. Considere os códigos exatos — para impressão, use sempre CMYK.</p>
+  <div class="grp rv">Principais</div>
+  <div class="palette rv d1">
+    <div class="pc" data-hex="#0F0F0F"><div class="c" style="background:#0F0F0F;border:1px solid #2a2a2a"><b style="color:#fff">Preto Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#0F0F0F</div><div class="codes">RGB 15 15 15<br>CMYK 0 0 0 94</div></div></div>
+    <div class="pc" data-hex="#D62828"><div class="c" style="background:#D62828"><b style="color:#fff">Vermelho Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#D62828</div><div class="codes">RGB 214 40 40<br>CMYK 0 81 81 16</div></div></div>
+    <div class="pc" data-hex="#FFFFFF"><div class="c" style="background:#fff"><b style="color:#0F0F0F">Branco</b><span class="copy" style="background:rgba(0,0,0,.5)">copiar</span></div><div class="m"><div class="h">#FFFFFF</div><div class="codes">RGB 255 255 255<br>CMYK 0 0 0 0</div></div></div>
+  </div>
+  <div class="grp rv">Apoio</div>
+  <div class="palette rv d1">
+    <div class="pc" data-hex="#FFEBDC"><div class="c" style="background:#FFEBDC"><b style="color:#B71C1C">Bege Massa</b><span class="copy" style="background:rgba(0,0,0,.45)">copiar</span></div><div class="m"><div class="h">#FFEBDC</div><div class="codes">RGB 255 235 220<br>halo de legenda</div></div></div>
+    <div class="pc" data-hex="#B71C1C"><div class="c" style="background:#B71C1C"><b style="color:#fff">Vermelho Escuro</b><span class="copy">copiar</span></div><div class="m"><div class="h">#B71C1C</div><div class="codes">RGB 183 28 28<br>hover · profundidade</div></div></div>
+    <div class="pc" data-hex="#9A9A9A"><div class="c" style="background:#9A9A9A"><b style="color:#fff">Cinza</b><span class="copy">copiar</span></div><div class="m"><div class="h">#9A9A9A</div><div class="codes">RGB 154 154 154<br>texto secundário</div></div></div>
+    <div class="pc" data-hex="#161616"><div class="c" style="background:#161616;border:1px solid #2a2a2a"><b style="color:#fff">Grafite</b><span class="copy">copiar</span></div><div class="m"><div class="h">#161616</div><div class="codes">RGB 22 22 22<br>cards · superfície</div></div></div>
+  </div>
+  <div class="grp rv">Negativo &amp; positivo</div>
+  <div class="negpos rv d1">
+    <div class="np"><div class="st" style="background:#fff"><img src="../assets/logo-suprema-vermelho.png" alt=""></div><div class="lbl">Positivo — sobre fundo claro</div></div>
+    <div class="np"><div class="st" style="background:#0F0F0F"><img src="../assets/logo-suprema-branco.png" alt=""></div><div class="lbl">Negativo — sobre fundo escuro</div></div>
+  </div>
+  <div class="grp rv">Escala de cinza</div>
+  <div class="grayscale rv d1">
+    <div class="g" style="background:#fff;color:#000">0%</div>
+    <div class="g" style="background:#d9d9d9;color:#000">20%</div>
+    <div class="g" style="background:#b3b3b3;color:#000">40%</div>
+    <div class="g" style="background:#808080;color:#fff">60%</div>
+    <div class="g" style="background:#4d4d4d;color:#fff">80%</div>
+    <div class="g" style="background:#0F0F0F;color:#fff">100%</div>
+  </div>
+</section>
+
+<!-- ░░ 11 TIPOGRAFIA ░░ -->
+<section class="alt" id="tipografia" data-bb="Tipografia">
+  <span class="num">11</span>
+  <div class="kicker rv">Linha tipográfica</div>
+  <h2 class="rv d1">Saira Condensed<br>+ <em>Poppins.</em></h2>
+  <p class="lead rv d2">Dois papéis: <strong>Saira Condensed</strong> para o nome e os títulos pesados (como na logo); <strong>Poppins</strong> para legendas, corpo e interface.</p>
+  <div class="tfam rv d1">
+    <div class="tcard2">
+      <div class="hd"><span class="role">Display / títulos</span><span class="name">Saira Condensed</span></div>
+      <div class="big">Pizza no ponto</div>
+      <p>Reservada para impacto — títulos, chamadas e o wordmark. Caixa-alta, pesos 800/900. Conecta direto com o logotipo.</p>
+      <div class="glyphs">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj &nbsp; 1 2 3 4 5 6 7 8 9 0 &nbsp; ! @ # % &amp; ?</div>
+      <div class="weights"><span>Light 300</span><span>Medium 500</span><span>SemiBold 700</span><span>Bold 800</span><span>Black 900</span></div>
+    </div>
+    <div class="tcard2">
+      <div class="hd"><span class="role">Corpo / interface</span><span class="name">Poppins</span></div>
+      <div class="big pop">Massa fresca, queijo no ponto</div>
+      <p>A base funcional — textos corridos, legendas e UI. Conforto de leitura em qualquer tamanho. Nas peças: linha 1 Regular, linha 2 Bold.</p>
+      <div class="glyphs" style="font-family:'Poppins',sans-serif">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj &nbsp; 1 2 3 4 5 6 7 8 9 0 &nbsp; ! @ # % &amp; ?</div>
+      <div class="weights"><span>Light 300</span><span>Regular 400</span><span>Medium 500</span><span>SemiBold 600</span><span>Bold 700</span><span>Extra 800</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 12 UTILIZAÇÃO / USOS INCORRETOS ░░ -->
+<section id="usos" data-bb="Usos">
+  <span class="num">12</span>
+  <div class="kicker rv">Utilização da marca</div>
+  <h2 class="rv d1">O que <em>não</em><br>fazer.</h2>
+  <p class="lead rv d2">Use a logo só nas cores da marca, na proporção correta e com contraste suficiente. Os erros abaixo quebram a identidade.</p>
+  <div class="donts rv d1">
+    <div class="dont"><div class="d" style="background:#1f6f3f"><img src="../assets/logo-suprema-branco.png" alt=""></div><p>Não trocar a cor da marca</p></div>
+    <div class="dont"><div class="d"><img src="../assets/logo-suprema-branco.png" alt="" style="transform:scaleX(1.6)"></div><p>Não distorcer proporções</p></div>
+    <div class="dont"><div class="d" style="background:#FFEBDC"><img src="../assets/logo-suprema-branco.png" alt=""></div><p>Não usar branca sem contraste</p></div>
+    <div class="dont"><div class="d"><img src="../assets/logo-suprema-branco.png" alt="" style="transform:rotate(-12deg)"></div><p>Não girar ou inclinar</p></div>
+    <div class="dont"><div class="d" style="background:#0a0a0a"><img src="../assets/photos/foto-01.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;max-height:none;opacity:.9"><img src="../assets/logo-suprema-branco.png" style="position:relative;z-index:1;max-width:60%"></div><p>Não aplicar sobre foto sem proteção</p></div>
+  </div>
+</section>
+
+<!-- ░░ 13 FOTOGRAFIA ░░ -->
+<section id="fotografia" data-bb="Fotografia">
+  <span class="num">13</span>
+  <div class="kicker rv">Fotografia</div>
+  <h2 class="rv d1">Quente, real,<br><em>apetitosa.</em></h2>
+  <p class="lead rv d2">Pizza em primeiro plano, queijo escorrendo, borda alta e dourada. Luz quente e direcional, sombras presentes. A caixa kraft da Suprema aparece como prop recorrente.</p>
+  <div class="ph-attrs rv d1">
+    <div class="ph-attr"><img src="../assets/photos/foto-30.jpg" alt=""><div class="t"><b>Caloroso</b><span>Luz quente, tom acolhedor</span></div></div>
+    <div class="ph-attr"><img src="../assets/photos/foto-01.jpg" alt=""><div class="t"><b>Artesanal</b><span>Massa fresca, borda alta</span></div></div>
+    <div class="ph-attr"><img src="../assets/photos/foto-60.jpg" alt=""><div class="t"><b>Apetitoso</b><span>Cheese pull, primeiro plano</span></div></div>
+  </div>
+  <div class="ph-strip rv d1">
+    <div class="p" style="background-image:url('../assets/photos/foto-50.jpg')"></div>
+    <div class="p" style="background-image:url('../assets/photos/foto-100.jpg')"></div>
+    <div class="p" style="background-image:url('../assets/photos/foto-110.jpg')"></div>
+    <div class="p" style="background-image:url('../assets/photos/foto-40.jpg')"></div>
+  </div>
+</section>
+
+<!-- ░░ 14 LAYOUTS ░░ -->
+<section class="alt" id="layouts" data-bb="Layouts">
+  <span class="num">14</span>
+  <div class="kicker rv">Layouts</div>
+  <h2 class="rv d1">Peças que<br>parecem <em>Suprema.</em></h2>
+  <p class="lead rv d2">Foto cheia, halo bege no topo, logo branca no rodapé. Os formatos sociais 9:16 seguem sempre o mesmo sistema.</p>
+  <div class="lay-grid rv d1">
+    <div class="story"><img class="bg" src="../assets/photos/foto-30.jpg" alt=""><div class="cap"><span class="l1">Massa fresca, do jeito que</span> <span class="l2">a gente faz há anos.</span></div><img class="lg" src="../assets/logo-suprema-branco.png" alt=""></div>
+    <div class="story"><img class="bg" src="../assets/photos/foto-01.jpg" alt=""><div class="cap"><span class="l1">Quando o queijo escorre…</span> <span class="l2">a pizza tá no ponto.</span></div><img class="lg" src="../assets/logo-suprema-branco.png" alt=""></div>
+    <div class="story reel"><img class="bg" src="../assets/photos/foto-60.jpg" alt=""><div class="bars tp"></div><div class="bars bt"></div><div class="narr">recheio<br>até a borda.</div><img class="lg" src="../assets/logo-suprema-branco.png" alt="" style="bottom:11%"></div>
+    <div class="story"><img class="bg" src="../assets/photos/foto-110.jpg" alt=""><div class="cap"><span class="l1">Se for pra exagerar,</span> <span class="l2">que seja na pizza.</span></div><img class="lg" src="../assets/logo-suprema-branco.png" alt=""></div>
+  </div>
+</section>
+
+<!-- ░░ 15 A MARCA EM AÇÃO ░░ -->
+<section id="acao" data-bb="Em ação">
+  <span class="num">15</span>
+  <div class="kicker rv">A marca em ação</div>
+  <h2 class="rv d1">No mundo<br><em>real.</em></h2>
+  <p class="lead rv d2">A identidade viva — na embalagem, na mão do cliente, na mesa de sexta à noite.</p>
+  <div class="action rv d1">
+    <div class="act"><img src="../assets/photos/foto-60.jpg" alt=""><div class="tag">Caixa kraft com a marca em vermelho</div></div>
+    <div class="act"><img src="../assets/photos/foto-40.jpg" alt=""><div class="tag">Delivery — a pizza na cozinha de casa</div></div>
+    <div class="act"><img src="../assets/photos/foto-50.jpg" alt=""><div class="tag">Combo na mesa, pronto pra turma</div></div>
+    <div class="act"><img src="../assets/photos/foto-100.jpg" alt=""><div class="tag">Gigante de 4 sabores + bebida</div></div>
+  </div>
+</section>
+
+<!-- ░░ 16 MATERIAIS DE VENDA ░░ -->
+<section class="alt" id="materiais" data-bb="Materiais">
+  <span class="num">16</span>
+  <div class="kicker rv">Materiais de venda</div>
+  <h2 class="rv d1">Marca <em>aplicada.</em></h2>
+  <p class="lead rv d2">Aplicações em embalagem e uniforme. Verifique sempre a viabilidade com o fornecedor e peça uma prova antes de produzir em escala.</p>
+  <div class="materials rv d1">
+    <div class="mat"><div class="mk"><img class="photo" src="../assets/photos/foto-60.jpg" alt=""></div><div class="nm"><b>Caixa de Pizza</b><span>Kraft · marca em vermelho</span></div></div>
+    <div class="mat"><div class="mk mk-bag"><div class="bag"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Sacola Delivery</b><span>Kraft · 22×18cm</span></div></div>
+    <div class="mat"><div class="mk mk-shirt"><div class="body"><span class="col"></span><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Camiseta</b><span>Preta · estampa branca</span></div></div>
+    <div class="mat"><div class="mk mk-apron"><div class="ap"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Avental</b><span>Preto · logo branca</span></div></div>
+    <div class="mat"><div class="mk mk-cup"><div class="cup"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Copo</b><span>Vermelho · logo branca</span></div></div>
+    <div class="mat"><div class="mk mk-card"><div class="cardv" style="background:#0F0F0F;border:1px solid #2a2a2a"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Cartão Fidelidade</b><span>9×4,8cm · preto</span></div></div>
+  </div>
+</section>
+
+<!-- ░░ CRÉDITOS ░░ -->
+<section class="credits" data-bb="Créditos">
+  <img src="../assets/logo-suprema-branco.png" alt="Suprema Pizza">
+  <div class="big">É a <em>Suprema.</em></div>
+  <div class="by">Uma marca cuidada por <b>Fenice Lab</b> · ©2026 · Versão 1.0</div>
+</section>
+
+<!--PAGES-->
+
+<footer>
+  <span><span class="wm" style="color:var(--vermelho-lt)"><span class="s" style="font-size:15px">SUPREMA</span></span> · Brand Book · Versão 1.0</span>
+  <span>Produzido por <b>Fenice Lab</b> · ©2026</span>
+</footer>
+
+<script src="../apresentacao/present.js"></script>
+<script>
+  // pattern de rolinhos na capa
+  var pin="<svg xmlns='http://www.w3.org/2000/svg' width='130' height='130' viewBox='0 0 130 130'>"
+    +"<g transform='rotate(34 65 65)'><rect x='26' y='59' width='78' height='11' rx='5.5' fill='%23D62828' opacity='0.35'/></g>"
+    +"<g transform='rotate(-34 65 65)'><rect x='26' y='59' width='78' height='11' rx='5.5' fill='%23FFEBDC' opacity='0.16'/></g></svg>";
+  var gp=document.getElementById('gfPat'); if(gp) gp.style.background="#0F0F0F url(\"data:image/svg+xml,"+pin+"\") repeat";
+
+  // índice de pontos lateral
+  (function(){
+    var secs=[].slice.call(document.querySelectorAll('[data-bb]'));
+    var idx=document.getElementById('bbIndex');
+    secs.forEach(function(s){
+      var a=document.createElement('a'); a.href='#'+s.id;
+      a.innerHTML='<span>'+s.getAttribute('data-bb')+'</span>'; idx.appendChild(a);
+    });
+    var links=[].slice.call(idx.children);
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){
+        var i=secs.indexOf(e.target);
+        links.forEach(function(l,j){ l.classList.toggle('on', j===i); });
+      }});
+    },{threshold:.5});
+    secs.forEach(function(s){io.observe(s);});
+  })();
+</script>
+</body>
+</html>
