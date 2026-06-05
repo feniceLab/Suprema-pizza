@@ -4,106 +4,78 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suprema Pizza — Cronograma de Conteúdo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;500;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --carvao:#FFEBDC; --carvao-md:#242424; --carvao-lt:#333;
-    --dourado:#D62828; --dourado-dk:#B71C1C; --bege:#EDD9A3;
-    --branco:#fff; --cinza:#888; --brasa:#C0392B; --ambar:#E63946;
-    /* pilares de conteúdo */
-    --p-produto:#D62828; --p-promo:#C0392B; --p-bastidor:#E63946;
-    --p-social:#8B9D5B; --p-instit:#6A8CAF;
+    --preto:#0F0F0F; --preto-2:#141414; --preto-3:#161616; --linha:#1F1F1F; --linha-2:rgba(255,255,255,.10);
+    --vermelho:#D62020; --vermelho-dk:#B71C1C; --bege:#FFEBDC; --branco:#fff; --cinza:#9A9A9A;
+    /* pilares */
+    --p-produto:#D62020; --p-promo:#C0392B; --p-bastidor:#E63946; --p-social:#8B9D5B; --p-instit:#6A8CAF;
+    /* status */
+    --s-aaprovar:#9A9A9A; --s-producao:#E0A124; --s-pronto:#3FA7D6; --s-aprovado:#8B9D5B; --s-postado:#D62020;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--carvao);color:#3A322E;font-family:'Montserrat',sans-serif;font-size:14px;line-height:1.6;padding:32px 24px 80px}
-  .wrap{max-width:1200px;margin:0 auto}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+  body{background:var(--preto);color:#E6E6E6;font-size:14px;line-height:1.6;padding:30px 22px 70px}
+  .wrap{max-width:1180px;margin:0 auto}
 
   .top{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:6px}
-  .eyebrow{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado)}
-  h1{font-family:'Bebas Neue',sans-serif;font-size:46px;letter-spacing:3px;color:var(--dourado);line-height:.9}
-  .period{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:10px;padding:8px 16px}
-  .period b{font-family:'Bebas Neue';font-size:20px;letter-spacing:1.5px;color:var(--bege)}
+  .eyebrow{font-family:'Saira Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--vermelho)}
+  h1{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:48px;letter-spacing:.01em;text-transform:uppercase;color:var(--vermelho);line-height:.92}
+  .period{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--preto-3);border:1px solid var(--linha-2);border-radius:10px;padding:9px 16px}
+  .period b{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--bege);text-transform:uppercase}
   .period span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.1em}
-  .lead{color:#aaa;font-size:13.5px;max-width:680px;margin:10px 0 24px}
+  .lead{color:#C2C2C2;font-size:13.5px;max-width:720px;margin:10px 0 22px}
+  .lead b{color:var(--bege)}
 
-  /* legenda de pilares */
-  .pilares{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-  .pil{display:flex;align-items:center;gap:8px;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:8px;padding:7px 13px;font-size:12px;font-weight:600;color:#3A322E}
-  .pil .d{width:11px;height:11px;border-radius:3px}
+  /* legendas (pilares + status) */
+  .legendas{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:26px}
+  .leg-grp{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+  .leg-grp .lbl{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--cinza);margin-right:2px}
+  .pil{display:flex;align-items:center;gap:7px;background:var(--preto-3);border:1px solid var(--linha-2);border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:500;color:#D7D7D7}
+  .pil .d{width:10px;height:10px;border-radius:3px;flex:none}
+  .stbadge{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;padding:3px 9px;border-radius:999px;border:1px solid currentColor}
 
-  /* grade semanal */
-  .week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
-  @media(max-width:980px){.week{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:560px){.week{grid-template-columns:repeat(1,1fr)}}
-  .day{background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:230px}
-  .day .dh{padding:10px 12px;border-bottom:1px solid var(--carvao-lt);display:flex;align-items:baseline;justify-content:space-between}
-  .day .dh .wd{font-family:'Bebas Neue';font-size:17px;letter-spacing:1.5px;color:var(--dourado)}
-  .day .dh .dt{font-size:11px;color:var(--cinza);font-weight:600}
-  .day .body{padding:10px;display:flex;flex-direction:column;gap:8px;flex:1}
+  /* semana */
+  .sem{margin-bottom:30px}
+  .sem-h{display:flex;align-items:baseline;gap:12px;margin:0 2px 12px;padding-bottom:8px;border-bottom:1px solid var(--linha-2)}
+  .sem-h .n{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--bege)}
+  .sem-h .meta{font-size:11.5px;color:var(--cinza);letter-spacing:.04em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  @media(max-width:820px){.grid{grid-template-columns:repeat(1,1fr)}}
 
-  .post{border-radius:9px;border:1px solid var(--carvao-lt);border-left-width:3px;background:#1f1f1f;padding:9px 11px}
-  .post .pf{display:flex;align-items:center;gap:6px;margin-bottom:5px}
-  .post .fmt{font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:4px;background:var(--carvao-lt);color:var(--bege)}
-  .post .fmt.reel{background:rgba(192,57,43,.22);color:#E08074}
-  .post .fmt.story{background:rgba(106,140,175,.22);color:#9DBBD6}
-  .post .time{font-size:10px;color:var(--cinza);margin-left:auto;font-weight:600}
-  .post .ttl{font-size:12.5px;font-weight:700;color:#fff;line-height:1.3}
-  .post .cap{font-size:11px;color:#999;margin-top:3px;line-height:1.45}
-  .post[contenteditable]:focus{outline:1px solid var(--dourado-dk)}
-  .empty{flex:1;display:flex;align-items:center;justify-content:center;color:#555;font-size:11px;border:1px dashed #383838;border-radius:8px;min-height:60px}
+  .post{background:var(--preto-2);border:1px solid var(--linha-2);border-left-width:4px;border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;gap:8px;min-height:0}
+  .post .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .fmt{font-family:'Saira Condensed',sans-serif;font-weight:800;letter-spacing:.07em;text-transform:uppercase;font-size:10.5px;padding:3px 9px;border-radius:6px;background:var(--linha);color:var(--bege);display:inline-flex;align-items:center;gap:5px}
+  .fmt.video{background:rgba(214,32,32,.18);color:#F08C82}
+  .fmt.carrossel{background:rgba(106,140,175,.20);color:#9DBBD6}
+  .fmt.foto{background:rgba(139,157,91,.20);color:#B7C68A}
+  .post .when{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px;color:var(--cinza)}
+  .post .when b{color:#D7D7D7;font-weight:700}
+  .post .sabor{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:19px;line-height:1.1;letter-spacing:.01em;color:#fff;text-transform:uppercase}
+  .post .gancho{font-size:12.5px;color:#C2C2C2;line-height:1.5}
+  .post .row2{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:2px}
+  .chip{font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:2px 8px;border-radius:999px;border:1px solid var(--linha-2);color:#B8B8B8;display:inline-flex;align-items:center;gap:5px}
+  .chip .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .chip.novo{color:#F0C36D;border-color:rgba(240,195,109,.35)}
+  .chip.saz{color:#F08C82;border-color:rgba(240,140,130,.35)}
 
-  .foot{margin-top:30px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;background:var(--carvao-md);border:1px solid var(--carvao-lt);border-radius:12px;padding:18px 22px}
-  .foot .stat b{font-family:'Bebas Neue';font-size:30px;color:var(--dourado);letter-spacing:1px;display:block;line-height:1}
-  .foot .stat span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.1em}
-  .foot .hint{margin-left:auto;font-size:12px;color:#888;max-width:320px}
+  /* rodapé de stats */
+  .foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 30px;align-items:center;background:var(--preto-2);border:1px solid var(--linha-2);border-radius:14px;padding:18px 24px}
+  .foot .stat{min-width:74px}
+  .foot .stat b{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:34px;color:var(--vermelho);letter-spacing:.02em;display:block;line-height:1}
+  .foot .stat span{font-size:10.5px;color:var(--cinza);text-transform:uppercase;letter-spacing:.12em}
+  .foot .hint{margin-left:auto;font-size:12px;color:#9A9A9A;max-width:360px}
   .foot .hint b{color:var(--bege)}
-  .tags{margin-top:18px;font-size:12px;color:#999}
-  .tags b{color:var(--dourado);font-weight:700}
-  .tags code{background:var(--carvao-lt);color:var(--bege);padding:2px 7px;border-radius:5px;margin:0 2px;font-size:11px}
-</style>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;500;800;900&display=swap" rel="stylesheet">
-<style id="sup-wm">
-.wm-s{font-family:'Saira Condensed',sans-serif !important;font-weight:800 !important;letter-spacing:-.01em !important;text-transform:uppercase}
-.wm-p{font-family:'Saira Condensed',sans-serif !important;font-weight:300 !important;letter-spacing:.26em !important;font-size:.68em;text-transform:uppercase;display:inline-block}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style id="sup-v2">
-:root{
- --carvao:#0F0F0F;--carvao-md:#141414;--carvao-lt:#1F1F1F;--carvao-2:#161616;
- --dourado:#D62020;--dourado-dk:#B71C1C;--brasa:#B71C1C;--ambar:#D62020;
- --bege:#FFEBDC;--cinza:#9A9A9A;--branco:#FFFFFF;--creme:#FFFFFF;--kraft:#D62020;--tinta:#FFFFFF;
-}
-*{font-family:'Poppins',sans-serif !important}
-html,body{background:#0F0F0F !important;color:#fff !important}
-section{background:#0F0F0F !important;color:#fff !important}
-section.light{background:#141414 !important}
-section.dark2{background:#161616 !important}
-.hero{background:#0F0F0F !important}
-h1,h2,h3,h4{color:#fff !important}
-.hero h1{color:#D62020 !important}
-.kicker,.eyebrow{color:#D62020 !important}
-.lead{color:#E6E6E6 !important}
-p{color:#C2C2C2}
-.label,.hint,.col-sub,.col-tag,.col2-hint,.fnd-hint,.col2-meta,.fnd-meta,.col2-cap,.cap,.wd,.dt,.dh,.time,.tags,.stat,.period{color:#9A9A9A !important}
-.col2-bar,.fnd-bar{background:#161616 !important;border-color:rgba(255,255,255,.1) !important}
-.week,.post,.pil,.pilares,.graf{border-color:rgba(255,255,255,.1) !important}
-.post{background:#141414 !important}
-.pil{background:#161616 !important}
-.ttl{color:#fff !important}
-footer,.foot{background:#0a0a0a !important;color:#888 !important;border-top:1px solid rgba(255,255,255,.08) !important}
-[style*="color:#1A1A1A"]{color:#fff !important}
-[style*="color:#1a1a1a"]{color:#fff !important}
-[style*="color:#3A322E"]{color:#C2C2C2 !important}
-[style*="color:#3a322e"]{color:#C2C2C2 !important}
+  .ritmo{margin-top:14px;font-size:12px;color:#9A9A9A}
+  .ritmo b{color:var(--vermelho);font-weight:700}
+  .err{display:none;color:#F08C82;background:rgba(214,32,32,.08);border:1px solid rgba(214,32,32,.3);border-radius:10px;padding:14px 16px;font-size:13px}
 </style>
 </head>
 <body>
@@ -112,95 +84,108 @@ footer,.foot{background:#0a0a0a !important;color:#888 !important;border-top:1px 
   <div class="top">
     <div>
       <div class="eyebrow">Planejamento Editorial · Suprema Pizza</div>
-      <h1>Cronograma de Conteúdo</h1>
+      <h1 id="titulo">Cronograma de Conteúdo</h1>
     </div>
     <div class="period">
       <div>
-        <b contenteditable="true">Semana 1 — Junho</b><br>
-        <span>@asupremapizza</span>
+        <b id="mes">Junho 2026</b><br>
+        <span id="handle">@asupremapizza</span>
       </div>
     </div>
   </div>
-  <p class="lead">Mapa semanal de postagens do Suprema Pizza. Cada card define <b>formato</b>, <b>pilar de conteúdo</b>,
-  tema e legenda. Edite os textos direto nos cards. Ritmo-alvo: <b>1 post de feed/dia + stories diários + 2 reels/semana.</b></p>
+  <p class="lead">Calendário editorial do mês inteiro do Suprema Pizza, direto da pasta de produção.
+  Cada card traz <b>formato</b>, <b>pilar</b>, <b>status de produção</b> e o <b>gancho</b> da legenda.
+  Ritmo fixo: <b id="ritmo">Seg = Vídeo · Qua = Carrossel · Sex = Vídeo</b>.</p>
 
-  <div class="pilares">
-    <div class="pil"><span class="d" style="background:var(--p-produto)"></span>Produto · forno</div>
-    <div class="pil"><span class="d" style="background:var(--p-promo)"></span>Promoção · oferta</div>
-    <div class="pil"><span class="d" style="background:var(--p-bastidor)"></span>Bastidores · cozinha</div>
-    <div class="pil"><span class="d" style="background:var(--p-social)"></span>Prova social · review</div>
-    <div class="pil"><span class="d" style="background:var(--p-instit)"></span>Institucional · info</div>
+  <div class="legendas">
+    <div class="leg-grp"><span class="lbl">Pilares</span><span id="leg-pilares"></span></div>
+    <div class="leg-grp"><span class="lbl">Status</span>
+      <span class="stbadge" style="color:var(--s-aaprovar)">a aprovar</span>
+      <span class="stbadge" style="color:var(--s-producao)">em produção</span>
+      <span class="stbadge" style="color:var(--s-pronto)">pronto</span>
+      <span class="stbadge" style="color:var(--s-aprovado)">aprovado</span>
+      <span class="stbadge" style="color:var(--s-postado)">postado</span>
+    </div>
   </div>
 
-  <div class="week" id="week"></div>
+  <div id="err" class="err">Não foi possível carregar o cronograma (assets/cronograma.json). Rode o gerador e publique o JSON.</div>
+  <div id="semanas"></div>
 
-  <div class="foot">
-    <div class="stat"><b>7</b><span>Feeds</span></div>
-    <div class="stat"><b>2</b><span>Reels</span></div>
-    <div class="stat"><b>7</b><span>Dias de story</span></div>
-    <div class="hint"><b>Dica:</b> alterne os pilares ao longo da semana — nunca dois dias seguidos de promoção. Produto e bastidores sustentam o feed; promoção converte.</div>
-  </div>
-
-  <p class="tags"><b>Hashtags institucionais:</b>
-    <code>#SupremaPizza</code><code>#SupremaPizzaBlumenau</code><code>#PizzaEmBlumenau</code><code>#PizzaArtesanal</code><code>#ASupremaPizza</code><code>#DeliveryBlumenau</code>
-  </p>
+  <div class="foot" id="foot"></div>
+  <p class="ritmo">Fonte: pastas <b>copy.md</b> de produção (Drive) · gerado por <b>tools/gerar-cronograma.mjs</b>.</p>
 
 </div>
 
 <script>
-const PILARES = {
-  produto:'var(--p-produto)', promo:'var(--p-promo)', bastidor:'var(--p-bastidor)',
-  social:'var(--p-social)', instit:'var(--p-instit)'
+const PILAR_COR = { produto:'#D62020', promo:'#C0392B', bastidor:'#E63946', social:'#8B9D5B', instit:'#6A8CAF' };
+const STATUS = {
+  'a-aprovar': { label:'a aprovar',  cor:'var(--s-aaprovar)' },
+  'producao':  { label:'em produção',cor:'var(--s-producao)' },
+  'pronto':    { label:'pronto',     cor:'var(--s-pronto)' },
+  'aprovado':  { label:'aprovado',   cor:'var(--s-aprovado)' },
+  'postado':   { label:'postado',    cor:'var(--s-postado)' },
 };
-const WEEK = [
-  { wd:'SEG', dt:'02/06', posts:[
-    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Frango com Catupiry', cap:'Quando o queijo escorre… a pizza tá no ponto.'},
-    {fmt:'story', pilar:'instit', time:'18h', ttl:'Horário de hoje', cap:'Aberto até 23h. Bora pedir uma Suprema.'},
-  ]},
-  { wd:'TER', dt:'03/06', posts:[
-    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Alho com Cebola Caramelizada', cap:'Cebola caramelizada e pasta de alho premium.'},
-    {fmt:'story', pilar:'social', time:'19h', ttl:'Print de avaliação 5★', cap:'Repost de cliente real.'},
-  ]},
-  { wd:'QUA', dt:'04/06', posts:[
-    {fmt:'feed', pilar:'bastidor', time:'12h', ttl:'Massa fresca na bancada', cap:'Massa fresca, do jeito que a gente faz há anos.'},
-    {fmt:'reel', pilar:'produto', time:'20h', ttl:'Reel: cheese pull', cap:'Close em câmera lenta no queijo escorrendo.'},
-  ]},
-  { wd:'QUI', dt:'05/06', posts:[
-    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Milho, Bacon e Catupiry', cap:'Direto do forno… vem pra sua casa.'},
-    {fmt:'story', pilar:'instit', time:'18h', ttl:'Enquete: qual o próximo sabor?', cap:'Caixinha de pergunta no story.'},
-  ]},
-  { wd:'SEX', dt:'06/06', posts:[
-    {fmt:'feed', pilar:'instit', time:'11h', ttl:'A Suprema', cap:'Não é qualquer pizza. É A Suprema.'},
-    {fmt:'story', pilar:'bastidor', time:'20h', ttl:'Forno a todo vapor', cap:'Bastidor da sexta — forno aceso.'},
-  ]},
-  { wd:'SÁB', dt:'07/06', posts:[
-    {fmt:'reel', pilar:'produto', time:'13h', ttl:'Reel: Camarão com Borda de Cheddar', cap:'Camarão e borda recheada de cheddar. Vai encarar?'},
-    {fmt:'story', pilar:'social', time:'21h', ttl:'Casa cheia', cap:'Stories do ambiente, família à mesa.'},
-  ]},
-  { wd:'DOM', dt:'08/06', posts:[
-    {fmt:'feed', pilar:'produto', time:'12h', ttl:'Nutella com Morangos Frescos', cap:'Doce que vira lembrança boa.'},
-  ]},
-];
+const FMT_ICON = { video:'🎬', carrossel:'🎠', foto:'📷' };
+const FMT_LABEL = { video:'Reel', carrossel:'Carrossel', foto:'Foto' };
 
-const week = document.getElementById('week');
-WEEK.forEach(d=>{
-  const col = document.createElement('div'); col.className='day';
-  let inner = `<div class="dh"><span class="wd">${d.wd}</span><span class="dt">${d.dt}</span></div><div class="body">`;
-  if(d.posts.length){
-    d.posts.forEach(p=>{
-      inner += `<div class="post" style="border-left-color:${PILARES[p.pilar]}" contenteditable="true">
-        <div class="pf"><span class="fmt ${p.fmt}">${p.fmt}</span><span class="time">${p.time}</span></div>
-        <div class="ttl">${p.ttl}</div>
-        <div class="cap">${p.cap}</div>
-      </div>`;
-    });
-  } else {
-    inner += `<div class="empty">sem post</div>`;
-  }
-  inner += `</div>`;
-  col.innerHTML = inner;
-  week.appendChild(col);
-});
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function ddmm(iso){ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||''); return m ? `${m[3]}/${m[2]}` : esc(iso); }
+
+function render(data){
+  document.getElementById('titulo').textContent = 'Cronograma de Conteúdo';
+  document.getElementById('mes').textContent = data.titulo || data.mes || '';
+  document.getElementById('handle').textContent = data.handle || '';
+  if(data.ritmo) document.getElementById('ritmo').textContent = data.ritmo;
+
+  // legenda de pilares (data-driven)
+  document.getElementById('leg-pilares').innerHTML = (data.pilares||[]).map(p =>
+    `<span class="pil"><span class="d" style="background:${esc(p.cor)}"></span>${esc(p.label)}</span>`
+  ).join('');
+
+  // semanas
+  const host = document.getElementById('semanas');
+  host.innerHTML = (data.semanas||[]).map(sem => {
+    const cards = (sem.posts||[]).map(p => {
+      const cor = PILAR_COR[p.pilar] || PILAR_COR.produto;
+      const st = STATUS[p.status] || STATUS['a-aprovar'];
+      const pilarLabel = (data.pilares||[]).find(x=>x.id===p.pilar);
+      const chips = [];
+      chips.push(`<span class="chip"><span class="dot" style="background:${cor}"></span>${esc(pilarLabel?pilarLabel.label:p.pilar)}</span>`);
+      chips.push(`<span class="stbadge" style="color:${st.cor}">${esc(st.label)}</span>`);
+      if(p.novidade) chips.push(`<span class="chip novo">★ novidade</span>`);
+      if(p.sazonal)  chips.push(`<span class="chip saz">📅 ${esc(p.sazonal)}</span>`);
+      return `<article class="post" style="border-left-color:${cor}">
+        <div class="row1">
+          <span class="fmt ${esc(p.formato)}">${FMT_ICON[p.formato]||''} ${esc(FMT_LABEL[p.formato]||p.formato)}</span>
+          <span class="when"><b>${esc(p.dia)}</b> ${ddmm(p.data)}</span>
+        </div>
+        <div class="sabor">${esc(p.sabor||p.tema)}</div>
+        <div class="gancho">${esc(p.gancho||p.legenda_curta||'')}</div>
+        <div class="row2">${chips.join('')}</div>
+      </article>`;
+    }).join('');
+    const meta = `${(sem.posts||[]).length} post${(sem.posts||[]).length===1?'':'s'}`;
+    return `<section class="sem">
+      <div class="sem-h"><span class="n">${esc(sem.label||('Semana '+sem.n))}</span><span class="meta">${meta}</span></div>
+      <div class="grid">${cards}</div>
+    </section>`;
+  }).join('');
+
+  // rodapé
+  const s = data.stats || {};
+  const stats = [
+    ['feeds','Posts no feed'], ['reels','Reels'], ['carrosseis','Carrosséis'],
+    ['stories','Stories'], ['total','Total no mês'],
+  ].filter(([k])=>s[k]!=null);
+  document.getElementById('foot').innerHTML =
+    stats.map(([k,lbl])=>`<div class="stat"><b>${esc(s[k])}</b><span>${esc(lbl)}</span></div>`).join('') +
+    `<div class="hint"><b>Como funciona:</b> Segunda e sexta puxam reel (vídeo engaja mais); quarta é o carrossel. Toda legenda abre com uma pergunta pra gerar comentário.</div>`;
+}
+
+fetch('../../../assets/cronograma.json?ts=' + Date.now())
+  .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(render)
+  .catch(() => { document.getElementById('err').style.display='block'; });
 </script>
 </body>
 </html>

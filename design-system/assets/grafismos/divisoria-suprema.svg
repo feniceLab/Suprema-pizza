@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 40" role="img" aria-label="Divisória Suprema — linha, selo, linha">
+  <!-- Divisória da marca: filete — ✕ rolinhos — filete.
+       fill/stroke currentColor (tinta pela cor do contexto). Fenice Lab · 2026 -->
+  <title>Divisória Suprema</title>
+  <g fill="currentColor">
+    <rect x="0" y="18.5" width="210" height="3" rx="1.5"/>
+    <rect x="310" y="18.5" width="210" height="3" rx="1.5"/>
+    <g transform="translate(237 3) scale(0.31)">
+      <g transform="rotate(34 110 75)">
+        <rect x="34" y="64" width="152" height="22" rx="11"/>
+        <rect x="20" y="58" width="14" height="34" rx="5"/>
+        <rect x="186" y="58" width="14" height="34" rx="5"/>
+      </g>
+      <g transform="rotate(-34 110 75)" opacity=".82">
+        <rect x="34" y="64" width="152" height="22" rx="11"/>
+        <rect x="20" y="58" width="14" height="34" rx="5"/>
+        <rect x="186" y="58" width="14" height="34" rx="5"/>
+      </g>
+    </g>
+  </g>
+</svg>

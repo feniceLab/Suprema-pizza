@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 150" role="img" aria-label="Selo Suprema — variante bege">
+  <title>Selo Suprema · bege (cor de massa)</title>
+  <g fill="#FFEBDC">
+    <g transform="rotate(34 110 75)">
+      <rect x="34" y="64" width="152" height="22" rx="11"/>
+      <rect x="20" y="58" width="14" height="34" rx="5"/>
+      <rect x="186" y="58" width="14" height="34" rx="5"/>
+    </g>
+    <g transform="rotate(-34 110 75)" opacity=".82">
+      <rect x="34" y="64" width="152" height="22" rx="11"/>
+      <rect x="20" y="58" width="14" height="34" rx="5"/>
+      <rect x="186" y="58" width="14" height="34" rx="5"/>
+    </g>
+  </g>
+</svg>

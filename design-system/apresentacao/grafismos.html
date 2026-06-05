@@ -45,6 +45,61 @@
   .fnd-logo{width:60%;max-height:46%;object-fit:contain;z-index:2}
   .fnd-meta{padding:10px 14px;font-size:11px;color:var(--cinza);border-top:1px solid var(--line);display:flex;justify-content:space-between}
   .fnd-meta b{color:#fff;font-weight:600}
+
+  /* divisoria com selo (img) */
+  .divider .div-mark{width:46px;height:34px}
+
+  /* barra de download dos SVGs versionados */
+  .dl-bar{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .dl{display:flex;align-items:center;gap:13px;background:var(--s2);border:1px solid var(--line);
+    border-radius:12px;padding:12px 16px;transition:.2s var(--ease)}
+  .dl:hover{border-color:var(--vermelho-dk);transform:translateY(-2px)}
+  .dl .pv{width:46px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    background:#0F0F0F;border-radius:7px}
+  .dl .pv img{width:38px;height:auto}
+  .dl .pv.lt{background:#fff}
+  .dl .tx{line-height:1.25}
+  .dl .tx b{display:block;font-size:13px;color:#fff;font-weight:600}
+  .dl .tx span{font-size:11px;color:var(--cinza);font-family:ui-monospace,monospace}
+  .dl .go{margin-left:6px;display:inline-flex;align-items:center;gap:6px;background:var(--vermelho);
+    color:#fff;font-size:11.5px;font-weight:700;padding:7px 13px;border-radius:999px;white-space:nowrap}
+  .dl .go:hover{background:var(--vermelho-dk)}
+
+  /* spec 9:16 do halo */
+  .spec916{display:grid;grid-template-columns:300px 1fr;gap:30px;margin-top:32px;align-items:start}
+  @media(max-width:760px){.spec916{grid-template-columns:1fr}}
+  .stage916{aspect-ratio:9/16;width:100%;max-width:300px;background:#0F0F0F;border:1px solid var(--line);
+    border-radius:18px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+  .stage916 .safe{position:absolute;inset:9%;border:1px dashed rgba(160,160,160,.4);border-radius:8px;pointer-events:none}
+  .stage916 .cap{position:relative;z-index:2;padding:0 9% 11%;text-align:center}
+  .stage916 .cap .hl{display:inline;background:#FFEBDC;color:#1A1A1A;-webkit-box-decoration-break:clone;
+    box-decoration-break:clone;padding:.06em .3em;border-radius:.5em;line-height:1.5}
+  .stage916 .cap .l1{font-family:'Poppins',sans-serif;font-weight:400;font-size:clamp(13px,4.4vw,17px)}
+  .stage916 .cap .l2{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(15px,5.2vw,20px)}
+  .stage916 .cap .l2 .hl{margin-top:.34em}
+  .stage916 .wm916{position:absolute;left:50%;transform:translateX(-50%);bottom:5%;z-index:2}
+  .stage916 .wm916 img{height:26px;opacity:.95}
+  .spec-list{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .spec-list li{display:flex;gap:12px;font-size:13.5px;color:#cfcfcf;line-height:1.45}
+  .spec-list li b{color:#fff;font-weight:600;min-width:108px;display:inline-block}
+  .spec-list code{background:#222;color:#ffd9d4;padding:1px 6px;border-radius:4px;font-size:.86em}
+  .pipe{margin-top:20px;background:#0c0c0c;border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;font-family:ui-monospace,monospace;font-size:12px;color:#d6d6d6;line-height:1.7;overflow-x:auto}
+  .pipe .c{color:var(--cinza-esc)}
+
+  /* banco de copys */
+  .copys{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:14px;margin-top:26px}
+  .copy-card{background:var(--s2);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;
+    position:relative;transition:.2s var(--ease)}
+  .copy-card:hover{border-color:var(--vermelho-dk)}
+  .copy-card .n{position:absolute;top:12px;right:14px;font-family:var(--display);font-weight:800;
+    font-size:22px;color:rgba(255,255,255,.07)}
+  .copy-card .l1{font-size:14px;color:var(--cinza);font-weight:400}
+  .copy-card .l2{font-size:16px;color:#fff;font-weight:700;margin-top:2px}
+  .copy-card .cp{margin-top:13px;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;color:var(--vermelho-lt);cursor:pointer;
+    background:none;border:none;font-family:var(--font);padding:0}
+  .copy-card .cp:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -104,6 +159,58 @@
     </div>
   </div>
   <div class="rule-box rv"><b>Regra crítica.</b> Cor do halo <code>#FFEBDC</code>, texto em <b>preto</b>. Técnica oficial (peças / stop motion): ImageMagick <code>-morphology Dilate Disk:26</code> sobre o canal alpha do texto. <b>Nunca</b> caixa retangular sólida.</div>
+
+  <div class="grp rv">Spec oficial · Stories 9:16</div>
+  <p class="lead rv d2" style="margin-top:8px">O formato vertical é o principal nas redes. Abaixo, a especificação de produção e o pipeline de halo em <code style="background:#222;color:#ffd9d4;padding:1px 6px;border-radius:4px">ImageMagick</code>.</p>
+  <div class="spec916 rv d1">
+    <div class="stage916">
+      <div class="safe"></div>
+      <div class="cap">
+        <span class="hl l1">Quando o queijo escorre…</span><br>
+        <span class="hl l2">a pizza tá no ponto.</span>
+      </div>
+      <div class="wm916"><img src="../assets/logo-suprema-branco.png" alt="Suprema"></div>
+    </div>
+    <ul class="spec-list">
+      <li><b>Stage</b> 1080×1920 px (9:16), fundo <code>#0F0F0F</code>.</li>
+      <li><b>Halo</b> cor <code>#FFEBDC</code> · <code>Dilate Disk:26</code> sobre o alpha do texto.</li>
+      <li><b>Texto</b> Poppins · L1 Regular (gancho) / L2 Bold (punchline), preto <code>#1A1A1A</code>.</li>
+      <li><b>Wordmark</b> logo branca 320×192 px, centralizada em <b>y=1628</b>.</li>
+      <li><b>Margem segura</b> 9% (≈ 97 px) — nada de texto ou logo fora dela.</li>
+      <li><b>Legenda</b> baixa, sobre a foto; topo livre pra respiro da imagem.</li>
+    </ul>
+  </div>
+  <div class="pipe rv">
+<span class="c"># 1. texto com halo (canal alpha → dilata → preenche bege)</span>
+convert -size 1080x1920 xc:none -font Poppins-Bold -pointsize 76 \
+  -fill black -gravity south -annotate +0+360 "a pizza tá no ponto." txt.png
+convert txt.png -channel A -morphology Dilate Disk:26 +channel \
+  \( +clone -alpha extract -fill "#FFEBDC" -colorize 100 \) \
+  -compose DstOver -composite halo.png
+<span class="c"># 2. compor sobre o fundo/foto + wordmark em y=1628</span>
+convert fundo.jpg halo.png -gravity north -geometry +0+1180 -composite \
+  logo-suprema-branco.png -gravity north -geometry +0+1628 -composite story.png
+  </div>
+
+  <div class="grp rv">Banco de copys · 15 ganchos (2 linhas)</div>
+  <p class="lead rv d2" style="margin-top:8px">Linha 1 conversa, linha 2 entrega. Sempre Poppins: Regular em cima, Bold embaixo. Clique pra copiar.</p>
+  <div class="copys rv d1">
+    <div class="copy-card"><span class="n">01</span><div class="l1">Quando o queijo escorre…</div><div class="l2">a pizza tá no ponto.</div><button class="cp" data-copy="Quando o queijo escorre…&#10;a pizza tá no ponto." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">02</span><div class="l1">Não é qualquer pizza.</div><div class="l2">É A Suprema.</div><button class="cp" data-copy="Não é qualquer pizza.&#10;É A Suprema." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">03</span><div class="l1">Sexta à noite pede…</div><div class="l2">uma Suprema quentinha.</div><button class="cp" data-copy="Sexta à noite pede…&#10;uma Suprema quentinha." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">04</span><div class="l1">Massa fresca, fermentação lenta.</div><div class="l2">Sabor que a pressa não faz.</div><button class="cp" data-copy="Massa fresca, fermentação lenta.&#10;Sabor que a pressa não faz." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">05</span><div class="l1">A borda alta entrega:</div><div class="l2">isso é feito à mão.</div><button class="cp" data-copy="A borda alta entrega:&#10;isso é feito à mão." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">06</span><div class="l1">Jogo na TV, turma reunida…</div><div class="l2">só falta a pizza.</div><button class="cp" data-copy="Jogo na TV, turma reunida…&#10;só falta a pizza." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">07</span><div class="l1">Dieta começa amanhã.</div><div class="l2">Hoje é Suprema.</div><button class="cp" data-copy="Dieta começa amanhã.&#10;Hoje é Suprema." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">08</span><div class="l1">A pizza some rápido</div><div class="l2">porque chega quente.</div><button class="cp" data-copy="A pizza some rápido&#10;porque chega quente." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">09</span><div class="l1">Comida de verdade</div><div class="l2">junta gente à mesa.</div><button class="cp" data-copy="Comida de verdade&#10;junta gente à mesa." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">10</span><div class="l1">Cheese pull não mente:</div><div class="l2">queijo de verdade.</div><button class="cp" data-copy="Cheese pull não mente:&#10;queijo de verdade." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">11</span><div class="l1">A melhor pizza da semana</div><div class="l2">é numa noite comum.</div><button class="cp" data-copy="A melhor pizza da semana&#10;é numa noite comum." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">12</span><div class="l1">Em Blumenau tem nome:</div><div class="l2">é a Suprema.</div><button class="cp" data-copy="Em Blumenau tem nome:&#10;é a Suprema." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">13</span><div class="l1">Peça uma vez.</div><div class="l2">Vira lembrança boa.</div><button class="cp" data-copy="Peça uma vez.&#10;Vira lembrança boa." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">14</span><div class="l1">Quente, do forno</div><div class="l2">direto pra sua casa.</div><button class="cp" data-copy="Quente, do forno&#10;direto pra sua casa." type="button">⧉ copiar copy</button></div>
+    <div class="copy-card"><span class="n">15</span><div class="l1">Não vendemos preço.</div><div class="l2">A gente dá fome.</div><button class="cp" data-copy="Não vendemos preço.&#10;A gente dá fome." type="button">⧉ copiar copy</button></div>
+  </div>
 </section>
 
 <!-- 02 ROLINHOS -->
@@ -114,18 +221,7 @@
   <p class="lead rv d2">Os dois rolinhos de massa em "✕" vêm do topo da logo. Funcionam como selo, ponto de atenção e ornamento — sempre em vermelho ou branco, nunca distorcidos.</p>
   <div class="orn-grid rv d1">
     <div class="orn-big">
-      <svg width="220" height="150" viewBox="0 0 220 150" aria-label="Rolinhos de massa cruzados">
-        <g transform="rotate(34 110 75)">
-          <rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/>
-          <rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/>
-          <rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/>
-        </g>
-        <g transform="rotate(-34 110 75)">
-          <rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/>
-          <rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/>
-          <rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/>
-        </g>
-      </svg>
+      <img src="../assets/grafismos/selo-suprema-vermelho.svg" width="220" height="150" alt="Selo Suprema — rolinhos de massa cruzados">
     </div>
     <div class="uses">
       <div class="use"><b>Selo / assinatura</b><p>No topo do nome, como na logo — fecha a composição.</p></div>
@@ -133,6 +229,24 @@
       <div class="use"><b>Ponto de atenção</b><p>Pequeno, marca itens de lista ou destaques.</p></div>
       <div class="use"><b>Cores</b><p>Vermelho <code>#D62828</code> sobre claro · branco sobre escuro/foto. Nunca outra cor.</p></div>
     </div>
+  </div>
+  <div class="grp rv">Baixar os SVGs versionados</div>
+  <div class="dl-bar rv d1">
+    <a class="dl" href="../assets/grafismos/selo-suprema.svg" download>
+      <span class="pv"><img src="../assets/grafismos/selo-suprema-branco.svg" alt=""></span>
+      <span class="tx"><b>Selo (currentColor)</b><span>selo-suprema.svg</span></span><span class="go">↓ SVG</span></a>
+    <a class="dl" href="../assets/grafismos/selo-suprema-vermelho.svg" download>
+      <span class="pv lt"><img src="../assets/grafismos/selo-suprema-vermelho.svg" alt=""></span>
+      <span class="tx"><b>Selo vermelho</b><span>selo-suprema-vermelho.svg</span></span><span class="go">↓ SVG</span></a>
+    <a class="dl" href="../assets/grafismos/selo-suprema-branco.svg" download>
+      <span class="pv"><img src="../assets/grafismos/selo-suprema-branco.svg" alt=""></span>
+      <span class="tx"><b>Selo branco</b><span>selo-suprema-branco.svg</span></span><span class="go">↓ SVG</span></a>
+    <a class="dl" href="../assets/grafismos/selo-suprema-bege.svg" download>
+      <span class="pv"><img src="../assets/grafismos/selo-suprema-bege.svg" alt=""></span>
+      <span class="tx"><b>Selo bege</b><span>selo-suprema-bege.svg</span></span><span class="go">↓ SVG</span></a>
+    <a class="dl" href="../assets/grafismos/divisoria-suprema.svg" download>
+      <span class="pv"><img src="../assets/grafismos/selo-suprema-branco.svg" alt=""></span>
+      <span class="tx"><b>Divisória</b><span>divisoria-suprema.svg</span></span><span class="go">↓ SVG</span></a>
   </div>
 </section>
 
@@ -144,10 +258,7 @@
   <p class="lead rv d2">Os filetes horizontais da logo viram divisórias da marca. Use com o "✕" no centro para um respiro elegante entre seções.</p>
   <div class="divider rv d1">
     <span class="ln"></span>
-    <svg width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
-      <g transform="rotate(34 23 17)"><rect x="6" y="13" width="34" height="7" rx="3.5" fill="#D62828"/></g>
-      <g transform="rotate(-34 23 17)"><rect x="6" y="13" width="34" height="7" rx="3.5" fill="#fff"/></g>
-    </svg>
+    <img class="div-mark" src="../assets/grafismos/selo-suprema-vermelho.svg" width="46" height="34" alt="" aria-hidden="true">
     <span class="ln"></span>
   </div>
   <div class="divider rv d1">

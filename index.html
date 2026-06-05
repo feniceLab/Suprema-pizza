@@ -10,20 +10,31 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suprema Pizza — Painel da Marca</title>
+<!-- Onda 1: fundação canônica (tokens --sup-* + fontes auto-hospedadas) -->
+<link rel="stylesheet" href="design-system/colors_and_type.css">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
 <style>
+  /* Onda 1: :root base corrigido (era creme/quebrado) -> tema escuro,
+     referenciando os tokens canônicos --sup-* de colors_and_type.css.
+     Os valores efetivos no ar são reafirmados (idênticos) pelo bloco
+     sup-wrap-v2 logo abaixo; aqui garantimos a base já correta. */
   :root {
-    --carvao:     #FFEBDC;
-    --carvao-md:  #222222;
-    --carvao-lt:  #333333;
-    --dourado:    #D62828;
-    --dourado-dk: #B71C1C;
-    --bege:       #EDD9A3;
-    --branco:     #FFFFFF;
-    --cinza:      #888888;
-    --brasa:      #C0392B;
+    --carvao:     #0F0F0F;
+    --carvao-md:  #141414;
+    --carvao-lt:  #1F1F1F;
+    --carvao-2:   #161616;
+    --dourado:    #D62020;
+    --dourado-dk: var(--sup-vermelho-dk);
+    --brasa:      var(--sup-vermelho-dk);
+    --ambar:      #D62020;
+    --bege:       var(--sup-bege);
+    --branco:     var(--sup-branco);
+    --creme:      #FFFFFF;
+    --kraft:      #D62020;
+    --tinta:      #FFFFFF;
+    --cinza:      var(--sup-cinza);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html, body { height:100%; }
@@ -246,13 +257,13 @@
 
 
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Onda 1: Poppins agora auto-hospedada (colors_and_type.css/fonts.css) -->
 <style id="sup-wrap-v2">
-:root{
- --carvao:#0F0F0F;--carvao-md:#141414;--carvao-lt:#1F1F1F;--carvao-2:#161616;
- --dourado:#D62020;--dourado-dk:#B71C1C;--brasa:#B71C1C;--ambar:#D62020;
- --bege:#FFEBDC;--cinza:#9A9A9A;--branco:#FFFFFF;--creme:#FFFFFF;--kraft:#D62020;--tinta:#FFFFFF;
-}
+/* Onda 1: :root duplicado removido — agora só referencia o :root base (acima),
+   que por sua vez espelha os tokens canônicos --sup-*. Sem duplicação de paleta.
+   DÍVIDA TÉCNICA (próxima onda): os !important element-level abaixo seguem
+   load-bearing por causa da especificidade do <style> base; remover exige
+   refatorar aquele bloco. Mantidos para preservar o pixel atual. */
 *{font-family:'Poppins',sans-serif !important}
 html,body{background:#0F0F0F !important;color:#fff !important}
 header{background:#0F0F0F !important;border-bottom:2px solid #D62020 !important}
@@ -287,7 +298,7 @@ nav .tag{background:#D62020 !important;color:#fff !important}
 footer{background:#0a0a0a !important;color:#888 !important;border-top:1px solid rgba(255,255,255,.08) !important}
 footer span{color:#bbb}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;500;800;900&display=swap" rel="stylesheet">
+<!-- Onda 1: Saira Condensed agora auto-hospedada (colors_and_type.css/fonts.css) -->
 <style id="sup-wm">
 .wm-s{font-family:'Saira Condensed',sans-serif !important;font-weight:800 !important;letter-spacing:-.01em !important;text-transform:uppercase}
 .wm-p{font-family:'Saira Condensed',sans-serif !important;font-weight:300 !important;letter-spacing:.26em !important;font-size:.68em;text-transform:uppercase;display:inline-block}
@@ -311,6 +322,7 @@ footer span{color:#bbb}
   <button type="button" data-tab="designsystem">Design System</button>
   <button type="button" data-tab="grafismos">Grafismos <span class="tag">Novo</span></button>
   <button type="button" data-tab="cronograma">Cronograma <span class="tag">Novo</span></button>
+  <button type="button" data-tab="performance">📊 Performance <span class="tag">Novo</span></button>
   <button type="button" data-tab="drive">📸 Galeria</button>
   <button type="button" data-tab="catalogo">📖 Catálogo</button>
 </nav>
@@ -365,6 +377,17 @@ footer span{color:#bbb}
 
   <!-- FOTOGRAFIA -->
   <!-- FOTOS -->
+    <!-- PERFORMANCE -->
+  <section id="tab-performance" class="tab-panel">
+    <div class="embed-bar">
+      <b>Performance & Relatórios</b> &mdash; faturamento, ROAS, ranking de campanhas e análises mensais da operação de tráfego pago.
+      <a href="https://central.fenicelab.com.br/portal/?surface=performance&c=suprema&embed=1" target="_blank">Abrir em nova aba &#8599;</a>
+    </div>
+    <div class="embed-wrap">
+      <iframe data-src="https://central.fenicelab.com.br/portal/?surface=performance&c=suprema&embed=1" title="Performance Suprema"></iframe>
+    </div>
+  </section>
+
   <section id="tab-drive" class="tab-panel">
     <div class="gallery-wrap">
       <h2 class="sec">Sess&atilde;o Fotogr&aacute;fica</h2>
@@ -1139,6 +1162,90 @@ body.catedit #cat-bar #cat-edit{background:var(--dourado);color:#FFEBDC}
   nav button{padding:11px 9px;font-size:11px}
 }
 </style>
+
+<!-- ============================================================
+     Onda 1 — Boot data-driven a partir de data/ficha.json
+     O HTML é o molde; a ficha é o cliente. Tudo é PROGRESSIVO:
+     se o fetch falhar ou um campo faltar, o DOM hardcoded atual
+     permanece intacto (fallback total — visual não muda).
+     ============================================================ -->
+<script>
+(function(){
+  "use strict";
+  function setText(el, val){ if(el && val != null && String(val).length) el.textContent = val; }
+
+  function applyTokens(tk){
+    if(!tk || typeof tk !== "object") return;
+    var root = document.documentElement;
+    Object.keys(tk).forEach(function(k){
+      if(k.charAt(0) === "_") return;            // pula chaves _nota
+      var v = tk[k];
+      if(typeof v === "string" && v.length){
+        root.style.setProperty("--" + k, v);     // ex.: --dourado, --carvao
+      }
+    });
+  }
+
+  function applyHeader(f){
+    var c = f.cliente || {};
+    // Logo
+    var logo = document.querySelector(".logo-badge img");
+    if(logo && c.logo){ logo.setAttribute("src", c.logo); if(c.nome) logo.setAttribute("alt", c.nome); }
+    // Wordmark (SUPREMA / PIZZA)
+    if(c.wordmark){
+      setText(document.querySelector(".header-info .wm-s"), c.wordmark.linha1);
+      setText(document.querySelector(".header-info .wm-p"), c.wordmark.linha2);
+    }
+    // Subtítulo
+    setText(document.querySelector(".header-info span"), c.subtitulo);
+    // Badge "Ao vivo"
+    setText(document.querySelector(".live-badge"), c.live_label);
+    // Tagline (hook OPCIONAL — só preenche se existir um alvo no molde,
+    // mantendo pixel-equivalência quando o alvo ainda não foi adicionado)
+    var tagEl = document.querySelector("[data-ficha-tagline]");
+    if(tagEl) setText(tagEl, c.tagline);
+    // Título da aba do navegador
+    if(c.nome) document.title = c.nome + " — Painel da Marca";
+  }
+
+  function applyNav(f){
+    if(!Array.isArray(f.abas)) return;
+    var byId = {};
+    f.abas.forEach(function(a){ if(a && a.id) byId[a.id] = a; });
+    document.querySelectorAll("#nav button[data-tab]").forEach(function(btn){
+      var a = byId[btn.dataset.tab];
+      if(!a) return;
+      // Atualiza rótulo preservando o <span class="tag">Novo</span> quando aplicável.
+      var hasTag = a.novo === true;
+      // Limpa filhos de texto, mantém estrutura previsível.
+      btn.textContent = a.rotulo || btn.textContent;
+      if(hasTag){
+        var tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = "Novo";
+        btn.appendChild(document.createTextNode(" "));
+        btn.appendChild(tag);
+      }
+    });
+  }
+
+  function boot(){
+    fetch("data/ficha.json?ts=" + Date.now())
+      .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function(f){
+        try { applyTokens(f.tokens_wrapper); } catch(e){}
+        try { applyHeader(f); } catch(e){}
+        try { applyNav(f); } catch(e){}
+      })
+      .catch(function(){ /* fallback: mantém o DOM atual, sem alterar nada */ });
+  }
+
+  if(document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", boot);
+  else
+    boot();
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,379 @@
+{
+  "cliente": "Suprema Pizza",
+  "handle": "@asupremapizza",
+  "mes": "2026-06",
+  "titulo": "Junho 2026",
+  "ritmo": "Seg = Vídeo · Qua = Carrossel · Sex = Vídeo · stories recorrentes",
+  "stats": {
+    "feeds": 13,
+    "reels": 9,
+    "carrosseis": 4,
+    "fotos": 0,
+    "stories": 29,
+    "total": 42
+  },
+  "pilares": [
+    {
+      "id": "produto",
+      "label": "Produto · sabor",
+      "cor": "#D62020"
+    },
+    {
+      "id": "promo",
+      "label": "Novidade · lançamento",
+      "cor": "#C0392B"
+    },
+    {
+      "id": "bastidor",
+      "label": "Bastidores · processo",
+      "cor": "#E63946"
+    },
+    {
+      "id": "social",
+      "label": "Prova social · review",
+      "cor": "#8B9D5B"
+    },
+    {
+      "id": "instit",
+      "label": "Institucional · marca",
+      "cor": "#6A8CAF"
+    }
+  ],
+  "semanas": [
+    {
+      "n": 1,
+      "label": "Semana 1",
+      "posts": [
+        {
+          "data": "2026-06-01",
+          "dia": "SEG",
+          "formato": "video",
+          "sabor": "Frango com Catupiry",
+          "tema": "Frango com Catupiry (cheese pull)",
+          "pilar": "produto",
+          "gancho": "🐔 ou 🧀? Responde aí qual fala mais alto pra você.",
+          "legenda_curta": "Segunda-feira difícil pede frango com catupiry. 🐔 ou 🧀? Responde aí.",
+          "hashtags": [
+            "#supremapizza",
+            "#frangocomcatupiry",
+            "#pizzaartesanal",
+            "#pizzaquentinha",
+            "#peçajá",
+            "#deliverydepizza",
+            "#segunda"
+          ],
+          "cta": "Linha 1 = micro-ação (🐔/🧀). Linha 2 = ordem suave (\"manda FRANGO\"). Responder TODO comentário com outra pergunta (Hormozi).",
+          "status": "producao",
+          "novidade": false,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-03",
+          "dia": "QUA",
+          "formato": "carrossel",
+          "sabor": "Nutella com Morangos Frescos",
+          "tema": "Pizza de Nutella com Morangos Frescos — conceito \"ZOOM\"",
+          "pilar": "produto",
+          "gancho": "A gente deu o zoom pra você. 🔍 Nova Pizza de Nutella com Morangos Frescos — estreia semana que vem! Salva e marca quem vai querer dividir. 🍫🍓",
+          "legenda_curta": "A gente deu o zoom pra você. 🔍 Nova Pizza de Nutella com Morangos Frescos — estreia semana que vem! Salva e marca quem vai querer dividir. 🍫🍓",
+          "hashtags": [
+            "#supremapizza",
+            "#pizzadenutella",
+            "#nutellacommorango",
+            "#pizzadoce",
+            "#pizzaartesanal",
+            "#blumenau",
+            "#aguaverde",
+            "#sobremesa"
+          ],
+          "cta": "Teaser de lançamento — estreia semana que vem. CTA = salvar o post + marcar amigo (engajamento honesto). NÃO direcionar compra ainda (produto não disponível). Quando lançar, trocar pra \"peça a sua pelo link da bio\". NÃO usar \"garante a sua\" / \"manda X e leva Y\" (ver regra Fenice de CTA em foto).",
+          "status": "aprovado",
+          "novidade": true,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-05",
+          "dia": "SEX",
+          "formato": "video",
+          "sabor": "Calabresa",
+          "tema": "Calabresa Artesanal (clássico renovado)",
+          "pilar": "produto",
+          "gancho": "🍺 ou 🥤 com a calabresa de hoje? Responde só com o emoji.",
+          "legenda_curta": "Sextou. Calabresa artesanal saindo do forno. 🍺 ou 🥤? Responde o emoji.",
+          "hashtags": [
+            "#supremapizza",
+            "#calabresa",
+            "#pizzaartesanal",
+            "#sextou",
+            "#pizzaquentinha",
+            "#peçajá",
+            "#deliverydepizza"
+          ],
+          "cta": "Emoji 🍺/🥤 + palavra-chave \"COMBO\". (Combo pizza+bebida = âncora de ticket, confirmar com cliente.)",
+          "status": "producao",
+          "novidade": false,
+          "sazonal": null
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "label": "Semana 2",
+      "posts": [
+        {
+          "data": "2026-06-08",
+          "dia": "SEG",
+          "formato": "video",
+          "sabor": "Nutella com Morangos Frescos",
+          "tema": "LANÇAMENTO — Pizza de Nutella com Morangos Frescos",
+          "pilar": "promo",
+          "gancho": "Nutella DE VERDADE + morango fresco, na massa que você já ama. Chegou na Suprema. 🍫🍓 Valeu a espera.",
+          "legenda_curta": "Nutella DE VERDADE + morango fresco, na massa que você já ama. Chegou na Suprema. 🍫🍓 Valeu a espera.",
+          "hashtags": [
+            "#supremapizza",
+            "#pizzadenutella",
+            "#nutellacommorango",
+            "#pizzadoce",
+            "#pizzaartesanal",
+            "#blumenau",
+            "#aguaverde",
+            "#sobremesa",
+            "#lancamento"
+          ],
+          "cta": "\"PEÇA A SUA PELO LINK DA BIO\" (card final) + marcar amigo na legenda. Deixa claro que chegou essa semana (sem cravar data). NÃO usar \"garante a sua\" (regra Fenice de CTA em foto).",
+          "status": "pronto",
+          "novidade": true,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-10",
+          "dia": "QUA",
+          "formato": "carrossel",
+          "sabor": "Geleia de Pimenta com Queijo Brie",
+          "tema": "Queijo Brie com Geleia de Pimenta",
+          "pilar": "produto",
+          "gancho": "O doce que encontra o ardidinho. 🧀🌶️",
+          "legenda_curta": "O doce que encontra o ardidinho. 🧀🌶️",
+          "hashtags": [
+            "#supremapizza",
+            "#queijobrie",
+            "#geleiadepimenta",
+            "#pizzapremium",
+            "#pizzaartesanal",
+            "#blumenau",
+            "#aguaverde",
+            "#pizzadoceousalgada"
+          ],
+          "cta": "",
+          "status": "pronto",
+          "novidade": true,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-12",
+          "dia": "SEX",
+          "formato": "video",
+          "sabor": "A Suprema / Chocolate com Morango (combo casal)",
+          "tema": "DIA DOS NAMORADOS (sazonal) — pizza a dois",
+          "pilar": "instit",
+          "gancho": "Pizza a dois combina mais com qual sabor? Marca seu par e já escolham 💞",
+          "legenda_curta": "Dia dos Namorados é melhor com pizza a dois. Marca seu par 💞🍕",
+          "hashtags": [
+            "#supremapizza",
+            "#diadosnamorados",
+            "#pizzaadois",
+            "#datediapizza",
+            "#pizzaartesanal",
+            "#peçajá",
+            "#namorados"
+          ],
+          "cta": "\"Marca seu par\" — gera marcação (alcance) + comentário.",
+          "status": "a-aprovar",
+          "novidade": false,
+          "sazonal": "Dia dos Namorados"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "label": "Semana 3",
+      "posts": [
+        {
+          "data": "2026-06-15",
+          "dia": "SEG",
+          "formato": "video",
+          "sabor": "Bastidores",
+          "tema": "Bastidores / Processo (forno a lenha)",
+          "pilar": "bastidor",
+          "gancho": "Adivinha quanto tempo essa pizza leva pra ficar pronta? Chuta nos comentários ⏱️🔥",
+          "legenda_curta": "Do zero ao forno: assim nasce uma Suprema. Quanto tempo será que leva? ⏱️",
+          "hashtags": [
+            "#supremapizza",
+            "#bastidores",
+            "#feitoamao",
+            "#pizzaartesanal",
+            "#fornoalenha",
+            "#pizzadeverdade",
+            "#peçajá"
+          ],
+          "cta": "\"Chuta quanto tempo leva\" — pergunta lúdica, ótima pra comentário.",
+          "status": "a-aprovar",
+          "novidade": false,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-17",
+          "dia": "QUA",
+          "formato": "carrossel",
+          "sabor": "Borda de Pasta de Alho (Santa Massa)",
+          "tema": "Borda de Pasta de Alho (Santa Massa)",
+          "pilar": "promo",
+          "gancho": "Sua Suprema agora tem BORDA DE PASTA DE ALHO. 🧄🔥",
+          "legenda_curta": "Sua Suprema agora tem BORDA DE PASTA DE ALHO. 🧄🔥",
+          "hashtags": [
+            "#supremapizza",
+            "#bordarecheada",
+            "#bordadealho",
+            "#santamassa",
+            "#pizzaartesanal",
+            "#blumenau",
+            "#aguaverde"
+          ],
+          "cta": "",
+          "status": "pronto",
+          "novidade": true,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-19",
+          "dia": "SEX",
+          "formato": "video",
+          "sabor": "Bacon com Tomate e Catupiry",
+          "tema": "Bacon, Tomate e Catupiry + branding da caixa",
+          "pilar": "instit",
+          "gancho": "Adivinha o que tá saindo da caixa hoje? 🍕🥓",
+          "legenda_curta": "Sexta com bacon, tomate e catupiry direto da caixa Suprema. Bora? 🍕🥓",
+          "hashtags": [
+            "#supremapizza",
+            "#bacon",
+            "#pizzaartesanal",
+            "#sextou",
+            "#pizzaquentinha",
+            "#peçajá",
+            "#deliverydepizza"
+          ],
+          "cta": "\"Sexta é dia de quê?\" — pergunta aberta, fácil de responder.",
+          "status": "a-aprovar",
+          "novidade": false,
+          "sazonal": null
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "label": "Semana 4",
+      "posts": [
+        {
+          "data": "2026-06-22",
+          "dia": "SEG",
+          "formato": "video",
+          "sabor": "Geleia de Pimenta com Queijo Brie",
+          "tema": "Geleia de Pimenta com Brie (NOVIDADE gourmet)",
+          "pilar": "promo",
+          "gancho": "Doce com picante: você encara ou passa longe? Comenta 🌶️",
+          "legenda_curta": "Geleia de pimenta com brie. Doce + picante: você encara? 🌶️🧀",
+          "hashtags": [
+            "#supremapizza",
+            "#pizzagourmet",
+            "#brie",
+            "#geleiadepimenta",
+            "#pizzaartesanal",
+            "#saborinesquecível",
+            "#peçajá"
+          ],
+          "cta": "\"Encara ou passa longe?\" — escolha provocativa, gera resposta.",
+          "status": "a-aprovar",
+          "novidade": true,
+          "sazonal": null
+        },
+        {
+          "data": "2026-06-24",
+          "dia": "QUA",
+          "formato": "carrossel",
+          "sabor": "Doce de Leite com Paçoca",
+          "tema": "FESTA JUNINA — Doce de Leite com Paçoca (sabor novo)",
+          "pilar": "promo",
+          "gancho": "Chegou o arraiá da Suprema! 🎉🌽🎶",
+          "legenda_curta": "Chegou o arraiá da Suprema! 🎉🌽🎶",
+          "hashtags": [
+            "#supremapizza",
+            "#festajunina",
+            "#saojoao",
+            "#docedeleite",
+            "#paçoca",
+            "#pizzadoce",
+            "#pizzaartesanal",
+            "#blumenau",
+            "#arraiá"
+          ],
+          "cta": "",
+          "status": "a-aprovar",
+          "novidade": true,
+          "sazonal": "Festa Junina / São João"
+        },
+        {
+          "data": "2026-06-26",
+          "dia": "SEX",
+          "formato": "video",
+          "sabor": "Mussarela / 4 Queijos",
+          "tema": "Mussarela / Cheese Pull (queijo esticando)",
+          "pilar": "produto",
+          "gancho": "Esse cheese pull é hipnotizante ou é só impressão minha? Comenta 🧀",
+          "legenda_curta": "Liga o som e olha esse queijo esticando. Hipnotizante ou não? 🧀",
+          "hashtags": [
+            "#supremapizza",
+            "#cheesepull",
+            "#queijo",
+            "#mussarela",
+            "#pizzaartesanal",
+            "#sextou",
+            "#peçajá"
+          ],
+          "cta": "\"Hipnotizante ou impressão?\" — pergunta leve + chama pra ligar o som (retenção).",
+          "status": "a-aprovar",
+          "novidade": false,
+          "sazonal": null
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "label": "Semana 5",
+      "posts": [
+        {
+          "data": "2026-06-29",
+          "dia": "SEG",
+          "formato": "video",
+          "sabor": "A Suprema (calabresa carro-chefe)",
+          "tema": "A Suprema (branding institucional)",
+          "pilar": "instit",
+          "gancho": "Já provou A Suprema? Conta pra gente o que achou 👇 (e quem ainda não provou, qual sabor vai pedir primeiro?)",
+          "legenda_curta": "Existe pizza. E existe A Suprema. Já provou? 🍕",
+          "hashtags": [
+            "#supremapizza",
+            "#asuprema",
+            "#pizzaartesanal",
+            "#pizzadeverdade",
+            "#sabordeverdade",
+            "#peçajá",
+            "#deliverydepizza"
+          ],
+          "cta": "Duas perguntas (já provou? / qual pediria?) — capta tanto cliente quanto quem ainda não é.",
+          "status": "a-aprovar",
+          "novidade": false,
+          "sazonal": null
+        }
+      ]
+    }
+  ]
+}

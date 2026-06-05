@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://supremapizza.fenicelab.com.br/data/ficha.schema.json",
+  "title": "Ficha do Cliente — Portal Fenice Lab (white-label)",
+  "description": "Schema semântico da ficha que alimenta o portal de um cliente. O HTML é o molde; a ficha é o cliente.",
+  "type": "object",
+  "required": ["cliente", "contato", "tokens", "tipografia", "abas", "galeria"],
+  "additionalProperties": true,
+  "properties": {
+    "$schema": { "type": "string" },
+    "_meta": {
+      "type": "object",
+      "properties": {
+        "versao": { "type": "string" },
+        "gerado_por": { "type": "string" },
+        "atualizado_em": { "type": "string" },
+        "fonte_da_verdade": { "type": "string" },
+        "placeholder": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+
+    "cliente": {
+      "type": "object",
+      "required": ["slug", "nome", "logo", "wordmark", "tagline"],
+      "additionalProperties": true,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "nome": { "type": "string", "minLength": 1 },
+        "segmento": { "type": "string" },
+        "cidade": { "type": "string" },
+        "uf": { "type": "string", "minLength": 2, "maxLength": 2 },
+        "logo": { "type": "string", "minLength": 1 },
+        "wordmark": {
+          "type": "object",
+          "required": ["linha1"],
+          "properties": {
+            "linha1": { "type": "string", "minLength": 1 },
+            "linha2": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "subtitulo": { "type": "string" },
+        "tagline": { "type": "string", "minLength": 1 },
+        "live_label": { "type": "string" }
+      }
+    },
+
+    "contato": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "endereco": { "type": "string" },
+        "telefone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "email": { "type": "string" },
+        "instagram": { "type": "string" },
+        "instagram_url": { "type": "string" },
+        "cardapio_digital": { "type": "string" },
+        "site": { "type": "string" }
+      }
+    },
+
+    "tokens": {
+      "type": "object",
+      "description": "Conjunto canônico --sup-* (espelho de colors_and_type.css). Valores hex (#RGB/#RRGGBB) ou rgba()/var().",
+      "minProperties": 1,
+      "patternProperties": {
+        "^(sup-)?[a-z0-9-]+$": {
+          "type": "string",
+          "pattern": "^(#[0-9A-Fa-f]{3,8}|rgba?\\([^)]+\\)|var\\(--[^)]+\\))$"
+        }
+      },
+      "properties": {
+        "_nota": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "tokens_wrapper": {
+      "type": "object",
+      "description": "Tokens injetados no :root do wrapper (pixel-equivalentes ao estado no ar).",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "string",
+          "pattern": "^(#[0-9A-Fa-f]{3,8}|rgba?\\([^)]+\\)|var\\(--[^)]+\\))$"
+        }
+      },
+      "properties": {
+        "_nota": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "tipografia": {
+      "type": "object",
+      "required": ["corpo", "display"],
+      "additionalProperties": false,
+      "properties": {
+        "corpo": { "$ref": "#/$defs/fontFace" },
+        "display": { "$ref": "#/$defs/fontFace" }
+      }
+    },
+
+    "abas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "rotulo", "tipo"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "rotulo": { "type": "string", "minLength": 1 },
+          "novo": { "type": "boolean" },
+          "tipo": { "type": "string", "enum": ["iframe", "interno"] },
+          "src": { "type": "string" },
+          "src_eager": { "type": "boolean" },
+          "link_externo": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "tipo": { "const": "iframe" } } },
+            "then": { "required": ["src"] }
+          }
+        ]
+      }
+    },
+
+    "galeria": {
+      "type": "object",
+      "required": ["base", "arquivos"],
+      "additionalProperties": true,
+      "properties": {
+        "_nota": { "type": "string" },
+        "base": { "type": "string" },
+        "categorias": { "type": "array", "items": { "type": "string" } },
+        "videos": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "base": { "type": "string" },
+            "total_catalogado": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "arquivos": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "\\.(jpg|jpeg|png|webp)$" }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "fontFace": {
+      "type": "object",
+      "required": ["familia", "pesos"],
+      "additionalProperties": true,
+      "properties": {
+        "familia": { "type": "string", "minLength": 1 },
+        "pesos": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 100, "maximum": 900 },
+          "minItems": 1
+        },
+        "fonte": { "type": "string" },
+        "uso": { "type": "string" }
+      }
+    }
+  }
+}

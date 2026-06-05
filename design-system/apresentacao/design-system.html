@@ -100,7 +100,7 @@
   .l3{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--s2)}
   .l3 .st{height:150px;display:flex;align-items:center;justify-content:center;padding:24px}
   .l3 .st img{max-width:80%;max-height:90px}
-  .l3 .st svg{max-height:80px}
+  .l3 .st svg,.l3 .st img{max-height:80px}
   .l3 .cp{padding:14px 16px;border-top:1px solid var(--line)}
   .l3 .cp b{font-family:var(--display);font-weight:800;font-size:15px;text-transform:uppercase;color:#fff;display:block}
   .l3 .cp span{font-size:12px;color:var(--cinza)}
@@ -149,11 +149,11 @@
   /* app icon + favicon + avatar */
   .icon-row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end;margin-top:8px}
   .appicon{width:86px;height:86px;border-radius:20px;background:var(--vermelho);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.5)}
-  .appicon svg{width:54px}
+  .appicon svg,.appicon img{width:54px}
   .favicon{width:32px;height:32px;border-radius:7px;background:var(--vermelho);display:flex;align-items:center;justify-content:center}
-  .favicon svg{width:22px}
+  .favicon svg,.favicon img{width:22px}
   .avatarc{width:64px;height:64px;border-radius:50%;background:#0F0F0F;border:2px solid var(--vermelho);display:flex;align-items:center;justify-content:center}
-  .avatarc svg{width:40px}
+  .avatarc svg,.avatarc img{width:40px}
   .icon-item{display:flex;flex-direction:column;align-items:center;gap:8px}
   .icon-item span{font-size:11px;color:var(--cinza)}
 
@@ -166,6 +166,26 @@
   .bp .cols{display:flex;gap:5px;height:54px}
   .bp .cols i{flex:1;background:rgba(214,40,40,.25);border:1px solid rgba(214,40,40,.4);border-radius:4px}
   .bp .meta2{font-size:12px;color:var(--cinza);margin-top:12px;line-height:1.5}
+
+  /* chip "copiar token" nos cards de cor (Sprint 2) */
+  .tok-chip{display:inline-flex;align-items:center;gap:5px;margin-top:7px;font-family:ui-monospace,Menlo,monospace;
+    font-size:11px;color:var(--vermelho-lt);background:rgba(214,40,40,.1);border:1px solid rgba(214,40,40,.28);
+    border-radius:999px;padding:4px 10px;cursor:pointer;transition:.18s var(--ease);line-height:1}
+  .tok-chip::before{content:"⧉";font-size:11px;opacity:.85}
+  .tok-chip:hover{background:var(--vermelho);color:#fff;border-color:var(--vermelho)}
+
+  /* casos-limite de logo (Sprint 4) */
+  .logo-bgs{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:680px){.logo-bgs{grid-template-columns:1fr 1fr}}
+  .lbg{flex-direction:column;height:auto;padding:0;border-radius:14px}
+  .lbg .stg{width:100%;height:118px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:14px 14px 0 0}
+  .lbg .stg img.lg{width:62%;max-width:130px;position:relative;z-index:1}
+  .lbg .ok.w{background:#E3A008;color:#1a1a1a}
+  .lbg .cap2{padding:11px 14px;border-top:1px solid var(--line);width:100%}
+  .lbg .cap2 b{display:block;font-size:12.5px;color:#fff;font-weight:700}
+  .lbg .cap2 .st{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .lbg .cap2 .st.y{color:#3FB950}.lbg .cap2 .st.w{color:#E3A008}.lbg .cap2 .st.n{color:var(--vermelho-lt)}
+  .lbg .cap2 span.dsc{display:block;font-size:11px;color:var(--cinza);margin-top:3px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -241,16 +261,16 @@
   <p class="lead rv d2">Base preta, marca vermelha, texto branco. Bege e cinzas são apoio. Clique em qualquer cor para copiar o HEX.</p>
   <div class="grp rv">Primárias</div>
   <div class="palette rv d1">
-    <div class="pc" data-hex="#0F0F0F"><div class="c" style="background:#0F0F0F;border:1px solid #2a2a2a"><b style="color:#fff">Preto Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#0F0F0F</div><div class="u">Fundo principal</div></div></div>
-    <div class="pc" data-hex="#D62828"><div class="c" style="background:#D62828"><b style="color:#fff">Vermelho Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#D62828</div><div class="u">Marca · CTA · destaque</div></div></div>
-    <div class="pc" data-hex="#FFFFFF"><div class="c" style="background:#fff"><b style="color:#0F0F0F">Branco</b><span class="copy" style="background:rgba(0,0,0,.5)">copiar</span></div><div class="m"><div class="h">#FFFFFF</div><div class="u">Texto sobre preto</div></div></div>
+    <div class="pc" data-hex="#0F0F0F" data-token="--sup-carvao"><div class="c" style="background:#0F0F0F;border:1px solid #2a2a2a"><b style="color:#fff">Preto Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#0F0F0F</div><button class="tok-chip" data-token="--sup-carvao" type="button" title="copiar token CSS">--sup-carvao</button><div class="u">Fundo principal</div></div></div>
+    <div class="pc" data-hex="#D62828" data-token="--sup-vermelho"><div class="c" style="background:#D62828"><b style="color:#fff">Vermelho Suprema</b><span class="copy">copiar</span></div><div class="m"><div class="h">#D62828</div><button class="tok-chip" data-token="--sup-vermelho" type="button" title="copiar token CSS">--sup-vermelho</button><div class="u">Marca · CTA · destaque</div></div></div>
+    <div class="pc" data-hex="#FFFFFF" data-token="--sup-branco"><div class="c" style="background:#fff"><b style="color:#0F0F0F">Branco</b><span class="copy" style="background:rgba(0,0,0,.5)">copiar</span></div><div class="m"><div class="h">#FFFFFF</div><button class="tok-chip" data-token="--sup-branco" type="button" title="copiar token CSS">--sup-branco</button><div class="u">Texto sobre preto</div></div></div>
   </div>
   <div class="grp rv">Apoio</div>
   <div class="palette rv d1">
-    <div class="pc" data-hex="#FFEBDC"><div class="c" style="background:#FFEBDC"><b style="color:#B71C1C">Bege Massa</b><span class="copy" style="background:rgba(0,0,0,.45)">copiar</span></div><div class="m"><div class="h">#FFEBDC</div><div class="u">Halo de legenda (peças)</div></div></div>
-    <div class="pc" data-hex="#B71C1C"><div class="c" style="background:#B71C1C"><b style="color:#fff">Vermelho Escuro</b><span class="copy">copiar</span></div><div class="m"><div class="h">#B71C1C</div><div class="u">Hover · profundidade</div></div></div>
-    <div class="pc" data-hex="#9A9A9A"><div class="c" style="background:#9A9A9A"><b style="color:#fff">Cinza</b><span class="copy">copiar</span></div><div class="m"><div class="h">#9A9A9A</div><div class="u">Texto secundário</div></div></div>
-    <div class="pc" data-hex="#161616"><div class="c" style="background:#161616;border:1px solid #2a2a2a"><b style="color:#fff">Grafite</b><span class="copy">copiar</span></div><div class="m"><div class="h">#161616</div><div class="u">Cards · superfície alt</div></div></div>
+    <div class="pc" data-hex="#FFEBDC" data-token="--sup-bege"><div class="c" style="background:#FFEBDC"><b style="color:#B71C1C">Bege Massa</b><span class="copy" style="background:rgba(0,0,0,.45)">copiar</span></div><div class="m"><div class="h">#FFEBDC</div><button class="tok-chip" data-token="--sup-bege" type="button" title="copiar token CSS">--sup-bege</button><div class="u">Halo de legenda (peças)</div></div></div>
+    <div class="pc" data-hex="#B71C1C" data-token="--sup-vermelho-dk"><div class="c" style="background:#B71C1C"><b style="color:#fff">Vermelho Escuro</b><span class="copy">copiar</span></div><div class="m"><div class="h">#B71C1C</div><button class="tok-chip" data-token="--sup-vermelho-dk" type="button" title="copiar token CSS">--sup-vermelho-dk</button><div class="u">Hover · profundidade</div></div></div>
+    <div class="pc" data-hex="#9A9A9A" data-token="--sup-cinza"><div class="c" style="background:#9A9A9A"><b style="color:#fff">Cinza</b><span class="copy">copiar</span></div><div class="m"><div class="h">#9A9A9A</div><button class="tok-chip" data-token="--sup-cinza" type="button" title="copiar token CSS">--sup-cinza</button><div class="u">Texto secundário</div></div></div>
+    <div class="pc" data-hex="#161616" data-token="--sup-grafite"><div class="c" style="background:#161616;border:1px solid #2a2a2a"><b style="color:#fff">Grafite</b><span class="copy">copiar</span></div><div class="m"><div class="h">#161616</div><button class="tok-chip" data-token="--sup-grafite" type="button" title="copiar token CSS">--sup-grafite</button><div class="u">Cards · superfície alt</div></div></div>
   </div>
   <div class="grp rv">Pares aprovados</div>
   <div class="pairs rv d1">
@@ -271,14 +291,18 @@
   <div class="logos3 rv d1">
     <div class="l3"><div class="st" style="background:#fff"><img src="../assets/logo-suprema-vermelho.png" alt=""></div><div class="cp"><b>1 · Vermelha</b><span>Fundo claro · principal</span></div></div>
     <div class="l3"><div class="st" style="background:#0F0F0F"><img src="../assets/logo-suprema-branco.png" alt=""></div><div class="cp"><b>2 · Branca</b><span>Fundo escuro / foto</span></div></div>
-    <div class="l3"><div class="st" style="background:#161616"><svg viewBox="0 0 220 150" width="120"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g></svg></div><div class="cp"><b>3 · Símbolo</b><span>Espaço reduzido · avatar</span></div></div>
+    <div class="l3"><div class="st" style="background:#161616"><img src="../assets/grafismos/selo-suprema-duotone.svg" width="120" alt="Selo Suprema — simbolo"></div><div class="cp"><b>3 · Símbolo</b><span>Espaço reduzido · avatar</span></div></div>
   </div>
-  <div class="grp rv">Sobre fundos</div>
+  <div class="grp rv">Sobre fundos — casos-limite</div>
+  <p class="lead rv d2" style="margin-top:8px">Verde = pode · amarelo = atenção (avalie contraste) · vermelho = proibido. A leitura da marca vem antes da estética.</p>
   <div class="logo-bgs rv d1">
-    <div class="lbg" style="background:#fff"><img src="../assets/logo-suprema-vermelho.png" alt=""><span class="ok y">✓</span></div>
-    <div class="lbg" style="background:#0F0F0F"><img src="../assets/logo-suprema-branco.png" alt=""><span class="ok y">✓</span></div>
-    <div class="lbg" style="background:#D62828"><img src="../assets/logo-suprema-branco.png" alt=""><span class="ok y">✓</span></div>
-    <div class="lbg" style="background:#000"><img src="../assets/photos/foto-60.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85"><img src="../assets/logo-suprema-branco.png" style="position:relative;z-index:1"><span class="ok y">✓</span></div>
+    <div class="lbg"><div class="stg" style="background:#fff"><img class="lg" src="../assets/logo-suprema-vermelho.png" alt=""><span class="ok y">✓</span></div><div class="cap2"><b>Fundo claro</b><span class="st y">OK</span><span class="dsc">Logo vermelha — contraste cheio.</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#0F0F0F"><img class="lg" src="../assets/logo-suprema-branco.png" alt=""><span class="ok y">✓</span></div><div class="cap2"><b>Fundo escuro</b><span class="st y">OK</span><span class="dsc">Logo branca — combinação principal.</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#D62828"><img class="lg" src="../assets/logo-suprema-branco.png" alt=""><span class="ok w">!</span></div><div class="cap2"><b>Fundo vermelho</b><span class="st w">Atenção</span><span class="dsc">Só a versão branca; nunca a vermelha (some).</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#000"><img src="../assets/photos/foto-01.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92"><img class="lg" src="../assets/logo-suprema-branco.png" alt=""><span class="ok w">!</span></div><div class="cap2"><b>Foto baixo contraste</b><span class="st w">Atenção</span><span class="dsc">Área clara da foto come a logo branca — escureça ou reposicione.</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#FFEBDC"><img class="lg" src="../assets/logo-suprema-branco.png" alt=""><span class="ok n">✕</span></div><div class="cap2"><b>Branca sobre bege</b><span class="st n">Proibido</span><span class="dsc">Sem contraste. Use a versão vermelha sobre o bege.</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#fff"><img class="lg" src="../assets/grafismos/selo-suprema-vermelho.svg" alt="" style="width:18%;min-width:26px"><span class="ok n">✕</span></div><div class="cap2"><b>Tamanho mínimo</b><span class="st n">Proibido</span><span class="dsc">Abaixo do mínimo (logo &lt; 18–22px / símbolo &lt; 16px) a marca some — troque pelo símbolo.</span></div></div>
+    <div class="lbg"><div class="stg" style="background:#161616"><img class="lg" src="../assets/grafismos/selo-suprema-branco.svg" alt="" style="filter:grayscale(1)"><span class="ok w">!</span></div><div class="cap2"><b>Monocromático</b><span class="st w">Atenção</span><span class="dsc">Em 1 cor (preto/branco), use só o símbolo cheio — sem meios-tons.</span></div></div>
   </div>
 </section>
 
@@ -289,8 +313,8 @@
   <h2 class="rv d1">Cada tamanho,<br>uma <em>versão.</em></h2>
   <p class="lead rv d2">Quanto menor o espaço, mais simples a versão. Abaixo dos mínimos, troque a assinatura completa pelo símbolo.</p>
   <div class="ctx-grid rv d1">
-    <div class="ctx"><div class="demo"><span class="sym"><svg viewBox="0 0 220 150" width="22"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g></svg></span></div><b>Favicon</b><div class="px">16–32px</div><div class="use">Símbolo</div></div>
-    <div class="ctx"><div class="demo"><svg viewBox="0 0 220 150" width="44"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g></svg></div><b>App / Avatar</b><div class="px">≥ 88px</div><div class="use">Símbolo</div></div>
+    <div class="ctx"><div class="demo"><span class="sym"><img src="../assets/grafismos/selo-suprema-vermelho.svg" width="22" alt="Selo Suprema"></span></div><b>Favicon</b><div class="px">16–32px</div><div class="use">Símbolo</div></div>
+    <div class="ctx"><div class="demo"><img src="../assets/grafismos/selo-suprema-vermelho.svg" width="44" alt="Selo Suprema"></div><b>App / Avatar</b><div class="px">≥ 88px</div><div class="use">Símbolo</div></div>
     <div class="ctx"><div class="demo"><img src="../assets/logo-suprema-branco.png" style="width:96px"></div><b>Header mobile</b><div class="px">28–34px alt.</div><div class="use">Assinatura</div></div>
     <div class="ctx"><div class="demo"><img src="../assets/logo-suprema-branco.png" style="width:140px"></div><b>Header desktop</b><div class="px">40–56px alt.</div><div class="use">Assinatura</div></div>
     <div class="ctx"><div class="demo"><img src="../assets/logo-suprema-branco.png" style="width:120px"></div><b>Impressão</b><div class="px">≥ 30mm larg.</div><div class="use">Assinatura</div></div>
@@ -319,9 +343,9 @@
   </div>
   <div class="grp rv">Ícone, favicon &amp; avatar</div>
   <div class="icon-row rv d1">
-    <div class="icon-item"><div class="appicon"><svg viewBox="0 0 220 150"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g></svg></div><span>Ícone de app</span></div>
-    <div class="icon-item"><div class="favicon"><svg viewBox="0 0 220 150"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g></svg></div><span>Favicon</span></div>
-    <div class="icon-item"><div class="avatarc"><svg viewBox="0 0 220 150"><g transform="rotate(34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#fff"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#fff"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#fff"/></g><g transform="rotate(-34 110 75)"><rect x="34" y="64" width="152" height="22" rx="11" fill="#D62828"/><rect x="20" y="58" width="14" height="34" rx="5" fill="#D62828"/><rect x="186" y="58" width="14" height="34" rx="5" fill="#D62828"/></g></svg></div><span>Avatar social</span></div>
+    <div class="icon-item"><div class="appicon"><img src="../assets/grafismos/selo-suprema-branco.svg" alt="Selo Suprema — branco"></div><span>Ícone de app</span></div>
+    <div class="icon-item"><div class="favicon"><img src="../assets/grafismos/selo-suprema-branco.svg" alt="Selo Suprema — branco"></div><span>Favicon</span></div>
+    <div class="icon-item"><div class="avatarc"><img src="../assets/grafismos/selo-suprema-duotone.svg" alt="Selo Suprema — avatar"></div><span>Avatar social</span></div>
   </div>
 </section>
 

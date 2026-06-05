@@ -4,7 +4,9 @@
    Tema: ESCURO (carvão + vermelho Suprema + branco)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* Fontes auto-hospedadas (Onda 1): Poppins (corpo) + Saira Condensed (display).
+   Substitui o @import do Google Fonts. */
+@import url('./assets/fonts/fonts.css');
 
 :root {
   /* ---------- COR · Superfícies escuras (tema base) ---------- */
@@ -24,6 +26,7 @@
   --sup-branco:      #FFFFFF;   /* texto primário                */
   --sup-cinza:       #9A9A9A;   /* texto secundário              */
   --sup-cinza-esc:   #6E6E6E;   /* texto desativado / legendas   */
+  --sup-cinza-leg:   #B0B0B0;   /* legenda LEGÍVEL (>=6:1 sobre carvão) — usar p/ texto */
 
   /* ---------- COR · Conteúdo social (halo de legenda) ---------- */
   /* Usar SOMENTE em peças sociais sobre foto — nunca na UI escura. */
@@ -42,7 +45,7 @@
 
   /* ---------- TIPOGRAFIA · Famílias ---------- */
   --sup-font:        'Poppins', system-ui, -apple-system, sans-serif;
-  --sup-font-display:'Poppins', system-ui, sans-serif; /* caps pesado p/ títulos */
+  --sup-font-display:'Saira Condensed', 'Poppins', system-ui, sans-serif; /* display caps pesado p/ títulos */
 
   /* ---------- TIPOGRAFIA · Pesos ---------- */
   --sup-w-light:  300;   /* "PIZZA" do logo / kicker fino   */
@@ -129,7 +132,7 @@
 .sup-small {
   font-size: 13px;
   line-height: 1.5;
-  color: var(--sup-cinza-esc);
+  color: var(--sup-cinza-leg);   /* Onda 1: legenda legível (AA) */
 }
 .sup-price {
   font-family: var(--sup-font);

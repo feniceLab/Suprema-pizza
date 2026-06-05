@@ -266,6 +266,59 @@
 .cover .inner{position:relative;z-index:2}
 .cover .meta{position:relative;z-index:2}
 .epi{font-family:var(--display,'Saira Condensed');font-weight:300;font-style:italic;text-transform:none;font-size:clamp(15px,1.9vw,21px);color:var(--bege,#FFEBDC);letter-spacing:.01em;margin-top:14px;max-width:680px;line-height:1.4;padding-left:16px;border-left:2px solid var(--vermelho,#D62828)}
+
+  /* ===== PROVA / REASON-WHY (Sprint 4) — bloqueado por dados, placeholders [X] ===== */
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+  @media(max-width:820px){.proof{grid-template-columns:1fr}}
+  .proof .pf{background:var(--s2);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
+  .proof .pf .ic{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--vermelho-lt);margin-bottom:12px}
+  .proof .pf .big{font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,44px);line-height:.95;color:#fff}
+  .proof .pf .big em{color:var(--vermelho);font-style:normal}
+  .proof .pf p{font-size:13.5px;line-height:1.5;color:var(--cinza);margin-top:10px}
+  .ph-x{display:inline-block;min-width:1.1em;text-align:center;color:var(--vermelho-lt);
+    background:rgba(214,40,40,.12);border:1px dashed rgba(214,40,40,.4);border-radius:5px;padding:0 .18em;font-style:normal}
+  .pf-note{margin-top:18px;font-size:12px;color:var(--cinza-esc);display:flex;align-items:center;gap:8px}
+  .pf-note .dot{width:7px;height:7px;border-radius:50%;background:var(--vermelho)}
+
+  /* ===== RESUMO DE BOLSO A4 (Sprint 3) ===== */
+  .bolso-wrap{margin-top:26px}
+  .bolso{background:#fff;color:#1A1A1A;border-radius:14px;overflow:hidden;max-width:840px;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid #e6e6e6}
+  .bolso .bhead{background:#0F0F0F;color:#fff;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .bolso .bhead img{height:30px}
+  .bolso .bhead .ttl{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:18px}
+  .bolso .bhead .ttl span{color:var(--vermelho-lt)}
+  .bolso .bgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#e6e6e6}
+  @media(max-width:760px){.bolso .bgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.bolso .bgrid{grid-template-columns:1fr}}
+  .bolso .bc{background:#fff;padding:20px 22px}
+  .bolso .bc h4{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+    font-size:12px;color:#D62828;margin-bottom:9px}
+  .bolso .bc p{font-size:13px;line-height:1.55;color:#333}
+  .bolso .bc .tag{font-weight:700;color:#0F0F0F}
+  .bolso .swatches{display:flex;gap:7px;margin-top:4px;flex-wrap:wrap}
+  .bolso .sw{display:flex;flex-direction:column;align-items:center;gap:4px;font-family:ui-monospace,monospace;font-size:9.5px;color:#555}
+  .bolso .sw i{width:30px;height:30px;border-radius:7px;border:1px solid rgba(0,0,0,.12)}
+  .bolso .bfoot{background:#FFEBDC;color:#1A1A1A;padding:13px 26px;font-size:11.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .bolso .bfoot b{color:#B71C1C}
+  .bolso .bx{display:inline-block;color:#B71C1C;background:rgba(214,40,40,.1);border:1px dashed rgba(214,40,40,.4);border-radius:4px;padding:0 .2em;font-weight:700}
+  .bolso-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .bolso-actions button{display:inline-flex;align-items:center;gap:8px;background:var(--vermelho);color:#fff;border:none;
+    font-family:var(--font);font-weight:700;font-size:13px;padding:12px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease)}
+  .bolso-actions button:hover{background:var(--vermelho-dk);transform:translateY(-2px)}
+  .bolso-actions .hint{font-size:12px;color:var(--cinza-esc);align-self:center}
+
+  /* ===== IMPRESSÃO A4 — só o resumo de bolso sai no papel ===== */
+  @media print{
+    @page{size:A4;margin:12mm}
+    body{background:#fff !important}
+    .nav,.bb-index,#prog,footer,.scrollcue,.bolso-actions{display:none !important}
+    body > section:not(#bolso),body > header:not(#bolso),.credits{display:none !important}
+    #bolso{display:block !important;padding:0 !important;background:#fff !important}
+    #bolso .num,#bolso .kicker,#bolso h2,#bolso .epi,#bolso .lead{display:none !important}
+    #bolso .bolso{box-shadow:none;border:1px solid #bbb;max-width:100%}
+    #bolso .bolso, #bolso .bolso *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
 </style>
 </head>
 <body>
@@ -279,6 +332,7 @@
     <a href="#tipografia">Tipografia</a>
     <a href="#acao">Em ação</a>
     <a href="#materiais">Materiais</a>
+    <a href="#bolso">Bolso</a>
   </div>
 </nav>
 <div id="prog"></div>
@@ -367,6 +421,17 @@
     <div class="pillar"><div class="n">02</div><b>Artesanal</b><p>Massa fresca, feito com cuidado.</p></div>
     <div class="pillar"><div class="n">03</div><b>Apetitoso</b><p>Tudo gera vontade de dar uma garfada.</p></div>
   </div>
+  <div class="grp rv">Prova · reason-why</div>
+  <p class="lead rv d2" style="margin-top:8px">Promessa sem prova é só slogan. Os números abaixo sustentam o discurso — <strong>pendentes de confirmação com o cliente</strong> (marcados <span class="ph-x">[X]</span>).</p>
+  <div class="proof rv d1">
+    <div class="pf"><div class="ic">Massa</div><div class="big"><span class="ph-x">[X]</span> <em>h</em></div><p>Horas de fermentação lenta — o que dá leveza e digestão fácil à massa.</p></div>
+    <div class="pf"><div class="ic">História</div><div class="big">desde <span class="ph-x">[X]</span></div><p>Ano de fundação em Blumenau — o "a gente faz há anos" com data.</p></div>
+    <div class="pf"><div class="ic">Queijo</div><div class="big"><span class="ph-x">[X]</span></div><p>Tipo / origem do queijo que escorre — o herói do cheese pull.</p></div>
+    <div class="pf"><div class="ic">Entrega</div><div class="big">caixa <span class="ph-x">[X]</span></div><p>Embalagem térmica que mantém a pizza quente — prova do "chega quente".</p></div>
+    <div class="pf"><div class="ic">Cobertura</div><div class="big">raio <span class="ph-x">[X]</span> km</div><p>Área de entrega a partir da loja — até onde a Suprema chega quente.</p></div>
+    <div class="pf"><div class="ic">Sabores</div><div class="big"><span class="ph-x">[X]</span></div><p>Quantidade de sabores no cardápio — a fartura que junta a família.</p></div>
+  </div>
+  <div class="pf-note"><span class="dot"></span> Bloco bloqueado por dados: cada <span class="ph-x">[X]</span> espera o número real do cliente (Adelia confirma). Nada aqui é inventado.</div>
 </section>
 
 <!-- ░░ 03 PÚBLICO ░░ -->
@@ -678,6 +743,64 @@
     <div class="mat"><div class="mk mk-apron"><div class="ap"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Avental</b><span>Preto · logo branca</span></div></div>
     <div class="mat"><div class="mk mk-cup"><div class="cup"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Copo</b><span>Vermelho · logo branca</span></div></div>
     <div class="mat"><div class="mk mk-card"><div class="cardv" style="background:#0F0F0F;border:1px solid #2a2a2a"><img src="../assets/logo-suprema-branco.png" alt=""></div></div><div class="nm"><b>Cartão Fidelidade</b><span>9×4,8cm · preto</span></div></div>
+  </div>
+</section>
+
+<!-- ░░ RESUMO DE BOLSO A4 (Sprint 3) ░░ -->
+<section id="bolso" data-bb="Resumo">
+  <span class="num">17</span>
+  <div class="kicker rv">Resumo de bolso</div>
+  <h2 class="rv d1">A marca numa<br><em>página.</em></h2>
+  <p class="epi rv d2">Tudo o que importa, num cartão A4.</p>
+  <p class="lead rv d2">Para colar na parede da cozinha ou levar na reunião. Use <b>Imprimir</b> (Ctrl/Cmd + P) — só este resumo sai no papel, em A4.</p>
+  <div class="bolso-wrap rv d1">
+    <div class="bolso">
+      <div class="bhead">
+        <span class="ttl">SUPREMA <span>·</span> Resumo de bolso</span>
+        <img src="../assets/logo-suprema-branco.png" alt="Suprema Pizza">
+      </div>
+      <div class="bgrid">
+        <div class="bc">
+          <h4>Quem somos</h4>
+          <p>Pizzaria artesanal e acolhedora de Blumenau/SC. <span class="tag">Massa fresca de fermentação lenta, queijo no ponto, entrega quente.</span> Vendemos pelo desejo, nunca pelo preço.</p>
+        </div>
+        <div class="bc">
+          <h4>Como falamos</h4>
+          <p>Caloroso, artesanal e apetitoso. Fala como amigo, acolhe como casa. Copy conversacional, <span class="tag">2 linhas</span> — sem CTA agressivo nem preço na arte social.</p>
+        </div>
+        <div class="bc">
+          <h4>Tagline</h4>
+          <p class="tag">"Quando o queijo escorre, a pizza tá no ponto."</p>
+          <p>Assinatura: <b>Não é qualquer pizza. É A Suprema.</b></p>
+        </div>
+        <div class="bc">
+          <h4>Cores</h4>
+          <div class="swatches">
+            <div class="sw"><i style="background:#0F0F0F"></i>#0F0F0F</div>
+            <div class="sw"><i style="background:#D62828"></i>#D62828</div>
+            <div class="sw"><i style="background:#FFFFFF"></i>#FFFFFF</div>
+            <div class="sw"><i style="background:#FFEBDC"></i>#FFEBDC</div>
+          </div>
+          <p style="margin-top:8px">Preto base · vermelho marca · branco texto · bege halo de legenda.</p>
+        </div>
+        <div class="bc">
+          <h4>Fonte &amp; logo</h4>
+          <p><span class="tag">Saira Condensed</span> nos títulos e no wordmark (caixa-alta, 800/900). <span class="tag">Poppins</span> no corpo e legendas. Logo branca sobre escuro, vermelha sobre claro; símbolo (✕ rolinhos) em espaço reduzido.</p>
+        </div>
+        <div class="bc">
+          <h4>Contato</h4>
+          <p>WhatsApp <span class="bx">[X]</span><br>Horário <span class="bx">[X]</span><br>Endereço <span class="bx">[X]</span> · Blumenau/SC<br>@ <span class="bx">[X]</span></p>
+        </div>
+      </div>
+      <div class="bfoot">
+        <span>Suprema Pizza · Blumenau/SC · ©2026</span>
+        <span>Marca cuidada por <b>Fenice Lab</b> · v1.0</span>
+      </div>
+    </div>
+    <div class="bolso-actions">
+      <button type="button" onclick="window.print()">⎙ Imprimir A4</button>
+      <span class="hint">Campos <span class="ph-x" style="font-style:normal">[X]</span> aguardam dados do cliente (WhatsApp, horário, endereço, @).</span>
+    </div>
   </div>
 </section>
 
