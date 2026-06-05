@@ -2,190 +2,456 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="shortcut icon" href="/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suprema Pizza — Cronograma de Conteúdo</title>
+<title>Cronograma Completo Junho 2026 · Suprema Pizza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;500;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --preto:#0F0F0F; --preto-2:#141414; --preto-3:#161616; --linha:#1F1F1F; --linha-2:rgba(255,255,255,.10);
-    --vermelho:#D62020; --vermelho-dk:#B71C1C; --bege:#FFEBDC; --branco:#fff; --cinza:#9A9A9A;
-    /* pilares */
-    --p-produto:#D62020; --p-promo:#C0392B; --p-bastidor:#E63946; --p-social:#8B9D5B; --p-instit:#6A8CAF;
-    /* status */
-    --s-aaprovar:#9A9A9A; --s-producao:#E0A124; --s-pronto:#3FA7D6; --s-aprovado:#8B9D5B; --s-postado:#D62020;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-  body{background:var(--preto);color:#E6E6E6;font-size:14px;line-height:1.6;padding:30px 22px 70px}
-  .wrap{max-width:1180px;margin:0 auto}
+  :root{ --preto:#0E0E0E; --grafite:#1A1A1A; --cinza:#242424; --vermelho:#D62828; --branco:#fff; --suave:#bdbdbd; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--preto);color:var(--branco);font-family:'Poppins',sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px;}
 
-  .top{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:6px}
-  .eyebrow{font-family:'Saira Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--vermelho)}
-  h1{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:48px;letter-spacing:.01em;text-transform:uppercase;color:var(--vermelho);line-height:.92}
-  .period{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--preto-3);border:1px solid var(--linha-2);border-radius:10px;padding:9px 16px}
-  .period b{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--bege);text-transform:uppercase}
-  .period span{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.1em}
-  .lead{color:#C2C2C2;font-size:13.5px;max-width:720px;margin:10px 0 22px}
-  .lead b{color:var(--bege)}
+  header.hero{position:relative;text-align:center;padding:64px 18px 50px;background:
+     radial-gradient(1200px 420px at 50% -10%, rgba(214,40,40,.30), transparent 60%), var(--preto);
+     border-bottom:1px solid #2a2a2a;}
+  .hero img.logo{height:84px;margin-bottom:22px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.6));}
+  .hero .kick{color:var(--vermelho);font-weight:800;letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:10px;}
+  .hero h1{font-family:'Anton',sans-serif;font-size:clamp(36px,9vw,84px);line-height:.96;letter-spacing:.02em;text-transform:uppercase;}
+  .hero h1 em{color:var(--vermelho);font-style:normal;}
+  .hero .tag{color:var(--suave);font-weight:300;font-style:italic;font-size:16px;margin-top:16px;padding:0 10px;}
+  .hero .stats{display:flex;gap:16px;justify-content:center;margin-top:26px;flex-wrap:wrap;}
+  .hero .stats div{background:var(--grafite);border:1px solid #2e2e2e;border-radius:14px;padding:12px 22px;min-width:104px;}
+  .hero .stats b{font-family:'Anton',sans-serif;font-size:32px;color:var(--vermelho);display:block;line-height:1;}
+  .hero .stats span{font-size:11px;color:var(--suave);letter-spacing:.1em;text-transform:uppercase;}
 
-  /* legendas (pilares + status) */
-  .legendas{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:26px}
-  .leg-grp{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
-  .leg-grp .lbl{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--cinza);margin-right:2px}
-  .pil{display:flex;align-items:center;gap:7px;background:var(--preto-3);border:1px solid var(--linha-2);border-radius:8px;padding:6px 11px;font-size:11.5px;font-weight:500;color:#D7D7D7}
-  .pil .d{width:10px;height:10px;border-radius:3px;flex:none}
-  .stbadge{font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;padding:3px 9px;border-radius:999px;border:1px solid currentColor}
+  .sem{padding:42px 0 6px;}
+  .sem-h{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .sem-h .n{font-family:'Anton',sans-serif;font-size:26px;color:var(--branco);background:var(--vermelho);padding:3px 16px;border-radius:9px;}
+  .sem-h .line{flex:1;height:1px;background:#2e2e2e;}
+  .sem-h .sub{color:var(--suave);font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
 
-  /* semana */
-  .sem{margin-bottom:30px}
-  .sem-h{display:flex;align-items:baseline;gap:12px;margin:0 2px 12px;padding-bottom:8px;border-bottom:1px solid var(--linha-2)}
-  .sem-h .n{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--bege)}
-  .sem-h .meta{font-size:11.5px;color:var(--cinza);letter-spacing:.04em}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-  @media(max-width:820px){.grid{grid-template-columns:repeat(1,1fr)}}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:860px){.grid{grid-template-columns:1fr;max-width:430px;margin:0 auto;}}
 
-  .post{background:var(--preto-2);border:1px solid var(--linha-2);border-left-width:4px;border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;gap:8px;min-height:0}
-  .post .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .fmt{font-family:'Saira Condensed',sans-serif;font-weight:800;letter-spacing:.07em;text-transform:uppercase;font-size:10.5px;padding:3px 9px;border-radius:6px;background:var(--linha);color:var(--bege);display:inline-flex;align-items:center;gap:5px}
-  .fmt.video{background:rgba(214,32,32,.18);color:#F08C82}
-  .fmt.carrossel{background:rgba(106,140,175,.20);color:#9DBBD6}
-  .fmt.foto{background:rgba(139,157,91,.20);color:#B7C68A}
-  .post .when{margin-left:auto;font-family:'Saira Condensed',sans-serif;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px;color:var(--cinza)}
-  .post .when b{color:#D7D7D7;font-weight:700}
-  .post .sabor{font-family:'Saira Condensed',sans-serif;font-weight:700;font-size:19px;line-height:1.1;letter-spacing:.01em;color:#fff;text-transform:uppercase}
-  .post .gancho{font-size:12.5px;color:#C2C2C2;line-height:1.5}
-  .post .row2{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:2px}
-  .chip{font-size:10.5px;font-weight:600;letter-spacing:.02em;padding:2px 8px;border-radius:999px;border:1px solid var(--linha-2);color:#B8B8B8;display:inline-flex;align-items:center;gap:5px}
-  .chip .dot{width:8px;height:8px;border-radius:50%;flex:none}
-  .chip.novo{color:#F0C36D;border-color:rgba(240,195,109,.35)}
-  .chip.saz{color:#F08C82;border-color:rgba(240,140,130,.35)}
+  .card{background:var(--grafite);border:1px solid #2a2a2a;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+        opacity:0;transform:translateY(34px);transition:opacity 1.3s cubic-bezier(.2,.7,.2,1),transform 1.3s cubic-bezier(.2,.7,.2,1),border-color .2s;}
+  .card.in{opacity:1;transform:none;}
+  .card:hover{border-color:var(--vermelho);}
+  @media(prefers-reduced-motion:reduce){.card{opacity:1;transform:none;transition:border-color .2s;}}
+  .card .top{display:flex;justify-content:space-between;align-items:center;padding:13px 15px 9px;gap:8px;}
+  .card .day{font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;}
+  .card .badge{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;white-space:nowrap;}
+  .b-reel{background:rgba(214,40,40,.18);color:#ff6b6b;border:1px solid rgba(214,40,40,.4);}
+  .b-carr{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);}
+  .b-wait{background:rgba(255,200,0,.12);color:#ffce5a;border:1px solid rgba(255,200,0,.3);}
 
-  /* rodapé de stats */
-  .foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 30px;align-items:center;background:var(--preto-2);border:1px solid var(--linha-2);border-radius:14px;padding:18px 24px}
-  .foot .stat{min-width:74px}
-  .foot .stat b{font-family:'Saira Condensed',sans-serif;font-weight:900;font-size:34px;color:var(--vermelho);letter-spacing:.02em;display:block;line-height:1}
-  .foot .stat span{font-size:10.5px;color:var(--cinza);text-transform:uppercase;letter-spacing:.12em}
-  .foot .hint{margin-left:auto;font-size:12px;color:#9A9A9A;max-width:360px}
-  .foot .hint b{color:var(--bege)}
-  .ritmo{margin-top:14px;font-size:12px;color:#9A9A9A}
-  .ritmo b{color:var(--vermelho);font-weight:700}
-  .err{display:none;color:#F08C82;background:rgba(214,32,32,.08);border:1px solid rgba(214,32,32,.3);border-radius:10px;padding:14px 16px;font-size:13px}
+  .media9{position:relative;width:100%;background:#000;aspect-ratio:9/16;}
+  .media9 video{width:100%;height:100%;object-fit:cover;display:block;}
+  .carr{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;background:#000;aspect-ratio:4/5;}
+  .carr img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:center;}
+  .carr::-webkit-scrollbar{height:6px;}.carr::-webkit-scrollbar-thumb{background:#444;border-radius:9px;}
+  .swipe{font-size:10.5px;color:#8a8a8a;text-align:center;padding:6px;letter-spacing:.1em;text-transform:uppercase;}
+
+  .info{padding:13px 15px 16px;}
+  .info h3{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:5px;}
+  .info h3 em{color:var(--vermelho);font-style:normal;}
+  .info p{color:var(--suave);font-weight:300;font-size:13px;line-height:1.5;}
+
+  details.cap{margin-top:12px;border-top:1px solid #2e2e2e;padding-top:10px;}
+  details.cap summary{cursor:pointer;list-style:none;color:var(--vermelho);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px;background:rgba(214,40,40,.10);border:1px solid rgba(214,40,40,.38);border-radius:10px;padding:10px 13px;transition:background .15s;}
+  details.cap summary:hover{background:rgba(214,40,40,.20);}
+  details.cap summary::-webkit-details-marker{display:none;}
+  details.cap summary::after{content:"＋ abrir";margin-left:auto;font-size:12px;font-weight:600;letter-spacing:.04em;}
+  details.cap[open] summary::after{content:"－ fechar";}
+  details.cap .txt{white-space:pre-line;color:#e7e7e7;font-weight:300;font-size:13px;line-height:1.62;margin-top:10px;background:#151515;border-radius:10px;padding:12px 13px;border:1px solid #262626;}
+
+  .ph{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#1c1c1c,#1c1c1c 14px,#181818 14px,#181818 28px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#9a9a9a;text-align:center;padding:18px;}
+  .ph .big{font-family:'Anton',sans-serif;font-size:22px;color:#ffce5a;line-height:1.05;}
+  .skip{aspect-ratio:9/16;background:var(--cinza);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#9a9a9a;text-align:center;padding:18px;}
+
+  footer{text-align:center;padding:50px 18px 64px;margin-top:36px;border-top:1px solid #2a2a2a;color:var(--suave);}
+  footer img{height:44px;opacity:.85;margin-bottom:14px;}
+  footer a{color:var(--vermelho);text-decoration:none;}
+  footer .end{font-size:13px;margin-top:8px;}
+  footer .fen{margin-top:20px;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#666;}
 </style>
 </head>
 <body>
+
+<header class="hero">
+  <img class="logo" src="media/logo_white.png" alt="Suprema Pizza">
+  <div class="kick">Aprovação de Conteúdo</div>
+  <h1>Cronograma Completo<br><em>Junho 2026</em></h1>
+  <div class="tag">"Quando o queijo escorre, a pizza tá no ponto."</div>
+  <div class="stats">
+    <div><b>12</b><span>Posts no feed</span></div>
+    <div><b>10</b><span>Stories recorrentes</span></div>
+    <div><b>~41</b><span>Publicações/mês</span></div>
+  </div>
+</header>
+
 <div class="wrap">
 
-  <div class="top">
-    <div>
-      <div class="eyebrow">Planejamento Editorial · Suprema Pizza</div>
-      <h1 id="titulo">Cronograma de Conteúdo</h1>
-    </div>
-    <div class="period">
-      <div>
-        <b id="mes">Junho 2026</b><br>
-        <span id="handle">@asupremapizza</span>
-      </div>
-    </div>
-  </div>
-  <p class="lead">Calendário editorial do mês inteiro do Suprema Pizza, direto da pasta de produção.
-  Cada card traz <b>formato</b>, <b>pilar</b>, <b>status de produção</b> e o <b>gancho</b> da legenda.
-  Ritmo fixo: <b id="ritmo">Seg = Vídeo · Qua = Carrossel · Sex = Vídeo</b>.</p>
+  <!-- SEMANA 1 -->
+  <section class="sem">
+    <div class="sem-h"><span class="n">01</span><span class="sub">Semana 1 · 01 a 05/06</span><span class="line"></span></div>
+    <div class="grid">
+      <div class="card"><div class="top"><span class="day">Seg · 01/06</span><span class="badge b-reel">Reel</span></div>
+        <div class="media9"><video src="media/reel01.mp4" poster="media/poster_reel01.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Frango com <em>Catupiry</em></h3><p>Cheese pull do recheio cremoso — abre a semana no apetite.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Começa a semana do jeito certo. 🍕
 
-  <div class="legendas">
-    <div class="leg-grp"><span class="lbl">Pilares</span><span id="leg-pilares"></span></div>
-    <div class="leg-grp"><span class="lbl">Status</span>
-      <span class="stbadge" style="color:var(--s-aaprovar)">a aprovar</span>
-      <span class="stbadge" style="color:var(--s-producao)">em produção</span>
-      <span class="stbadge" style="color:var(--s-pronto)">pronto</span>
-      <span class="stbadge" style="color:var(--s-aprovado)">aprovado</span>
-      <span class="stbadge" style="color:var(--s-postado)">postado</span>
+Frango desfiado no capricho + catupiry cremoso que estica na primeira mordida. Daquelas que fazem segunda-feira valer a pena.
+
+📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #frangocomcatupiry #pizzaartesanal #blumenau #aguaverde</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Qua · 03/06</span><span class="badge b-carr">Carrossel</span></div>
+        <div class="carr"><img src="media/c03_1.jpg"><img src="media/c03_2.jpg"><img src="media/c03_3.jpg"><img src="media/c03_4.jpg"><img src="media/c03_5.jpg"><img src="media/c03_6.jpg"></div>
+        <div class="swipe">← arraste →</div>
+        <div class="info"><h3>Pizza de <em>Nutella</em></h3><p>Conceito "zoom": a gente aproxima a Nutella com morangos frescos pra você.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">A Suprema sequestra a câmera e dá um zoom pra você. 🔍
+
+Tá chegando coisa boa: a nova Pizza de Nutella com Morangos Frescos. Nutella cremosa derretendo sobre a mesma massa artesanal das salgadas, com morango fresco por cima. 🍫🍓
+
+Estreia semana que vem. 🔜 Salva esse post pra não perder e marca quem vai dividir essa com você. 👀
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #pizzadenutella #nutellacommorango #pizzadoce #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Sex · 05/06</span><span class="badge b-reel">Reel</span></div>
+        <div class="media9"><video src="media/reel05.mp4" poster="media/poster_reel05.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Pizza de <em>Camarão</em></h3><p>Camarão sobre queijo derretido, assada no ponto.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Sexta pede algo especial. 🦐
+
+Pizza de camarão coberta de queijo derretido, assada na temperatura certa. Sofisticada e na medida — do tamanho da sua fome.
+
+📲 Fecha a semana pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #pizzadecamarão #pizzaartesanal #sextou #blumenau</div></details></div></div>
     </div>
-  </div>
+  </section>
 
-  <div id="err" class="err">Não foi possível carregar o cronograma (assets/cronograma.json). Rode o gerador e publique o JSON.</div>
-  <div id="semanas"></div>
+  <!-- SEMANA 2 -->
+  <section class="sem">
+    <div class="sem-h"><span class="n">02</span><span class="sub">Semana 2 · 08 a 12/06</span><span class="line"></span></div>
+    <div class="grid">
+      <div class="card"><div class="top"><span class="day">Seg · 08/06</span><span class="badge b-reel">Reel · Lançamento</span></div>
+        <div class="media9"><video src="media/reel08.mp4" poster="media/poster_reel08.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Lançamento <em>Nutella</em></h3><p>"Valeu a espera": Nutella de verdade + morango fresco.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Demorou? Demorou. Mas tem motivo. 🍫
 
-  <div class="foot" id="foot"></div>
-  <p class="ritmo">Fonte: pastas <b>copy.md</b> de produção (Drive) · gerado por <b>tools/gerar-cronograma.mjs</b>.</p>
+A gente não ia jogar uma imitação de chocolate barato na nossa massa e chamar de novidade. Esperamos pra fazer do jeito certo: Nutella de verdade derretendo sobre a mesma massa artesanal das nossas salgadas, com morango fresco por cima.
+
+Chegou essa semana na Suprema. E sim — valeu cada dia de espera. 🍓
+
+Marca aquela pessoa que vai querer dividir uma dessas com você. 👀
+
+📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #pizzadenutella #nutellacommorango #lancamento #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Qua · 10/06</span><span class="badge b-carr">Carrossel</span></div>
+        <div class="carr"><img src="media/c10_1.jpg"><img src="media/c10_2.jpg"><img src="media/c10_3.jpg"><img src="media/c10_4.jpg"></div>
+        <div class="swipe">← arraste →</div>
+        <div class="info"><h3>Brie com <em>Geleia de Pimenta</em></h3><p>O doce que encontra o ardidinho — premium, maçaricado na hora.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">O doce que encontra o ardidinho. 🧀🌶️
+
+Apresentando a nossa Queijo Brie com Geleia de Pimenta: brie cremoso maçaricado na hora + geleia de pimenta artesanal por cima. Doce, salgado e aquele ardidinho que surpreende.
+
+Pra quem gosta de fugir do óbvio. Deu coragem? 👀
+
+📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #queijobrie #geleiadepimenta #pizzapremium #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Sex · 12/06</span><span class="badge b-wait">Namorados</span></div>
+        <div class="skip"><div style="font-size:30px">💞</div><div>Material físico</div><div style="font-size:12px">produção do cliente</div></div>
+        <div class="info"><h3>Dia dos <em>Namorados</em></h3><p>Sazonal — a Suprema vai produzir o material físico desse dia.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SEMANA 3 -->
+  <section class="sem">
+    <div class="sem-h"><span class="n">03</span><span class="sub">Semana 3 · 15 a 19/06</span><span class="line"></span></div>
+    <div class="grid">
+      <div class="card"><div class="top"><span class="day">Seg · 15/06</span><span class="badge b-reel">Reel</span></div>
+        <div class="media9"><video src="media/reel15.mp4" poster="media/poster_reel15.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Bastidores do <em>Processo</em></h3><p>"Olha como nasce": montada à mão, queijo sem economia.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Toda Suprema começa assim: no capricho. 👀
+
+Massa de verdade, queijo sem economia, ingrediente no ponto — até virar aquela fatia que você ama. É o cuidado que você sente já na primeira mordida.
+
+Feita na hora, pra você. 📲 Peça pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #bastidores #pizzaartesanal #feitonahora #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Qua · 17/06</span><span class="badge b-carr">Carrossel</span></div>
+        <div class="carr"><img src="media/c17_1.jpg"><img src="media/c17_2.jpg"><img src="media/c17_3.jpg"><img src="media/c17_4.jpg"></div>
+        <div class="swipe">← arraste →</div>
+        <div class="info"><h3><em>Borda de Pasta de Alho</em></h3><p>Borda recheada com a pasta de alho da Santa Massa.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Pra quem ama pasta de alho, essa é pra você. 🧄
+
+Feita com a pasta de alho da Santa Massa — aquela borda que você deixava por último virou a melhor parte da pizza.
+
+Disponível pra deixar qualquer sabor ainda melhor. Peça a sua com borda recheada. 😮‍💨
+
+📲 Link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #bordarecheada #bordadealho #santamassa #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Sex · 19/06</span><span class="badge b-reel">Reel</span></div>
+        <div class="media9"><video src="media/reel19.mp4" poster="media/poster_reel19.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Corte na <em>Hora</em></h3><p>Corte cirúrgico, fatia perfeita — boa demais pra não postar.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Tem coisa mais satisfatória que esse corte? 🔪
+
+Uma mistura de sabores, corte certo, fatia perfeita — quentinha, do jeito que tem que ser. Boa demais pra não postar.
+
+Deu fome? 📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #pizzaartesanal #fatiaperfeita #deufome #blumenau</div></details></div></div>
+    </div>
+  </section>
+
+  <!-- SEMANA 4 -->
+  <section class="sem">
+    <div class="sem-h"><span class="n">04</span><span class="sub">Semana 4 · 22 a 26/06</span><span class="line"></span></div>
+    <div class="grid">
+      <div class="card"><div class="top"><span class="day">Seg · 22/06</span><span class="badge b-reel">Reel</span></div>
+        <div class="media9"><video src="media/reel22.mp4" poster="media/poster_reel22.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Geleia de Pimenta com <em>Brie</em></h3><p>Brie maçaricado + geleia: doce que encontra o ardidinho.</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Pra quem ousa. 🧀🌶️
+
+Queijo brie com geleia de pimenta, maçaricado na hora e cortado na medida. O doce que encontra o ardidinho — pra fugir do comum.
+
+Deu coragem? 📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #queijobrie #geleiadepimenta #pizzapremium #blumenau</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Qua · 24/06</span><span class="badge b-wait">Festa Junina · em produção</span></div>
+        <div class="ph"><div style="font-size:30px">🎉🌽</div><div class="big">DOCE DE LEITE<br>COM PAÇOCA</div><div style="font-size:12px">sabor novo · fotos em produção</div></div>
+        <div class="info"><h3>Festa Junina <em>(sabor novo)</em></h3><p>Arraiá da Suprema — carrossel montado assim que as fotos do sabor chegarem.</p>
+        <details class="cap"><summary>📋 Legenda (rascunho)</summary><div class="txt">Chegou o arraiá da Suprema! 🎉🌽🎶
+
+Sabor novo de São João: Doce de Leite com Paçoca. Aquele docinho de festa junina que você ama — agora em forma de pizza. 😍
+
+Pra adoçar o seu arraiá sem sair de casa.
+
+📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #festajunina #saojoao #docedeleite #paçoca #arraiá</div></details></div></div>
+
+      <div class="card"><div class="top"><span class="day">Sex · 26/06</span><span class="badge b-reel">Reel · 🔊 Som</span></div>
+        <div class="media9"><video src="media/reel26.mp4" poster="media/poster_reel26.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>Cheese <em>Pull</em></h3><p>"Sobe o som": efeitos sonoros do queijo esticando (ASMR). 🔊 ative o som!</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">SOBE O SOM. 🔊🧀
+
+O queijo que não acaba — puxa a fatia e veja (e ouça) esse cheese pull. Liga o som que vale a pena.
+
+Deu fome? 📲 Peça a sua pelo link da bio.
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#supremapizza #cheesepull #queijo #asmr #pizzaartesanal #blumenau</div></details></div></div>
+    </div>
+  </section>
+
+  <!-- SEMANA 5 -->
+  <section class="sem">
+    <div class="sem-h"><span class="n">05</span><span class="sub">Semana 5 · 29/06</span><span class="line"></span></div>
+    <div class="grid">
+      <div class="card"><div class="top"><span class="day">Seg · 29/06</span><span class="badge b-reel">Reel · Institucional</span></div>
+        <div class="media9"><video src="media/reel29.mp4" poster="media/poster_reel29.jpg" autoplay loop muted controls playsinline preload="auto"></video></div>
+        <div class="info"><h3>É a <em>Suprema</em></h3><p>"Existe pizza. E existe A Suprema." Fecho institucional, trilha emocional. ▶ ative o som</p>
+        <details class="cap"><summary>📋 Legenda do post</summary><div class="txt">Existe pizza. E existe A Suprema. 🍕
+
+Não é marketing — é o que sai do forno: massa que cresce certinho, ingredientes de verdade, queijo que estica e aquele cheiro que toma conta da casa.
+
+Você prova uma vez e entende o nome.
+
+👉 Já provou A Suprema? Conta pra gente o que achou 👇
+
+📍 R. Gen. Osório, 3012 - Água Verde, Blumenau - SC. 🍕✨
+
+#asupremapizza #pizzaartesanal #blumenau #aguaverde</div></details></div></div>
+    </div>
+  </section>
+
+  <!-- STORIES RECORRENTES -->
+  <style>
+    .sec-intro{color:#cfcfcf;font-weight:300;font-size:14.5px;line-height:1.6;max-width:780px;margin:0 0 24px;}
+    .stcol{margin-bottom:26px;}
+    .stcol h4{font-family:'Anton',sans-serif;font-size:18px;color:var(--vermelho);margin-bottom:14px;letter-spacing:.03em;text-transform:uppercase;}
+    .stcol h4 small{color:#8a8a8a;font-family:'Poppins';font-weight:600;font-size:11px;letter-spacing:.1em;}
+    .stgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}
+    @media(max-width:860px){.stgrid{grid-template-columns:repeat(2,1fr);}}
+    .stcard{background:var(--grafite);border:1px solid #2a2a2a;border-radius:13px;overflow:hidden;transition:border-color .2s;}
+    .stcard:hover{border-color:var(--vermelho);}
+    .stcard video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;}
+    .stcard span{display:block;font-size:11px;color:#dcdcdc;padding:8px 6px;text-align:center;line-height:1.25;font-weight:600;}
+    .rot{margin-top:8px;background:var(--grafite);border:1px solid #2a2a2a;border-radius:14px;padding:16px 16px 10px;}
+    .rot h4{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:6px;}
+    .rot .lead{color:#bdbdbd;font-weight:300;font-size:13.5px;line-height:1.6;margin-bottom:12px;}
+    .rot .lead b{color:#ff8a8a;}
+    .rtab{width:100%;border-collapse:collapse;font-size:12px;}
+    .rtab td{padding:7px 8px;border-top:1px solid #262626;color:#d8d8d8;font-weight:300;vertical-align:top;}
+    .rtab td.d{color:#fff;font-weight:700;white-space:nowrap;width:78px;}
+    .rtab td.u{color:#ffce5a;font-weight:600;white-space:nowrap;}
+    .resumo{text-align:center;padding:52px 18px 6px;margin-top:34px;border-top:1px solid #2a2a2a;}
+    .resumo h2{font-family:'Anton',sans-serif;font-size:clamp(28px,7vw,54px);text-transform:uppercase;letter-spacing:.02em;line-height:1;}
+    .resumo h2 em{color:var(--vermelho);font-style:normal;}
+    .rnum{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:28px 0 22px;}
+    .rnum div{background:var(--grafite);border:1px solid #2e2e2e;border-radius:16px;padding:18px 22px;min-width:140px;}
+    .rnum b{font-family:'Anton',sans-serif;font-size:40px;color:var(--vermelho);display:block;line-height:1;}
+    .rnum span{font-size:11px;color:#bdbdbd;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;display:block;}
+    .resumo .msg{max-width:740px;margin:0 auto;color:#dcdcdc;font-weight:300;font-size:15px;line-height:1.75;}
+    .resumo .msg b{color:#fff;font-weight:600;}
+  </style>
+  <section class="sem">
+    <div class="sem-h"><span class="n" style="font-size:17px;padding:6px 14px">STORIES</span><span class="sub">Recorrentes · presença quase diária</span><span class="line"></span></div>
+    <p class="sec-intro">Além dos 12 posts no feed, a Suprema mantém a marca ativa com <b style="color:#fff">10 stories em stop motion</b> rodando o mês inteiro — <b style="color:#fff">2 por dia</b> nos dias de postagem, + <b style="color:#fff">3 gatilhos de urgência</b> espalhados. É presença constante sem custo extra de produção.</p>
+
+    <div class="stcol"><h4>🍕 Stop motions de sabor <small>· 7 · 2 por dia em rodízio</small></h4>
+      <div class="stgrid">
+        <div class="stcard"><video src="media/st_cam.mp4" poster="media/s_cam.jpg" autoplay loop muted playsinline preload="auto"></video><span>Camarão c/ Cheddar</span></div>
+        <div class="stcard"><video src="media/st_alho.mp4" poster="media/s_alho.jpg" autoplay loop muted playsinline preload="auto"></video><span>Alho c/ Cebola</span></div>
+        <div class="stcard"><video src="media/st_bast.mp4" poster="media/s_bast.jpg" autoplay loop muted playsinline preload="auto"></video><span>Bastidores</span></div>
+        <div class="stcard"><video src="media/st_milho.mp4" poster="media/s_milho.jpg" autoplay loop muted playsinline preload="auto"></video><span>Milho, Bacon e Catupiry</span></div>
+        <div class="stcard"><video src="media/st_supr.mp4" poster="media/s_supr.jpg" autoplay loop muted playsinline preload="auto"></video><span>A Suprema</span></div>
+        <div class="stcard"><video src="media/st_nut.mp4" poster="media/s_nut.jpg" autoplay loop muted playsinline preload="auto"></video><span>Nutella c/ Morangos</span></div>
+        <div class="stcard"><video src="media/st_brie.mp4" poster="media/s_brie.jpg" autoplay loop muted playsinline preload="auto"></video><span>Geleia de Pimenta c/ Brie</span></div>
+      </div></div>
+
+    <div class="stcol"><h4>🎯 Gatilhos de urgência <small>· 3 · espalhados (1 por dia em 3 dias)</small></h4>
+      <div class="stgrid">
+        <div class="stcard"><video src="media/st_fatia.mp4" poster="media/s_fatia.jpg" autoplay loop muted playsinline preload="auto"></video><span>Sua Fatia (endowment)</span></div>
+        <div class="stcard"><video src="media/st_cozinha.mp4" poster="media/s_cozinha.jpg" autoplay loop muted playsinline preload="auto"></video><span>Cozinha Rodando (urgência)</span></div>
+        <div class="stcard"><video src="media/st_pedindo.mp4" poster="media/s_pedindo.jpg" autoplay loop muted playsinline preload="auto"></video><span>Alguém Pedindo (loss aversion)</span></div>
+      </div></div>
+
+    <div class="rot"><h4>📅 Como rotacionam no mês</h4>
+      <p class="lead"><b>2 stories de sabor por dia</b> em rodízio + <b>3 gatilhos</b> nos dias 01, 08 e 15. Resultado: <b>~29 stories no mês</b>, sem repetir em sequência.</p>
+      <table class="rtab">
+        <tr><td class="d">Seg 01</td><td>Camarão · Alho</td><td class="u">+ Sua Fatia</td></tr>
+        <tr><td class="d">Qua 03</td><td>Bastidores · Milho</td><td></td></tr>
+        <tr><td class="d">Sex 05</td><td>A Suprema · Nutella</td><td></td></tr>
+        <tr><td class="d">Seg 08</td><td>Geleia+Brie · Camarão</td><td class="u">+ Cozinha Rodando</td></tr>
+        <tr><td class="d">Qua 10</td><td>Alho · Bastidores</td><td></td></tr>
+        <tr><td class="d">Sex 12</td><td>Milho · A Suprema</td><td></td></tr>
+        <tr><td class="d">Seg 15</td><td>Nutella · Geleia+Brie</td><td class="u">+ Alguém Pedindo</td></tr>
+        <tr><td class="d">Qua 17</td><td>Camarão · Alho</td><td></td></tr>
+        <tr><td class="d">Sex 19</td><td>Bastidores · Milho</td><td></td></tr>
+        <tr><td class="d">Seg 22</td><td>A Suprema · Nutella</td><td></td></tr>
+        <tr><td class="d">Qua 24</td><td>Geleia+Brie · Camarão</td><td></td></tr>
+        <tr><td class="d">Sex 26</td><td>Alho · Bastidores</td><td></td></tr>
+        <tr><td class="d">Seg 29</td><td>Milho · A Suprema</td><td></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- RESUMO -->
+  <section class="resumo">
+    <div style="color:var(--vermelho);font-weight:800;letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:10px">Resumo da Entrega</div>
+    <h2>Junho em <em>números</em></h2>
+    <div class="rnum">
+      <div><b>22</b><span>Criativos produzidos</span></div>
+      <div><b>~41</b><span>Publicações no mês</span></div>
+      <div><b>13</b><span>Dias no feed</span></div>
+      <div><b>5</b><span>Semanas planejadas</span></div>
+    </div>
+    <p class="msg">12 posts no feed + 10 stories recorrentes rodando o mês inteiro = <b>presença quase diária</b> da Suprema, com qualidade premium e identidade consistente.<br><br>E o mais importante: <b>tudo planejado e entregue com antecedência.</b> Esse é o jeito Fenice de trabalhar — você aprova o mês inteiro de uma vez, com calma, e a marca nunca fica sem conteúdo. É assim, mês após mês, que a presença digital cresce de verdade. 🍕🔥</p>
+  </section>
+
+  <!-- PROPOSTA: CUPONS ORGANICOS -->
+  <style>
+    .prop{margin:30px 0 6px;background:linear-gradient(180deg,#181818,#101010);border:1px solid rgba(214,40,40,.45);border-radius:22px;padding:40px 26px 32px;box-shadow:0 0 60px rgba(214,40,40,.06) inset;}
+    .prop .pk{color:var(--vermelho);font-weight:800;letter-spacing:.3em;font-size:12px;text-transform:uppercase;text-align:center;margin-bottom:10px;}
+    .prop h2{font-family:'Anton',sans-serif;font-size:clamp(30px,7.5vw,56px);text-transform:uppercase;text-align:center;line-height:1;letter-spacing:.02em;}
+    .prop h2 em{color:var(--vermelho);font-style:normal;}
+    .prop .who{text-align:center;color:#8a8a8a;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:12px 0 28px;}
+    .prop p{max-width:760px;margin:0 auto 16px;color:#dcdcdc;font-weight:300;font-size:15px;line-height:1.78;}
+    .prop p b{color:#fff;font-weight:600;}
+    .prop .hl{color:#ff8a8a;font-weight:700;}
+    .ptab{width:100%;max-width:580px;margin:26px auto 8px;border-collapse:collapse;font-size:14px;border:1px solid #2a2a2a;border-radius:12px;overflow:hidden;}
+    .ptab td{padding:12px 16px;border-top:1px solid #242424;color:#e7e7e7;font-weight:300;}
+    .ptab tr:first-child td{border-top:none;}
+    .ptab td.code{font-family:'Poppins';font-weight:800;color:#fff;background:rgba(214,40,40,.18);letter-spacing:.05em;white-space:nowrap;width:135px;}
+    .prop .bonus{text-align:center;font-size:14px;color:#bdbdbd;margin-top:16px;}
+    .prop .bonus b{color:#fff;font-weight:600;}
+    .prop .close{max-width:760px;margin:24px auto 0;color:#cfcfcf;font-weight:300;font-style:italic;font-size:14.5px;line-height:1.72;text-align:center;border-top:1px solid #2a2a2a;padding-top:22px;}
+    .prop .close b{color:#fff;font-style:normal;}
+  </style>
+  <section class="sem">
+    <div class="prop">
+      <div class="pk">Sugestão da Fenice · Próximo Nível</div>
+      <h2>Cupons <em>Orgânicos</em></h2>
+      <div class="who">Transformar quem já te segue em pedido</div>
+
+      <p>Vocês já investem em cupom no <b>tráfego pago</b> — e funciona. Mas tem um ativo que vocês <b>já pagaram e ainda não estão convertendo</b>: quem já segue a Suprema.</p>
+      <p><b>Essa galera já está aqui.</b> Assiste seus stories todo dia, vê seus reels, salva seus carrosséis. Ela já está dentro do seu <b>custo operacional</b>. Dar a ela um cupom exclusivo <span class="hl">não custa mídia nova</span> — é pegar um custo que já existe e transformar em <b>investimento de conversão</b>.</p>
+      <p><b>Como funciona:</b> cada sabor ganha um código próprio, ativado no dia a dia (stories) e nos lançamentos (reels e carrosséis). Quem acompanha: vê → usa → pede.</p>
+
+      <table class="ptab">
+        <tr><td class="code">NUTELLA</td><td>Nutella com Morangos Frescos</td></tr>
+        <tr><td class="code">CAMARAO</td><td>Camarão com Borda de Cheddar</td></tr>
+        <tr><td class="code">BRIE</td><td>Geleia de Pimenta com Brie</td></tr>
+        <tr><td class="code">FRANGO</td><td>Frango com Catupiry</td></tr>
+        <tr><td class="code">BORDA</td><td>Borda de Pasta de Alho · Santa Massa</td></tr>
+        <tr><td class="code">SUPREMA</td><td>A Suprema</td></tr>
+      </table>
+
+      <p class="bonus"><b>E tem bônus:</b> cada código diz <b>qual conteúdo virou pedido</b> — vocês passam a saber o que o orgânico realmente move.</p>
+
+      <div class="close">A oferta é de vocês — sugerimos um <b>brinde casado</b> (borda recheada ou refri) pra não tocar na margem, válido na semana de cada post.<br>Topam testar a partir de Julho? <b>A gente já deixa pronto no cronograma.</b></div>
+    </div>
+  </section>
 
 </div>
 
+<footer>
+  <img src="media/logo_white.png" alt="Suprema Pizza">
+  <div class="end">📍 R. Gen. Osório, 3012 · Água Verde · Blumenau/SC</div>
+  <div class="end"><a href="https://www.instagram.com/asupremapizza/">@asupremapizza</a> · <a href="https://pedir.delivery/app/asupremapizza/menu">cardápio online</a></div>
+  <div class="fen">Cronograma produzido por Fenice Lab · Junho 2026</div>
+</footer>
+
 <script>
-const PILAR_COR = { produto:'#D62020', promo:'#C0392B', bastidor:'#E63946', social:'#8B9D5B', instit:'#6A8CAF' };
-const STATUS = {
-  'a-aprovar': { label:'a aprovar',  cor:'var(--s-aaprovar)' },
-  'producao':  { label:'em produção',cor:'var(--s-producao)' },
-  'pronto':    { label:'pronto',     cor:'var(--s-pronto)' },
-  'aprovado':  { label:'aprovado',   cor:'var(--s-aprovado)' },
-  'postado':   { label:'postado',    cor:'var(--s-postado)' },
-};
-const FMT_ICON = { video:'🎬', carrossel:'🎠', foto:'📷' };
-const FMT_LABEL = { video:'Reel', carrossel:'Carrossel', foto:'Foto' };
-
-function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-function ddmm(iso){ const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||''); return m ? `${m[3]}/${m[2]}` : esc(iso); }
-
-function render(data){
-  document.getElementById('titulo').textContent = 'Cronograma de Conteúdo';
-  document.getElementById('mes').textContent = data.titulo || data.mes || '';
-  document.getElementById('handle').textContent = data.handle || '';
-  if(data.ritmo) document.getElementById('ritmo').textContent = data.ritmo;
-
-  // legenda de pilares (data-driven)
-  document.getElementById('leg-pilares').innerHTML = (data.pilares||[]).map(p =>
-    `<span class="pil"><span class="d" style="background:${esc(p.cor)}"></span>${esc(p.label)}</span>`
-  ).join('');
-
-  // semanas
-  const host = document.getElementById('semanas');
-  host.innerHTML = (data.semanas||[]).map(sem => {
-    const cards = (sem.posts||[]).map(p => {
-      const cor = PILAR_COR[p.pilar] || PILAR_COR.produto;
-      const st = STATUS[p.status] || STATUS['a-aprovar'];
-      const pilarLabel = (data.pilares||[]).find(x=>x.id===p.pilar);
-      const chips = [];
-      chips.push(`<span class="chip"><span class="dot" style="background:${cor}"></span>${esc(pilarLabel?pilarLabel.label:p.pilar)}</span>`);
-      chips.push(`<span class="stbadge" style="color:${st.cor}">${esc(st.label)}</span>`);
-      if(p.novidade) chips.push(`<span class="chip novo">★ novidade</span>`);
-      if(p.sazonal)  chips.push(`<span class="chip saz">📅 ${esc(p.sazonal)}</span>`);
-      return `<article class="post" style="border-left-color:${cor}">
-        <div class="row1">
-          <span class="fmt ${esc(p.formato)}">${FMT_ICON[p.formato]||''} ${esc(FMT_LABEL[p.formato]||p.formato)}</span>
-          <span class="when"><b>${esc(p.dia)}</b> ${ddmm(p.data)}</span>
-        </div>
-        <div class="sabor">${esc(p.sabor||p.tema)}</div>
-        <div class="gancho">${esc(p.gancho||p.legenda_curta||'')}</div>
-        <div class="row2">${chips.join('')}</div>
-      </article>`;
-    }).join('');
-    const meta = `${(sem.posts||[]).length} post${(sem.posts||[]).length===1?'':'s'}`;
-    return `<section class="sem">
-      <div class="sem-h"><span class="n">${esc(sem.label||('Semana '+sem.n))}</span><span class="meta">${meta}</span></div>
-      <div class="grid">${cards}</div>
-    </section>`;
-  }).join('');
-
-  // rodapé
-  const s = data.stats || {};
-  const stats = [
-    ['feeds','Posts no feed'], ['reels','Reels'], ['carrosseis','Carrosséis'],
-    ['stories','Stories'], ['total','Total no mês'],
-  ].filter(([k])=>s[k]!=null);
-  document.getElementById('foot').innerHTML =
-    stats.map(([k,lbl])=>`<div class="stat"><b>${esc(s[k])}</b><span>${esc(lbl)}</span></div>`).join('') +
-    `<div class="hint"><b>Como funciona:</b> Segunda e sexta puxam reel (vídeo engaja mais); quarta é o carrossel. Toda legenda abre com uma pergunta pra gerar comentário.</div>`;
-}
-
-fetch('../../../assets/cronograma.json?ts=' + Date.now())
-  .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-  .then(render)
-  .catch(() => { document.getElementById('err').style.display='block'; });
+(function(){
+  var cards=document.querySelectorAll('.card');
+  if(!('IntersectionObserver' in window)){cards.forEach(function(c){c.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var c=e.target, sibs=Array.prototype.slice.call(c.parentElement.children), idx=sibs.indexOf(c);
+        c.style.transitionDelay=(idx*0.26)+'s';          /* cascata: cada card do dia entra em sequência */
+        c.classList.add('in'); io.unobserve(c);
+      }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  cards.forEach(function(c){io.observe(c);});
+})();
 </script>
 </body>
 </html>
