@@ -6,3 +6,11 @@ ssl/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Sub-app de Performance (war room próprio)
+# node_modules e .env NUNCA versionar; dist/ É versionado de propósito:
+# o deploy faz `git reset --hard` na pasta servida e NÃO roda build na VPS,
+# então o iframe ./performance/dist/index.html só existe em prod se estiver no git.
+performance/node_modules/
+performance/.env
+performance/.env.local

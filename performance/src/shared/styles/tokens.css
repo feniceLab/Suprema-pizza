@@ -1,0 +1,214 @@
+/* ============================================================
+   FENICE LAB — Design System · Foundations
+   Cores + Tipografia · 2026
+   Tema: CLARO TERROSO (avorio + terracota/vermelho + caffè)
+   Regra de ouro: paleta terrosa — ZERO azul, ZERO dourado.
+   ------------------------------------------------------------
+   Importe este arquivo e use as variáveis --fen-* (tokens)
+   e as classes .fen-* (estilos semânticos base).
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  /* ---------- COR · Marca / primária (Terra Fenice) ---------- */
+  --fen-terra:      #B23A2E;   /* PRIMÁRIA — marca, ação principal       */
+  --fen-terra-h:    #952E24;   /* hover                                  */
+  --fen-terra-d:    #76241C;   /* press / texto sobre claro              */
+  --fen-terra-l:    #F6EAE7;   /* tinte 50 — fundo suave / chip          */
+
+  /* ---------- COR · Acento (Terracota / Cotta) ---------- */
+  --fen-cotta:      #CC7A4D;   /* acento pontual, gradiente fogo (topo)  */
+  --fen-cotta-d:    #97512E;   /* kicker / texto de acento sobre claro   */
+
+  /* ---------- COR · Neutros quentes (superfícies + tinta) ---------- */
+  --fen-avorio:     #F3ECE2;   /* fundo base (marfim)                    */
+  --fen-argilla:    #E6DAC8;   /* borda / divisor / superfície alt.      */
+  --fen-caffe:      #2A211C;   /* tinta / texto primário / sidebar       */
+  --fen-nero:       #160F0B;   /* tinta máxima / press de ink            */
+  --fen-surface:    #FFFFFF;   /* card / superfície elevada              */
+  --fen-surface-2:  #FBF7F1;   /* superfície sutil / input desabilitado  */
+  --fen-muted:      #8A7D6F;   /* texto secundário / meta                */
+
+  /* ---------- COR · Escala Terra (primary) 50→900 ---------- */
+  --fen-terra-50:  #F6EAE7;
+  --fen-terra-100: #EBCEC8;
+  --fen-terra-200: #DCA89E;
+  --fen-terra-300: #CC8275;
+  --fen-terra-400: #BF5A4A;
+  --fen-terra-500: #B23A2E;   /* = --fen-terra */
+  --fen-terra-600: #952E24;
+  --fen-terra-700: #76241C;
+  --fen-terra-800: #551A14;
+  --fen-terra-900: #34100C;
+
+  /* ---------- COR · Escala Neutra quente ---------- */
+  --fen-neutral-50:  #FBF7F1;
+  --fen-neutral-100: #F3ECE2;  /* avorio   */
+  --fen-neutral-200: #E6DAC8;  /* argilla  */
+  --fen-neutral-300: #C9BBA6;
+  --fen-neutral-400: #A89A88;
+  --fen-neutral-500: #8A7D6F;  /* muted    */
+  --fen-neutral-700: #564636;
+  --fen-neutral-800: #2A211C;  /* caffè    */
+  --fen-neutral-900: #160F0B;  /* nero     */
+
+  /* ---------- COR · Semânticas funcionais (terrosas) ---------- */
+  --fen-success:    #5E7A4F;   /* verde-oliva — concluído / ativo        */
+  --fen-success-bg: #EEF3E9;
+  --fen-warning:    #CC7A4D;   /* terracota — atenção / em setup         */
+  --fen-warning-bg: #FBEFE4;
+  --fen-danger:     #B23A2E;   /* terra — erro / destrutivo              */
+  --fen-danger-bg:  #F6EAE7;
+  --fen-info:       #6E5A48;   /* marrom morno — informativo (sem azul!) */
+  --fen-info-bg:    #F1ECE5;
+
+  /* ---------- COR · Mapeamento semântico (pense em "papel") ---------- */
+  --fen-primary:    var(--fen-terra);
+  --fen-accent:     var(--fen-cotta);
+  --fen-bg:         var(--fen-avorio);
+  --fen-text:       var(--fen-caffe);
+  --fen-text-muted: var(--fen-muted);
+  --fen-border:     var(--fen-argilla);
+
+  /* ---------- GRADIENTE · "Fogo" (assinatura) ---------- */
+  --fen-flame:      linear-gradient(135deg, #B23A2E 0%, #CC7A4D 100%);
+  --fen-flame-v:    linear-gradient(0deg, #952E24 0%, #B23A2E 50%, #CC7A4D 100%);
+
+  /* ---------- TIPOGRAFIA · Famílias ---------- */
+  --fen-font:      'Inter', system-ui, -apple-system, sans-serif;  /* corpo + UI   */
+  --fen-display:   'Fraunces', Georgia, serif;                      /* títulos      */
+  --fen-mono:      'JetBrains Mono', ui-monospace, monospace;       /* código/dados */
+
+  /* ---------- TIPOGRAFIA · Pesos ---------- */
+  --fen-w-reg:   400;
+  --fen-w-med:   500;
+  --fen-w-semi:  600;
+  --fen-w-bold:  700;
+  --fen-w-black: 900;   /* Fraunces display / wordmark */
+
+  /* ---------- ESPAÇAMENTO (escala base 4pt) ---------- */
+  --fen-s1: 4px;   --fen-s2: 8px;   --fen-s3: 12px;  --fen-s4: 16px;
+  --fen-s5: 24px;  --fen-s6: 32px;  --fen-s7: 48px;  --fen-s8: 64px;
+
+  /* ---------- RAIO ---------- */
+  --fen-r-sm:   8px;
+  --fen-r-md:   12px;   /* raio padrão de card/botão/input */
+  --fen-r-lg:   16px;
+  --fen-r-xl:   24px;
+  --fen-r-pill: 999px;
+
+  /* ---------- SOMBRA / ELEVAÇÃO (quentes — base Caffè, nunca preto puro) ---------- */
+  --fen-sh-sm: 0 1px 3px rgba(42,33,28,.10);
+  --fen-sh-md: 0 6px 18px rgba(42,33,28,.12);
+  --fen-sh-lg: 0 16px 40px rgba(42,33,28,.18);
+  --fen-ring:  0 0 0 3px rgba(204,122,77,.5);   /* anel de foco terracota */
+
+  /* ---------- MOVIMENTO ---------- */
+  --fen-ease:   cubic-bezier(.2,.7,.3,1);
+  --fen-dur:    .15s;
+  --fen-dur-lg: .32s;
+
+  /* ---------- LAYOUT ---------- */
+  --fen-container: 1200px;   /* largura máx de conteúdo  */
+  --fen-gutter:    24px;     /* gutter do grid de 12 col */
+}
+
+/* ============================================================
+   ESTILOS SEMÂNTICOS BASE
+   ============================================================ */
+
+.fen-body {
+  background: var(--fen-bg);
+  color: var(--fen-text);
+  font-family: var(--fen-font);
+  font-weight: var(--fen-w-reg);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display / títulos — Fraunces */
+.fen-display {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  font-size: clamp(40px, 6vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.fen-h1 {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  font-size: clamp(30px, 4vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.fen-h2 {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.fen-h3 {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-semi);
+  font-size: 20px;
+  line-height: 1.2;
+}
+.fen-kicker {
+  font-family: var(--fen-font);
+  font-weight: var(--fen-w-bold);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--fen-cotta-d);
+}
+.fen-p {
+  font-weight: var(--fen-w-reg);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fen-text);
+}
+.fen-lead {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--fen-text-muted);
+}
+.fen-label {
+  font-size: 13px;
+  font-weight: var(--fen-w-semi);
+  line-height: 1.3;
+}
+.fen-caption {
+  font-size: 11px;
+  font-weight: var(--fen-w-bold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--fen-text-muted);
+}
+.fen-code,
+.fen-mono {
+  font-family: var(--fen-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.fen-code {
+  background: var(--fen-terra-l);
+  color: var(--fen-terra-d);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* ---------- Wordmark do logo — "fenice." ---------- */
+/* Fraunces 900, tinta Caffè, com o ponto final em Terracota.   */
+.fen-wordmark {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  letter-spacing: -0.02em;
+  color: var(--fen-caffe);
+}
+.fen-wordmark .dot { color: var(--fen-cotta); }
+/* Sobre fundo escuro, o wordmark vira marfim: */
+.fen-wordmark--invert { color: var(--fen-avorio); }

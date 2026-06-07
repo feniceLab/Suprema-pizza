@@ -1,0 +1,135 @@
+/* ComparativoAds — bar chart comparativo entre ads do mesmo adset */
+
+.perf-cmp-block {
+  background: var(--p-card2);
+  border: 1px solid var(--p-line);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+  color: var(--p-ink);
+  font-family: var(--p-font-body);
+}
+
+.perf-cmp-header {
+  margin-bottom: 14px;
+}
+
+.perf-cmp-kicker {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  margin-bottom: 4px;
+}
+
+.perf-cmp-title {
+  font-family: var(--p-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--p-ink);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.perf-cmp-subtitle {
+  font-size: 12px;
+  color: var(--p-muted);
+  margin-top: 4px;
+}
+
+.perf-cmp-empty {
+  font-size: 13px;
+  color: var(--p-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.perf-cmp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.perf-cmp-chart {
+  background: var(--p-card);
+  border: 1px solid var(--p-line);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perf-cmp-chart-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--p-muted);
+  font-weight: 600;
+}
+
+.perf-cmp-bar-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 6px 0 6px 8px;
+  border-left: 3px solid transparent;
+}
+
+.perf-cmp-bar-row.is-good {
+  border-left-color: var(--p-ok);
+}
+
+.perf-cmp-bar-row.is-bad {
+  border-left-color: var(--p-bad);
+}
+
+.perf-cmp-bar-row.is-mid {
+  border-left-color: var(--p-warn);
+}
+
+.perf-cmp-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.perf-cmp-label {
+  color: var(--p-ink);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
+.perf-cmp-value {
+  color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.perf-cmp-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--p-faint);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.perf-cmp-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(90deg, var(--p-accent), var(--p-accent2));
+  border-radius: 4px;
+  transition: width 200ms ease;
+}
+
+@media (max-width: 600px) {
+  .perf-cmp-grid {
+    grid-template-columns: 1fr;
+  }
+}

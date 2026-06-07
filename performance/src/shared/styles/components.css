@@ -1,0 +1,290 @@
+/* ============================================================
+   FENICE LAB — Componentes (atomos + compostos)
+   Prefixo .fen- · depende dos tokens --fen-* (tokens.css)
+   Principios: alvo de toque >= 44px (md/lg) · anel de foco
+   terracota sempre visivel · sombras quentes · raio 12px
+   · transicoes 150ms cubic-bezier(.2,.7,.3,1).
+   ============================================================ */
+
+/* ---------- Foco global (acessibilidade) ---------- */
+.fen-btn:focus-visible,
+.fen-input:focus-visible,
+.fen-toggle:focus-visible,
+.fen-card--clickable:focus-visible {
+  outline: none;
+  box-shadow: var(--fen-ring);
+}
+
+/* ============================================================
+   BOTAO
+   ============================================================ */
+.fen-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fen-s2);
+  font-family: var(--fen-font);
+  font-weight: var(--fen-w-semi);
+  border: 0;
+  border-radius: var(--fen-r-md);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: filter var(--fen-dur) var(--fen-ease),
+    background var(--fen-dur) var(--fen-ease),
+    box-shadow var(--fen-dur) var(--fen-ease);
+}
+
+/* Tamanhos */
+.fen-btn--sm { padding: 8px 13px; font-size: 13px; }
+.fen-btn--md { padding: 11px 18px; font-size: 14px; }
+.fen-btn--lg { padding: 14px 22px; font-size: 16px; }
+
+/* Variantes */
+.fen-btn--primary { background: var(--fen-flame); color: var(--fen-avorio); }
+.fen-btn--primary:hover { filter: brightness(1.06); }
+
+.fen-btn--ink { background: var(--fen-caffe); color: var(--fen-avorio); }
+.fen-btn--ink:hover { background: var(--fen-nero); }
+
+.fen-btn--outline {
+  background: var(--fen-surface);
+  color: var(--fen-terra-d);
+  border: 1.5px solid var(--fen-terra);
+}
+.fen-btn--outline:hover { background: var(--fen-terra-l); }
+
+.fen-btn--ghost { background: transparent; color: var(--fen-terra-d); }
+.fen-btn--ghost:hover { background: var(--fen-terra-l); }
+
+.fen-btn--soft { background: var(--fen-terra-l); color: var(--fen-terra-d); }
+.fen-btn--soft:hover { filter: brightness(.98); }
+
+.fen-btn--danger { background: var(--fen-danger); color: #fff; }
+.fen-btn--danger:hover { background: var(--fen-terra-h); }
+
+/* Estados */
+.fen-btn:disabled { opacity: .45; cursor: not-allowed; filter: none; }
+.fen-btn--loading { cursor: progress; }
+
+/* Spinner */
+.fen-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: fen-spin .7s linear infinite;
+}
+@keyframes fen-spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   CARD
+   ============================================================ */
+.fen-card {
+  background: var(--fen-surface);
+  border: 1px solid var(--fen-border);
+  border-radius: var(--fen-r-lg);
+  box-shadow: var(--fen-sh-sm);
+  transition: box-shadow var(--fen-dur) var(--fen-ease);
+}
+.fen-card--clickable { cursor: pointer; }
+.fen-card--clickable:hover { box-shadow: var(--fen-sh-md); }
+.fen-card--dark {
+  background: var(--fen-caffe);
+  border-color: rgba(243, 236, 226, .14);
+  color: var(--fen-avorio);
+}
+
+/* ============================================================
+   BADGE / TAG
+   ============================================================ */
+.fen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--fen-font);
+  font-weight: var(--fen-w-bold);
+  font-size: 11px;
+  line-height: 1;
+  border-radius: var(--fen-r-pill);
+  padding: 4px 11px;
+}
+.fen-badge--terra   { background: var(--fen-terra-l); color: var(--fen-terra-d); }
+.fen-badge--cotta   { background: var(--fen-warning-bg); color: var(--fen-cotta-d); }
+.fen-badge--ink     { background: var(--fen-caffe); color: var(--fen-avorio); }
+.fen-badge--success { background: var(--fen-success-bg); color: var(--fen-success); }
+.fen-badge--warning { background: var(--fen-warning-bg); color: var(--fen-cotta-d); }
+.fen-badge--danger  { background: var(--fen-danger-bg); color: var(--fen-terra-d); }
+.fen-badge--info    { background: var(--fen-info-bg); color: var(--fen-info); }
+.fen-badge--outline {
+  background: transparent;
+  color: var(--fen-terra-700);
+  border: 1px solid var(--fen-terra);
+}
+
+/* ============================================================
+   FIELD / INPUT
+   ============================================================ */
+.fen-field { display: flex; flex-direction: column; gap: 6px; }
+.fen-field__label {
+  font-family: var(--fen-font);
+  font-size: 13px;
+  font-weight: var(--fen-w-semi);
+  line-height: 1.3;
+  color: var(--fen-text);
+}
+.fen-input {
+  width: 100%;
+  font: var(--fen-w-reg) 14px/1 var(--fen-font);
+  padding: 11px 13px;
+  border: 1.5px solid var(--fen-border);
+  border-radius: var(--fen-r-md);
+  background: var(--fen-surface);
+  color: var(--fen-text);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color var(--fen-dur) var(--fen-ease),
+    box-shadow var(--fen-dur) var(--fen-ease);
+}
+.fen-input::placeholder { color: var(--fen-muted); }
+.fen-input:focus {
+  border-color: var(--fen-terra);
+  box-shadow: 0 0 0 3px rgba(178, 58, 46, .15);
+}
+.fen-input--error {
+  border-color: var(--fen-danger);
+}
+.fen-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(178, 58, 46, .15);
+}
+.fen-input:disabled {
+  background: var(--fen-surface-2);
+  color: var(--fen-muted);
+  cursor: not-allowed;
+}
+.fen-field__hint { font-size: 12px; color: var(--fen-muted); }
+.fen-field__err { font-size: 11px; color: var(--fen-danger); font-weight: var(--fen-w-semi); }
+
+/* ============================================================
+   AVATAR
+   ============================================================ */
+.fen-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: var(--fen-r-pill);
+  background: var(--fen-flame);
+  color: #fff;
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.fen-avatar__img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============================================================
+   KICKER
+   ============================================================ */
+.fen-kicker {
+  display: inline-block;
+  font-family: var(--fen-font);
+  font-weight: var(--fen-w-bold);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--fen-cotta-d);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TOGGLE
+   ============================================================ */
+.fen-toggle {
+  width: 42px;
+  height: 24px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--fen-argilla);
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--fen-dur) var(--fen-ease);
+}
+.fen-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(42, 33, 28, .25);
+  transition: left var(--fen-dur) var(--fen-ease);
+}
+.fen-toggle--on.fen-toggle--success { background: var(--fen-success); }
+.fen-toggle--on.fen-toggle--terra { background: var(--fen-terra); }
+.fen-toggle--on .fen-toggle__knob { left: 20px; }
+.fen-toggle--disabled { opacity: .45; cursor: not-allowed; }
+
+/* ============================================================
+   STAT CARD
+   ============================================================ */
+.fen-statcard { display: flex; flex-direction: column; gap: 6px; }
+.fen-statcard__label {
+  font-size: 12px;
+  font-weight: var(--fen-w-semi);
+  color: var(--fen-muted);
+}
+.fen-statcard__value {
+  font-family: var(--fen-display);
+  font-weight: var(--fen-w-black);
+  font-size: 34px;
+  line-height: 1;
+  color: var(--fen-terra);
+  font-variant-numeric: tabular-nums;
+}
+.fen-statcard__foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.fen-statcard__delta { font-weight: var(--fen-w-bold); }
+.fen-statcard__delta.is-up { color: var(--fen-success); }
+.fen-statcard__delta.is-down { color: var(--fen-terra); }
+.fen-statcard__delta-label,
+.fen-statcard__hint { color: var(--fen-muted); }
+
+/* ============================================================
+   APPROVAL CARD (composto)
+   ============================================================ */
+.fen-approval { overflow: hidden; }
+.fen-approval--horizontal { display: flex; }
+.fen-approval__media { background: var(--fen-surface-2); }
+.fen-approval--vertical .fen-approval__media { width: 100%; aspect-ratio: 4 / 5; }
+.fen-approval--horizontal .fen-approval__media {
+  flex: 0 0 42%;
+  align-self: stretch;
+}
+.fen-approval__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fen-approval__body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.fen-approval__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.fen-approval__datetime {
+  font-family: var(--fen-mono);
+  font-size: 12px;
+  color: var(--fen-muted);
+}
+.fen-approval__caption {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--fen-text);
+}
+.fen-approval__actions { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
