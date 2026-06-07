@@ -14,3 +14,14 @@ Thumbs.db
 performance/node_modules/
 performance/.env
 performance/.env.local
+
+# Auto-push: nunca versionar lixo de runtime
+._*
+**/._*
+*.bak
+*.bak-*
+*.bak.*
+.DS_Store
+**/.DS_Store
+*~
+index.html.bak*
